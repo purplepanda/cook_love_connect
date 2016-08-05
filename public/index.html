@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- CSS libraries -->
+    <link rel="stylesheet" href="css/lib/normalize.css">
+    <link rel="stylesheet" href="css/lib/skeleton.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" href="build/styles/styles.css">
+    <title>Cook Love Connect</title>
+</head>
+
+<!-- Begin Body Section -->
+
+<body ng-app="cookingConnect">
+    <header>
+        <nav>
+            <ul>
+                <a href="#/userhome.html">
+                    <li>Login / Register</li>
+                </a>
+                <a href="#/">
+                    <li>Potlucks</li>
+                </a>
+                <a href="#/">
+                    <li>Shared Cookbooks</li>
+                </a>
+                <a href="#/">
+                    <li>My Cookbook</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Cook Love Connect</h1>
+
+    <div id="content" ng-view></div>
+
+
+    <!-- Angular libraries -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <!-- Angular src -->
+    <script type="text/javascript" src="js/modules/cooking_connect.js"></script>
+</body>
+
+</html>
