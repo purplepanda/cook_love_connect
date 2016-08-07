@@ -1,7 +1,10 @@
-$red: #FF602A;
-$magenta: #FF00FF;
 $white: #FFFFFF;
 $grey: #404040;
+$pastel_red: #ED685E;
+$bright_red: #E94F37;
+$ice_blue: #E8FFF5;
+$light_azure: #DAF4F0;
+$dark_azure: #3D6366;
 
 * {
     box-sizing: border-box;
@@ -15,4 +18,13 @@ nav ul li {
   display: inline-block;
   float: right;
   padding: 15px;
+  color: $dark_azure;
+  background-color: $ice_blue;
+  &:hover {
+    color: $pastel_red;
+  }
+}
+
+.active {
+  background-color: $pastel_red;
 }

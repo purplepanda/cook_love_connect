@@ -8,44 +8,29 @@
     <link rel="stylesheet" href="css/lib/skeleton.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
     <!-- CSS -->
-    <link rel="stylesheet" href="build/styles/styles.css">
+    <link rel="stylesheet" type='text/css' href="build/styles/styles.css">
     <title>Cook Love Connect</title>
 </head>
 
 <!-- Begin Body Section -->
 
 <body ng-app="cookingConnect">
-    <header>
-        <nav>
-            <ul>
-                <a href="#/userhome.html">
-                    <li>Login / Register</li>
-                </a>
-                <a href="#/">
-                    <li>Potlucks</li>
-                </a>
-                <a href="#/">
-                    <li>Shared Cookbooks</li>
-                </a>
-                <a href="#/">
-                    <li>My Cookbook</li>
-                </a>
-            </ul>
-        </nav>
-    </header>
+    <header ng-include="'partials/header_main.html'"></header>
 
     <h1>Cook Love Connect</h1>
 
-    <div id="content" ng-view></div>
+    <div ui-view></div>
 
-    <h2>Test Headline!</h2>
+<footer ng-include="'partials/footer.html'"></footer>
 
-
-    <!-- Angular libraries -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
-    <!-- Angular src -->
-    <script type="text/javascript" src="js/modules/cooking_connect.js"></script>
+<!-- Angular libraries -->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+<!-- <script src="js/lib/angular-ui-router.min.js"></script> -->
+<!-- Angular src -->
+<script type="text/javascript" src="js/modules/cooking_connect.js"></script>
 </body>
 
 </html>
