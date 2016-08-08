@@ -4,8 +4,8 @@
 <div id="userhome">
 <form id="recipeSearch">
   <label for="search">Recipe Search</label>
-  <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna"></input>
-  <button>Search</button>
+  <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna" ng-model="searchIt.query"></input>
+  <button ng-click="submitSearch(searchIt)" >Search</button>
 </form>
 <div class="tempDiv" ng-click="recipeForm()">
   <h4>New Recipe Form</h4>
