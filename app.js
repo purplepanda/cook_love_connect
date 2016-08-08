@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 
+
 // mongoose.connect('mongodb:// .....  '); // connect to our data
 //
 // app.use(express.static(__dirname + '/public'));
@@ -37,6 +38,12 @@ router.get('/', function(req, res) {
 });
 
 //place additional routes for our API here
+// app.get('/api/users', function(req, res) {
+//   var key = req.query.key;
+  // var rId = req.param('rId');
+//   console.log('hello world /////');
+//   res.send(key);
+// });
 
 
 //register our routes
