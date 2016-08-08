@@ -1,8 +1,12 @@
+<header ng-include="'partials/header_login.html'"></header>
+<div id="landing">
+<section id="welcome">
 <h3>{{title}}</h3>
 
 <div>
-  <input type="text" ng-model="login">
-  <button>Login</button>
-  <input type="text" ng-model="register">
-  <button>Sign Up</button>
+<p>CLC makes it easier for you to save your recipes in one place, but what you'll really love is being able to share your favorites, new and old, with your favorite people, no matter how far away they are. Bon appetit!</p>
+  <button type="button" ng-click="loginTemp()">Login</button>
+  <button type="button" ng-click="regTemp()">Sign Up</button>
+</div>
+</section>
 </div>
