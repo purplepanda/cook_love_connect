@@ -5,9 +5,21 @@
 
 <div>
 <p>CLC makes it easier for you to save your recipes in one place, but what you'll really love is being able to share your favorites, new and old, with your favorite people, no matter how far away they are. Bon appetit!</p>
-  <button type="button" ng-click="loginTemp()">Login</button>
-  <button type="button" ng-click="regTemp()">Sign Up</button>
+  <button type="button" id="loginButton" ng-click="loginTemp()">Login</button>
+  <button type="button" id="signupButton" ng-click="regTemp()">Sign Up</button>
 </div>
+
+<form id="login">
+  <!-- note, I still need to set up ng-model -->
+  <label for="email">Email</label>
+  <input type="email" name="email" placeholder="jane@gmail.com" required></input>
+  <label for="password">Password</label>
+  <input type="password" name="password" placeholder="Not12345" required></input>
+  <!-- note, I still need to add ng-click -->
+  <button type="button" name="button">Login</button>
+</form>
+
+
 <form id="signup">
   <!-- note, I still need to set up ng-model -->
   <label for="firstName">First Name</label>
@@ -16,6 +28,10 @@
   <input type="text" name="lastName" placeholder="Doe" required></input>
   <label for="email">Email</label>
   <input type="email" name="email" placeholder="jane@gmail.com" required></input>
+  <label for="password">Password</label>
+  <input type="password" name="password" placeholder="Not12345" required></input>
+  <label for="confirm">Confirm Password</label>
+  <input type="password" name="confirmPassword" placeholder="Not12345" required></input>
   <label for="dietPrefs">Dietary Preferences</label>
   <input type="text" name="dietPrefs" placeholder="vegetarian"></input>
   <label for="allergies">Allergies</label>

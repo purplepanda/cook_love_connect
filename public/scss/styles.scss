@@ -106,23 +106,22 @@ input {
   width: 350px;
 }
 
-#signup {
+// hide signup/login forms when loading the page
+#signup,
+#login {
   display: none;
-
 }
 
 #signup input,
 #signup textarea,
-#signup button {
+#signup button,
+#login input,
+#login button {
   margin: 1em auto;
 }
 
-#signup button {
-  clear: both;
-}
-
 textarea {
-    min-width: 328px;
+    min-width: 350px;
     height: auto;
     margin-bottom: 2em;
     display: block;
