@@ -1,0 +1,24 @@
+<form name="newFormRecipe" novalidate ng-submit="recipeForm()"> 
+	<fieldset> 
+		<legend>Create New Recipe </legend>
+
+<div class="row">
+<div class="large-12 columns">
+	<label> Recipe Name</label>
+		<input type="text" name="name" placeholder="Recipe Name" mg-model="recipe.name" ng-minlength=3 ng maxlength=20 required/> <br/>
+	<label name="author">Author</label><br/>
+		<input type= "author" name="author" ng-model="author" placeholder="Author" required="Author" /><br/>
+	<label>Tags</label>	<br/>
+		<input type="tags" name="tags" ng-model="tags" placeholder="tags" required="tags"/>
+		<br>
+	<label>Image</label>
+		<br>
+		<input type="text" name="image" ng-model="image" placeholder="image" required="image"/><br/>
+	<label>Recipe Orgin:<br/></label><br/>
+		<textarea rows="4" cols="40" id="history of recipe">
+		</textarea>
+		
+
+		<button type= "submit" class="button radius">Submit</button><br/>
+	</fieldset>
+</form>
