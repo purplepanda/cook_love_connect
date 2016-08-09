@@ -4,7 +4,7 @@
   "description": "\"Cook collaboratively with family and friends, whether they live next door or thousands of miles away\"",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -29,7 +29,10 @@
   },
   "dependencies": {
     "angular-ui-router": "^0.3.1",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "mongoose": "^4.5.8"
+    "mongoose": "^4.5.8",
+    "nodemon": "^1.10.0",
+    "pug": "^2.0.0-beta4"
   }
 }

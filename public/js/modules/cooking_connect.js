@@ -10,6 +10,11 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       templateUrl: "partials/landing.html",
       controller: "landingCtrl"
     })
+    .state("register", {
+      url: "/register",
+      templateUrl: "partials/register.html",
+      controller: "registerCtrl"
+    })
     .state("userhome", {
       url: "/userhome",
       templateUrl: "partials/userhome.html",
