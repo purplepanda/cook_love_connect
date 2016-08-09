@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Vodka Tonic",
+    "tags": "alcohol",
+    "image": "http://www.placekitten.com/150/150",
+    "author": "Benson",
+    "originStory": "I started making these in college. Foolproof.",
+    "contents": {
+      "ingredients": [
+        {"name": "apple",
+          "quantity": 1,
+          "measurement": "whole"
+        },
+        {"name": "ice",
+          "quantity": 1,
+          "measurement": "cup, crushed"
+        },
+        {"name": "vodka",
+          "quantity": 1,
+          "measurement": "fluid ounce"
+        },
+        {"name": "lemon",
+          "quantity": 1,
+          "measurement": "wedge, for garnish"
+        },
+      ],
+      "steps": ["get a glass", "pour ice into glass", "pour vodka into glass", "stir it up"]
+    }
+  },
+  {
+    "name": "Fruit Salad",
+    "tags": "side-dish",
+    "image": "http://www.placekitten.com/150/150",
+    "author": "Amanda",
+    "originStory": "This was one of the first recipes my grandmother taught me to make when I was a kid.",
+    "contents": {
+      "ingredients": [
+        {"name": "apple",
+          "quantity": 1,
+          "measurement": "whole"
+        },
+        {"name": "banana",
+          "quantity": 1,
+          "measurement": "sliced"
+        },
+        {"name": "grapes",
+          "quantity": 1,
+          "measurement": "cup"
+        },
+        {"name": "blueberries",
+          "quantity": 1,
+          "measurement": "cup"
+        },
+      ],
+      "steps": ["wash the fruit", "place the fruit into a bowl", "mix and chill", "serve and enjoy"]
+    }
+  }
+]
