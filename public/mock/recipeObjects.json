@@ -1,6 +1,7 @@
 [
   {
     "name": "Vodka Tonic",
+    "_id": 123456789,
     "tags": "alcohol",
     "image": "http://www.placekitten.com/150/150",
     "author": "Benson",
@@ -29,6 +30,7 @@
   },
   {
     "name": "Fruit Salad",
+    "_id": 987654321,
     "tags": "side-dish",
     "image": "http://www.placekitten.com/150/150",
     "author": "Amanda",
