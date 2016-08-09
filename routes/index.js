@@ -1,16 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user_model');
+var mid = require('../middleware');
+
 
 
 
 //GET /profile
-router.get('/userhome', function(req, res, next) {
-  if (!req.session.userId) {
-    var err = new Error('You are not authorized to view this page.');
-    err.status = 403;
-    return next(err);
-  }
+router.get('/userhome', mid.requiresLogin, function(req, res, next) {
   User.findById(req.session.userId)
     .exec(function(error, user) {
       if (error) {
@@ -26,8 +23,25 @@ router.get('/userhome', function(req, res, next) {
 
 
 
+
+// GET /logout
+router.get('/logout', function(req, res, next) {
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function(err) {
+      if (err) {
+        return next(err);
+      } else {
+        return res.redirect('/');
+      }
+    });
+  }
+});
+
+
+
 //GET /login
-router.get('/login', function(req, res, next) {
+router.get('/login', mid.loggedOut, function(req, res, next) {
   return res.render('login', {
     title: 'Log In'
   });
@@ -39,7 +53,9 @@ router.get('/login', function(req, res, next) {
 router.post('/login', function(req, res, next) {
   if (req.body.email && req.body.password) {
     User.authenticate(req.body.email, req.body.password, function(error, user) {
+      console.log("What?");
       if (error || !user) {
+
         var err = new Error('Wrong email or password.');
         err.status = 401;
         return next(err);
@@ -47,7 +63,7 @@ router.post('/login', function(req, res, next) {
         // return res.send('Logged In!');
       } else {
         req.session.userId = user._id;
-        return res.redirect('/userhome');
+        return res.redirect('/public/partials/userhome');
 
         // return res.redirect('/userhome');
       }
@@ -62,7 +78,7 @@ router.post('/login', function(req, res, next) {
 
 
 // GET /register
-router.get('/register', function(req, res, next) {
+router.get('/register', mid.loggedOut, function(req, res, next) {
   // return res.send('Register today!');
   return res.render('register', {
     title: 'Sign Up'
@@ -155,7 +171,7 @@ router.get('/', function(req, res, next) {
 
 
 // GET /userhome
-router.get('/userhome', function(req, res, next) {
+router.get('/userhome', mid.requiresLogin, function(req, res, next) {
   return res.render('userhome', {
     title: 'My Kitchen'
   });
@@ -164,7 +180,7 @@ router.get('/userhome', function(req, res, next) {
 
 
 // GET /myCookbook
-router.get('/cookbook', function(req, res, next) {
+router.get('/cookbook', mid.requiresLogin, function(req, res, next) {
   return res.render('cookbook', {
     title: 'My Cookbook'
   });
@@ -172,4 +188,4 @@ router.get('/cookbook', function(req, res, next) {
 
 
 
-module.exports = router;
+module.exports = router;;

@@ -20,6 +20,11 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       templateUrl: "partials/login.html",
       controller: "loginCtrl"
     })
+    .state("logout", {
+      url: "/logout",
+      templateUrl: "partials/logout.html",
+      controller: "logoutCtrl"
+    })
     .state("userhome", {
       url: "/userhome",
       templateUrl: "partials/userhome.html",
