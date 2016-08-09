@@ -22,6 +22,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
     });
 }]);
 
+// [benson] currently, this does not work if I cut / paste into get_recipe_service -- throws an injector error
 app.factory('searchFactory',['$http', function($http){
   var urlBase = 'http://recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3';
   var searchFactory = {};
@@ -32,7 +33,7 @@ app.factory('searchFactory',['$http', function($http){
 
   console.log("searchFactory ", searchFactory)
   return searchFactory;
-  // PREVIOUS, BROKEN CODE
+  // PREVIOUS, BROKEN CODE -- delete once we get the above into separate factory file
   // $http({
   //   method: 'GET',
   //   url: 'http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3'
