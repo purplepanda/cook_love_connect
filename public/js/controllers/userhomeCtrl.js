@@ -1,6 +1,6 @@
 var app = angular.module("cookingConnect");
 
-app.controller("userhomeCtrl", function($scope, $http, searchFactory) {
+app.controller("userhomeCtrl", ['$scope', '$http', 'searchFactory', function($scope, $http, searchFactory) {
   $scope.title = "My Kitchen";
 
   $scope.recipeForm = function() {
@@ -20,4 +20,4 @@ app.controller("userhomeCtrl", function($scope, $http, searchFactory) {
     // searchFactory.saveObject(searchIt);
   };
 
-});
+}]);
