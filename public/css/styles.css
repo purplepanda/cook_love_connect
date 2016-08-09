@@ -92,8 +92,16 @@ input {
 #signup {
   display: none; }
 
-#signup input {
+#signup input,
+#signup textarea,
+#signup button {
   margin: 1em auto; }
 
+#signup button {
+  clear: both; }
+
 textarea {
-  height: auto; }
+  min-width: 328px;
+  height: auto;
+  margin-bottom: 2em;
+  display: block; }
