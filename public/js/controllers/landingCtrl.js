@@ -11,6 +11,7 @@ app.controller("landingCtrl", function($scope) {
   $scope.regTemp = function() {
     // alert('Temporary Function! Clicking this button should pop up a form to register');
     $('#signup').show();
+    // hide the buttons after showing the signup form
   };
 
 });
