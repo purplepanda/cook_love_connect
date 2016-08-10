@@ -15,7 +15,11 @@ h3 {
   .nav-left ul li {
     display: inline-block;
     text-decoration: none;
-    padding: 15px; }
+    padding: 15px;
+    color: white; }
+    .nav-left ul li a {
+      text-decoration: none;
+      color: white; }
 
 .nav-right {
   display: inline-block;
@@ -26,7 +30,7 @@ h3 {
     padding: 25px; }
     .nav-right ul li a {
       text-decoration: none;
-      color: #404040; }
+      color: white; }
       .nav-right ul li a:hover {
         color: #ED685E; }
 
@@ -46,7 +50,9 @@ header {
   opacity: 0.65;
   margin-left: 5%;
   padding: 5%;
-  text-align: center; }
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
 
 button:hover {
   color: #ED685E;
@@ -105,3 +111,24 @@ textarea {
   height: auto;
   margin-bottom: 2em;
   display: block; }
+
+.btn-primary.raised {
+  box-shadow: 0 3px 0 0 #007299; }
+
+.btn-primary.raised:active, .btn-primary.raised.active {
+  background: #33a6cc;
+  box-shadow: none;
+  margin-bottom: -3px;
+  margin-top: 3px; }
+
+.myModal {
+  display: block;
+  margin: 0 auto; }
+
+#bgUserHome {
+  background: url(http://trichilofoods.com/site/wp-content/uploads/2015/06/veggies.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 700px; }

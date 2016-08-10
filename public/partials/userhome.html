@@ -1,19 +1,21 @@
-<header ng-include="'partials/header_main.html'"></header>
-<h3>{{title}}</h3>
+<div id="bgUserHome">
+	<header ng-include="'partials/header_main.html'"></header>
+	<h3 style="color:white;">{{title}}</h3>
 
-<div id="userhome">
-<div class="tempDiv" ng-click="recipeForm()">
-  <h4>New Recipe Form</h4>
-  <p>This div is a placeholder for the "new recipe" form we are creating.</p>
-</div>
+	<div id="userhome">
+	<div class="tempDiv">
+	  <div ng-include="'partials/newRecipeForm.html'"></div>
+	</div>
 
-<div class="tempDiv">
-  <a ui-sref="cookbook"><h4>Personal Cookbook</h4></a>
-  <p>This div is a placeholder for the user's complete personal cookbook.</p>
-</div>
+	<div class="tempDiv">
+	  <a ui-sref="cookbook"><h4>Personal Cookbook</h4></a>
+	  <p>This div is a placeholder for the user's complete personal cookbook.</p>
+	</div>
 
-<div class="tempDiv">
-  <a ui-sref="cookbook"><h4>Shared Cookbooks</h4></a>
-  <p>This div is a placeholder for the area where a user can access any of their shared cookbooks.</p>
-</div>
+	<div class="tempDiv">
+	  <a ui-sref="cookbook"><h4>Shared Cookbooks</h4></a>
+	  <p>This div is a placeholder for the area where a user can access any of their shared cookbooks.</p>
+	</div>
+	</div>
+
 </div>
