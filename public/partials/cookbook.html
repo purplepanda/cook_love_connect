@@ -9,17 +9,14 @@
 	    <img ng-src="{{recipe.image}}" alt="" />
 	      <h3>{{recipe.name}}</h3>
 	      <h5><strong>tags</strong>{{recipe.tags}}</h5>
-				<!-- <p>Testing: {{recipe.contents.ingredients}}</p> -->
-	      <ul>Ingredients
-	        <!-- <li ng-repeat="ingredient in recipes.recipes[0].ingredients">{{ingredient}}</li> -->
+				<p>INGREDIENTS</p>
+				<ul>
 	        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
 	      </ul>
-	      <!-- <ol>
-	        <li><h5>Steps</h5></li>
-	        <li>Step 1</li>
-	        <li>Step 2</li>
-	        <li>Step 3</li>
-	      </ol> -->
+				<p>STEPS</p>
+	      <ol>
+	        <li ng-repeat="step in recipe.steps">{{step}}</li>
+	      </ol>
 	</div>
   <!-- not sure how to proceed at this point. need to restructure jSON obj or query? -->
   <!-- <ul>Cookbook json object using ng-repeat:
