@@ -133,7 +133,21 @@ textarea {
   background-size: cover;
   min-height: 700px; }
 
+<<<<<<< HEAD
 .footerMedia {
   width: 34px;
   height: 32px;
   padding-left: 5px; }
+=======
+.recipeCard {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 20%;
+  max-width: 250px;
+  height: 250px;
+  margin: 2%;
+  padding: 2%;
+  background-color: #ED685E;
+  border: 2px solid #404040; }
+>>>>>>> ng-cookbook
