@@ -7,8 +7,10 @@
 	<!-- benson trying stuff out -->
 	<div class="recipeCard" ng-repeat="recipe in recipes.recipes">
 	    <img ng-src="{{recipe.image}}" alt="" />
-	      <h3>{{recipe.name}}</h3>
-	      <h5><strong>tags</strong>{{recipe.tags}}</h5>
+	      <h3>NAME: {{recipe.name}}</h3>
+	      <p>TAGS: {{recipe.tags}}</p>
+				<p>ORIGIN STORY: {{recipe.originStory}}</p>
+				<p>AUTHOR: {{recipe.author}}</p>
 				<p>INGREDIENTS</p>
 				<ul>
 	        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
