@@ -26,6 +26,12 @@ app.controller("cookbookCtrl", function($scope, $http) {
   $http.get('../mock/recipeObjects.json').success(function(data) {
    $scope.recipes = data;
    console.log(data);
-});
+  });
+
+  // for cookbooks -- if we want to isolate one user's collection, I suppose
+  $http.get('../mock/cookbookObjects.json').success(function(data) {
+   $scope.cookbooks = data;
+   console.log(data);
+  });
 
 });
