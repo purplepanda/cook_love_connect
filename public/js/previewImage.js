@@ -5,7 +5,7 @@
                 reader.onload = function (e) {
                     $('#blah')
                         .attr('src', e.target.result)
-                        .width(150)
+                        .width(350)
                         .height(200);
                 };
 
