@@ -22,14 +22,22 @@ app.controller("userhomeCtrl", ['$scope', '$http', function($scope, $http) {
   };
 
 // [benson] define function that is called on submit button ng-click event
-  var tempSearch;
+  var tempSearch = "";
   $scope.submitSearch = function(searchIt){
-    console.log(searchIt);
+    // console.log(searchIt);
     tempSearch = searchIt;
     console.log('tempSearch:', tempSearch);
 
-
-    // actually, probably need another step here to make http call to API before saving object
+  // use tempSearch to make API call
+    var urlBase = 'http://recipepuppy.com/api/?q=';
+    var searchUrl = urlBase + tempSearch;
+    console.log("urlBase is ", urlBase);
+    console.log("searchUrl is ", searchUrl);
+    var searchFactory = {};
+    searchFactory.getRecipe = function(){
+      console.log('tempSearch inside getRecipe function', tempSearch);
+      return $http.get(urlBase);
+    };
 
     // including this next line throws an error that saveObject is not a function, even if I define it in the factory
     // searchFactory.saveObject(searchIt);
