@@ -3,59 +3,61 @@
 	<div class="cookbook">
 	<h3 style="color:white;">{{title}}</h3>
 	<input type="text" ng-model="recipeSearch" placeholder="recipe search">
-	<recipe-card>{{recipes[0].name}}<br><img ng-src="{{recipes[0].image}}"/><br>{{recipes[0].tags}}
-	 <div ng-include="'partials/modal.html'"></div>
-	</recipe-card>
 
-	<recipe-card>{{recipes[1].name}}<br><img ng-src="{{recipes[1].image}}"/><br>{{recipes[1].tags}}
-	<div ng-include="'partials/modal.html'"></div>
-	</recipe-card>
-
-	<recipe-card>Some Recipe 3
-	<div ng-include="'partials/modal.html'"></div>
-	</recipe-card>
-
-	<recipe-card>Some Recipe 4
-	<div ng-include="'partials/modal.html'"></div>
-	</recipe-card>
-
-	<recipe-card>Some Recipe 5
-	<div ng-include="'partials/modal.html'"></div>
-	</recipe-card>
-
-	<recipe-card>Some Recipe 6
-	<div ng-include="'partials/modal.html'"></div>
-	</recipe-card>
-	<recipe-card>Some Recipe 7
-	<div ng-include="'partials/modal.html'"></div>
-	</recipe-card>
-
-	<recipe-card>Some Recipe 8
-	<div ng-include="'partials/modal.html'"></div>
-	</recipe-card>
-
-	</div>
-
-	<!-- benson trying stuff out :) -- >
-	<div class="card" ng-repeat="recipe in recipes">
-	    <img src="" alt="">
+	<!-- benson trying stuff out -->
+	<div class="recipeCard" ng-repeat="recipe in recipes">
+	    <img ng-src="{{recipe.image}}" alt="" />
 	      <h3>{{recipe.name}}</h3>
 	      <h5><strong>tags</strong>{{recipe.tags}}</h5>
-	      <ul>
-	        <li><h5>Ingredients</h5></li>
-	        <li>Ingredient 1</li>
-	        <li>Ingredient 2</li>
-	        <li>Ingredient 3</li>
+				<!-- <p>Testing: {{recipe.contents.ingredients}}</p> -->
+	      <ul>Ingredients
+					<!-- how do I ng repeat to access the proper items in array of ingredients? -->
+					<!-- possibly write a for loop w .length of ingredients, then print here -->
+	        <li ng-repeat="ingredient in recipes.contents.ingredients">{{ingredient.name}}</li>
 	      </ul>
-	      <ol>
+	      <!-- <ol>
 	        <li><h5>Steps</h5></li>
 	        <li>Step 1</li>
 	        <li>Step 2</li>
 	        <li>Step 3</li>
-	      </ol>
+	      </ol> -->
 	</div>
   <!-- not sure how to proceed at this point. need to restructure jSON obj or query? -->
   <!-- <ul>Cookbook json object using ng-repeat:
   <li ng-repeat="book in cookbooks">{{book.users[0].recipes}}</li>
   </ul> -->
 </div>
+
+<!-- HARD CODED, may delete -->
+<!-- <recipe-card>{{recipes[0].name}}<br><img ng-src="{{recipes[0].image}}"/><br>{{recipes[0].tags}}
+ <div ng-include="'partials/modal.html'"></div>
+</recipe-card>
+
+<recipe-card>{{recipes[1].name}}<br><img ng-src="{{recipes[1].image}}"/><br>{{recipes[1].tags}}
+<div ng-include="'partials/modal.html'"></div>
+</recipe-card>
+
+<recipe-card>Some Recipe 3
+<div ng-include="'partials/modal.html'"></div>
+</recipe-card>
+
+<recipe-card>Some Recipe 4
+<div ng-include="'partials/modal.html'"></div>
+</recipe-card>
+
+<recipe-card>Some Recipe 5
+<div ng-include="'partials/modal.html'"></div>
+</recipe-card>
+
+<recipe-card>Some Recipe 6
+<div ng-include="'partials/modal.html'"></div>
+</recipe-card>
+<recipe-card>Some Recipe 7
+<div ng-include="'partials/modal.html'"></div>
+</recipe-card>
+
+<recipe-card>Some Recipe 8
+<div ng-include="'partials/modal.html'"></div>
+</recipe-card>
+
+</div> -->
