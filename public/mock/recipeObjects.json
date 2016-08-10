@@ -23,7 +23,7 @@
         {"name": "lemon",
           "quantity": 1,
           "measurement": "wedge, for garnish"
-        },
+        }
       ],
       "steps": ["get a glass", "pour ice into glass", "pour vodka into glass", "stir it up"]
     }
@@ -52,7 +52,7 @@
         {"name": "blueberries",
           "quantity": 1,
           "measurement": "cup"
-        },
+        }
       ],
       "steps": ["wash the fruit", "place the fruit into a bowl", "mix and chill", "serve and enjoy"]
     }

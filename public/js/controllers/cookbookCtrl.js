@@ -21,7 +21,11 @@ app.controller("cookbookCtrl", function($scope, $http) {
     console.log(response);
   }, function errorCallback(response) {
     console.log('something went wrong');
-
   });
+
+  $http.get('../mock/recipeObjects.json').success(function(data) {
+   $scope.recipes = data;
+   console.log(data);
+});
 
 });
