@@ -11,10 +11,13 @@
 	<label>Tags</label>	<br/>
 		<input type="tags" name="tags" ng-model="tags" placeholder="tags" required="tags"/>
 		<br>
-	<label>Image</label>
-		<br>
-		<input type="text" name="image" ng-model="image" placeholder="image" required="image"/><br/>
-	<label>Recipe Orgin:<br/></label><br/>
+	<!-- <label>Image</label> -->
+	<input type="file" onchange="previewFile()" name="user-photo"/><br/>
+	<img src="" height="200" alt="Image preview..."> <br>
+	<input type="submit" value="upload">
+	
+		
+	<label>Recipe Orgin:<br></label><br/>
 		<textarea rows="4" cols="40" id="history of recipe">
 		</textarea>
 		
