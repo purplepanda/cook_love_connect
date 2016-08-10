@@ -132,3 +132,8 @@ textarea {
   -o-background-size: cover;
   background-size: cover;
   min-height: 700px; }
+
+.footerMedia {
+  width: 34px;
+  height: 32px;
+  padding-left: 5px; }
