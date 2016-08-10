@@ -36,9 +36,24 @@
 
 	</div>
 
-  <ul>The full list using ng-repeat:
-  <li ng-repeat="recipe in recipes">{{recipe.name}} // {{recipe.tags}}</li>
-  </ul>
+	<!-- benson trying stuff out :) -- >
+	<div class="card" ng-repeat="recipe in recipes">
+	    <img src="" alt="">
+	      <h3>{{recipe.name}}</h3>
+	      <h5><strong>tags</strong>{{recipe.tags}}</h5>
+	      <ul>
+	        <li><h5>Ingredients</h5></li>
+	        <li>Ingredient 1</li>
+	        <li>Ingredient 2</li>
+	        <li>Ingredient 3</li>
+	      </ul>
+	      <ol>
+	        <li><h5>Steps</h5></li>
+	        <li>Step 1</li>
+	        <li>Step 2</li>
+	        <li>Step 3</li>
+	      </ol>
+	</div>
   <!-- not sure how to proceed at this point. need to restructure jSON obj or query? -->
   <!-- <ul>Cookbook json object using ng-repeat:
   <li ng-repeat="book in cookbooks">{{book.users[0].recipes}}</li>
