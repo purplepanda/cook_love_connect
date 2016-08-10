@@ -28,10 +28,11 @@
 			<br>
 			<label>Image</label>
 			<br>
-			<input class="myModal" type="file" onchange="previewFile()" name="user-photo" ng-model="image" required="image"/>
-      <img src="http://eat24hours.com/files/cuisines/v4/thai.jpg?e24v=103?e24v=178?e24v=178" height="200" alt="Image preview..."/>
-      <br>
-      <input type="submit" value="upload"/>
+			<input class="myModal" type="file" onchange="previewFile(this)" name="user-photo" ng-model="image" required="image"/>
+       <img id="blah" src="#" alt="your image" />
+      <!-- <img src="http://eat24hours.com/files/cuisines/v4/thai.jpg?e24v=103?e24v=178?e24v=178" height="200" alt="Image preview..."/> -->
+   <!--    <br>
+      <input type="submit" value="upload"/>  -->
       <br>
       <label>Recipe Orgin:</label>
       <br>
