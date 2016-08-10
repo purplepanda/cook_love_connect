@@ -24,7 +24,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 app.use(session({
   secret: 'amanda was here',
   resave: true,
-  saveUninitialized: false
+  saveUninitialized: false,
   store: new MongoStore({
     mongooseConnection: db
   })
@@ -57,7 +57,7 @@ app.use(bodyParser.urlencoded({
 // view engine setup // for use with jade templates, not sure about 2nd line
 //how do you even use jade here? does is automatically convert html to templates? What am I doing?
 app.set('view engine', 'pug');
-app.set('views', __dirname + '/public/partials');
+app.set('views', __dirname + '/views');
 
 
 

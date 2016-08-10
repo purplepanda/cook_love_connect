@@ -4,8 +4,61 @@ var User = require('../models/user_model');
 var mid = require('../middleware');
 
 
+router.get('/users/:id', function(req, res) {
+  User.findById(req.params.id, function(error, user) {
+    res.json({
+      success: true,
+      user: user
+    })
+  });
+})
+
+router.get('/users', function(req, res) {
+  User.find({}, function(error, users) {
+    res.json({
+      success: true,
+      users: users
+    })
+  });
+})
+
+router.post('/users', function(req, res, next) {
+  var user = new User({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password
+  });
+
+  user.save(function(error) {
+    if (error) {
+      res.json({
+        success: false,
+        error: error
+      })
+    } else {
+      res.json({
+        success: true,
+        user: user
+      })
+    }
+  });
+})
+
+// this needs to be tested.
+router.delete('/users/:id', function(req, res) {
+  User.findById(req.params.id, function(error, user) {
+    user.remove()
+    res.json({
+      success: true,
+      message: "user has been deleted"
+    })
+  });
+})
 
 
+
+////////all routes below here are copied from tutorial and do not necessarily work/////////
 //GET /profile
 router.get('/userhome', mid.requiresLogin, function(req, res, next) {
   User.findById(req.session.userId)
@@ -161,31 +214,5 @@ router.post('/register', function(req, res, next) {
 
 
 
-// GET /landing page
-router.get('/', function(req, res, next) {
-  return res.render('landing', {
-    title: 'Welcome'
-  });
-});
 
-
-
-// GET /userhome
-router.get('/userhome', mid.requiresLogin, function(req, res, next) {
-  return res.render('userhome', {
-    title: 'My Kitchen'
-  });
-});
-
-
-
-// GET /myCookbook
-router.get('/cookbook', mid.requiresLogin, function(req, res, next) {
-  return res.render('cookbook', {
-    title: 'My Cookbook'
-  });
-});
-
-
-
-module.exports = router;;
+module.exports = router;
