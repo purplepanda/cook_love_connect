@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <div id="bgUserHome">
 	<header ng-include="'partials/header_main.html'"></header>
@@ -37,4 +38,11 @@
 
 	</div>
 
+  <ul>The full list using ng-repeat:
+  <li ng-repeat="recipe in recipes">{{recipe.name}} // {{recipe.tags}}</li>
+  </ul>
+  <!-- not sure how to proceed at this point. need to restructure jSON obj or query? -->
+  <!-- <ul>Cookbook json object using ng-repeat:
+  <li ng-repeat="book in cookbooks">{{book.users[0].recipes}}</li>
+  </ul> -->
 </div>
