@@ -1,14 +1,38 @@
-<header ng-include="'partials/header_main.html'"></header>
-<div class="cookbook">
-<h3>{{title}}</h3>
-<input type="text" ng-model="recipeSearch" placeholder="recipe search">
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
+<div id="bgUserHome">
+	<header ng-include="'partials/header_main.html'"></header>
+	<div class="cookbook">
+	<h3 style="color:white;">{{title}}</h3>
+	<input type="text" ng-model="recipeSearch" placeholder="recipe search">
+	<recipe-card>Some Recipe 1
+	 <div ng-include="'partials/modal.html'"></div>
+	</recipe-card>
+
+	<recipe-card>Some Recipe 2
+	<div ng-include="'partials/modal.html'"></div>
+	</recipe-card>
+
+	<recipe-card>Some Recipe 3
+	<div ng-include="'partials/modal.html'"></div>
+	</recipe-card>
+
+	<recipe-card>Some Recipe 4
+	<div ng-include="'partials/modal.html'"></div>
+	</recipe-card>
+
+	<recipe-card>Some Recipe 5
+	<div ng-include="'partials/modal.html'"></div>
+	</recipe-card>
+
+	<recipe-card>Some Recipe 6
+	<div ng-include="'partials/modal.html'"></div>
+	</recipe-card>
+	<recipe-card>Some Recipe 7
+	<div ng-include="'partials/modal.html'"></div>
+	</recipe-card>
+
+	<recipe-card>Some Recipe 8
+	<div ng-include="'partials/modal.html'"></div>
+	</recipe-card>
+
+	</div>
 </div>
