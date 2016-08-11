@@ -53,7 +53,7 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe","storeRecipeFact
     // console.log('submitRecipe logging');
     // var newRecipe = new Recipe($scope.recipes.name, $scope.recipes.author, $scope.recipes.tags, $scope.recipes.originStory, "images",$scope.recipes.ingredients, "steps" );
     // console.log(newRecipes);
-    console.log(recipes);
+    // console.log(recipes);
   }
 
 

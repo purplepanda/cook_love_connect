@@ -6,26 +6,27 @@
 
 	<label> Recipe Name</label>
 			<br>
-			<input class="myModal" type="text" name="name" placeholder="Name of recipe" ng-model="recipes.name" ng-minlength=3 ng maxlength=20 required/>
+			<input class="myModal" type="text" name="name" placeholder="Mom's lasagna" ng-model="recipes.name" ng-minlength=3 ng maxlength=20 required/>
 			<br>
 			<label name="author">Author</label>
 			<br>
-			<input class="myModal" type= "text" name="author" ng-model="recipes.author" placeholder="Author" required="Author" />
+			<input class="myModal" type= "text" name="author" ng-model="recipes.author" placeholder="Josh Teo" required="Author" />
 			<br>
 			<label>Tags</label>
 			<br>
-			<input class="myModal" type="text" name="tags" ng-model="recipes.tags" placeholder="tags" required="tags"/>
+			<input class="myModal" type="text" name="Entree" ng-model="recipes.tags" placeholder="tags" required="tags"/>
 			<br>
 			<label>Image</label>
 			<br>
-			<input class="myModal" type="file" onchange="previewFile(this)" name="user-photo" ng-model="recipes.image" required="image" style="color:white;"/>
+      <input class="myModal" type="text" name="image" ng-model="recipes.image" placeholder="http://www.flickr.com/myImage.jpg">
+			<!-- <input class="myModal" type="file" onchange="previewFile(this)" name="user-photo" ng-model="recipes.image" required="image" style="color:white;"/>
 
-       <img id="blah" src="" alt="your image" />
+       <img id="blah" src="" alt="your image" /> -->
 
       		<label>Recipe Orgin:</label>
 
       		<br>
-      		<textarea class="myModal" rows="4" cols="40" id="history of recipe" palceholder="What's the story of this recipe..." ng-model="recipes.originStory"></textarea>
+      		<textarea class="myModal" rows="4" cols="40" id="history of recipe" placeholder="What's the story of this recipe..." ng-model="recipes.originStory"></textarea>
       		<br>
 
 

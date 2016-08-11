@@ -5,7 +5,7 @@ app.factory('storeRecipeFactory', function(){
 	var storeRecipe = {};
 	function saveObject(recipes) {
 		storeRecipe = recipes;
-		// console.log("Store recipe", storeRecipe);
+		console.log("Store recipe", storeRecipe);
 	}
 
 	function returnObject () {
