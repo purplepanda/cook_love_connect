@@ -19,5 +19,14 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       url: "/cookbook",
       templateUrl: "partials/cookbook.html",
       controller: "cookbookCtrl"
+    })
+    .state("newForm", {
+      url: "/newForm",
+      templateUrl: "partials/newForm.html",
+      controller: "newFormCtrl"
     });
 }]);
+
+// [benson] currently, this does not work if I cut / paste into get_recipe_service -- throws an injector error
+
+// this helped  http://weblogs.asp.net/dwahlin/using-an-angularjs-factory-to-interact-with-a-restful-service
