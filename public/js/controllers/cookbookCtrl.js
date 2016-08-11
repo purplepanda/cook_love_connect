@@ -1,7 +1,9 @@
 var app = angular.module("cookingConnect");
 
-app.controller("cookbookCtrl", function($scope, $http) {
+app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory) {
   $scope.title = "The ... Cookbook";
+
+  $scope.storeRecipeObject = storeRecipeFactory.returnObject();
 
   // $.ajax({
   //   url: 'http://food2fork.com/api/search?key=fc28481c5019cd053fe8ad5794e34d40&q=shredded%20chicken',

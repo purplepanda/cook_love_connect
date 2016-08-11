@@ -1,8 +1,9 @@
 var app = angular.module("cookingConnect");
 
-app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", function($scope, $state, postRecipe) {
+app.controller("newFormCtrl", ["$scope", "$state", "postRecipe","storeRecipeFactory","$location", function($scope, $state, postRecipe, storeRecipeFactory, $location) {
   $scope.title = "Add A New Recipe";
   $scope.recipes = {};
+  
 
   // List of Ingredients
   $scope.recipes.ingredients = [
@@ -49,11 +50,14 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", function($scope
 
   // write function to get recipe object on ng-click in newForm.html
 
-  $scope.submitRecipe = function() {
+  $scope.submitRecipe = function(recipes) {
+    storeRecipeFactory.saveObject(recipes);
+    $location.path("cookbook");
+
     // console.log('submitRecipe logging');
     // var newRecipe = new Recipe($scope.recipes.name, $scope.recipes.author, $scope.recipes.tags, $scope.recipes.originStory, "images",$scope.recipes.ingredients, "steps" );
     // console.log(newRecipes);
-    console.log($scope.recipes);
+    console.log(recipes);
   }
 
 
