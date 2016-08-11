@@ -5,9 +5,7 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", function($scope
   $scope.recipes = {};
 
   // List of Ingredients
-  $scope.recipes.ingredients = [
-    "Dummy Test",
-  ];
+  $scope.recipes.ingredients = [];
 
   // Methods for $scope.ingredients
   $scope.addIngredient = addIngredient;
@@ -27,9 +25,7 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", function($scope
   }
 
   // Instructions and steps in newForm recipe
-  $scope.recipes.instructions = [
-    "Dummy Test for intructions",
-  ];
+  $scope.recipes.instructions = [];
 
   // Methods for $scope.instructions
   $scope.addInstruction = addInstruction;
