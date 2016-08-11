@@ -138,7 +138,6 @@ textarea {
   height: 32px;
   padding-left: 5px; }
 
-<<<<<<< HEAD
 #newForm {
   display: block;
   text-align: center;
@@ -146,7 +145,7 @@ textarea {
 
 label {
   color: white; }
-=======
+
 .recipeCard {
   display: inline-block;
   text-align: center;
@@ -158,4 +157,3 @@ label {
   padding: 2%;
   background-color: #ED685E;
   border: 2px solid #404040; }
->>>>>>> 5dda09bd7ca3c7c9e352b45c0c73f43da1e4e1e2
