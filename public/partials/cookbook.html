@@ -13,17 +13,22 @@
 				<p>{{recipe.name}}</p>
 				<img ng-src="{{recipe.image}}" alt="" />
 	      <p>{{recipe.tags}}</p>
-				<div class="recipeDetails"  ng-show="showDetails">
-					<p>ORIGIN STORY: {{recipe.originStory}}</p>
-					<p>AUTHOR: {{recipe.author}}</p>
-					<p>INGREDIENTS</p>
-					<ul>
-		        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
-		      </ul>
-					<p>STEPS</p>
-		      <ol>
-		        <li ng-repeat="step in recipe.steps">{{step}}</li>
-		      </ol>
-				</div>
+				<!-- maybe use css to display this recipeDetails div in a special way? -->
+						<div class="recipeDetails"  ng-show="showDetails">
+							<p>{{recipe.name}}</p>
+							<img ng-src="{{recipe.image}}" alt="" />
+							<p>{{recipe.tags}}</p>
+							<p>ORIGIN STORY: {{recipe.originStory}}</p>
+							<p>AUTHOR: {{recipe.author}}</p>
+							<div>INGREDIENTS
+							<ul>
+				        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+				      </ul>
+							</div>
+							<p>STEPS</p>
+				      <ol>
+				        <li ng-repeat="step in recipe.steps">{{step}}</li>
+				      </ol>
+						</div>
 	</div>
 </div>
