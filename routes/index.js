@@ -1,7 +1,49 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user_model');
+var Recipe = require('../models/recipe_model');
 var mid = require('../middleware');
+
+
+
+
+///// routing to add a new recipe /////
+router.post('/recipes', function(req, res, next) {
+  var recipe = new Recipe({
+
+
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password
+
+
+
+  });
+  console.log(recipe);
+
+  user.save(function(error) {
+    if (error) {
+      console.log("Not saved");
+      console.log(error);
+      res.json({
+        success: false,
+        error: error
+      })
+    } else {
+      console.log("Saved!");
+      res.json({
+        success: true,
+        recipe: recipe
+      })
+    }
+  });
+})
+
+
+
+
+///// end recipe routing /////
 
 
 router.get('/users/:id', function(req, res) {
@@ -48,6 +90,9 @@ router.post('/users', function(req, res, next) {
     }
   });
 })
+
+
+
 
 // this needs to be tested.
 router.delete('/users/:id', function(req, res) {

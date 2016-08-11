@@ -2,12 +2,10 @@ var app = angular.module("cookingConnect");
 
 app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", function($scope, $state, postRecipe) {
   $scope.title = "Add A New Recipe";
-  $scope.recipes = {};
+  $scope.recipe = {};
 
   // List of Ingredients
-  $scope.recipes.ingredients = [
-    "Dummy Test",
-  ];
+  $scope.recipe.recIngredients = [];
 
   // Methods for $scope.ingredients
   $scope.addIngredient = addIngredient;
@@ -17,19 +15,17 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", function($scope
 
   // Adds to $scope.ingredients
   function addIngredient() {
-    $scope.recipes.ingredients.unshift($scope.ingredient);
-    $scope.ingredient = "";
+    $scope.recipe.recIngredients.unshift($scope.ingredient);
+    $scope.recIngredients = "";
   }
 
   // Removes from $scope.ingredients
   function removeIngredient(dummy) {
-    $scope.recipes.ingredients.splice(dummy, 1);
+    $scope.recipe.recIngredients.splice(dummy, 1);
   }
 
   // Instructions and steps in newForm recipe
-  $scope.recipes.instructions = [
-    "Dummy Test for intructions",
-  ];
+  $scope.recipe.recInstructions = [];
 
   // Methods for $scope.instructions
   $scope.addInstruction = addInstruction;
@@ -38,28 +34,31 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", function($scope
 
   // Adds to $scope.instructions
   function addInstruction() {
-    $scope.recipes.instructions.push($scope.instruction);
-    $scope.instruction = "";
+    $scope.recipe.recInstructions.push($scope.recInstructions);
+    $scope.recInstructions = "";
   }
 
   // Removes from $scope.instructions
   function removeInstruction(dummy) {
-    $scope.recipes.instructions.splice(dummy, 1);
+    $scope.recipe.recInstructions.splice(dummy, 1);
   }
 
   // write function to get recipe object on ng-click in newForm.html
 
   $scope.submitRecipe = function() {
-    // console.log('submitRecipe logging');
-    // var newRecipe = new Recipe($scope.recipes.name, $scope.recipes.author, $scope.recipes.tags, $scope.recipes.originStory, "images",$scope.recipes.ingredients, "steps" );
-    // console.log(newRecipes);
-    console.log($scope.recipes);
+    console.log($scope.recipe);
   }
 
 
   /////////// service to send new recipe information to database ///////////
-  $scope.redirectHome = postRecipe.registerUser;
+  $scope.redirectHome = postRecipe.addNewRecipe;
 
   ///postRecipe = name of service
+
+  $scope.cancelRecipe = function() {
+    $state.go("userhome");
+  }
+
+
 
 }]);

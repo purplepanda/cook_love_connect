@@ -24,10 +24,10 @@ h3 {
     display: inline-block;
     text-decoration: none;
     padding: 15px;
-    color: white;
+    color: $grey;
     a {
       text-decoration: none;
-      color: white;
+      color: $grey;
     }
   }
 }
@@ -40,7 +40,7 @@ h3 {
     padding: 25px;
     a {
       text-decoration: none;
-      color: white;
+      color: $grey;
       &:hover {
         color: $pastel_red;
       }
@@ -132,7 +132,7 @@ input {
 #signup button,
 #login input,
 #login button {
-  margin: 1em auto;
+  margin: 1.5em auto;
 }
 
 textarea {
@@ -199,3 +199,6 @@ label {
 #recipeSearchBox {
   margin: 1em auto;
 }
+
+
+////// styling for new recipe form /////

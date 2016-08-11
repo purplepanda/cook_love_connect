@@ -1,76 +1,136 @@
 <div id="tempRecFormBack">
 	<header ng-include="'partials/header_main.html'"></header>
-<h3 style="color:white;">{{title}}</h3>
+<h3>{{title}}</h3>
 
-<form id="newForm">
+<!-- <form method="POST" action="/recipes"> -->
+<form id="newForm" name="form" ng-submit="redirectHome(recipe)">
 
-	<label> Recipe Name</label>
-			<br>
-			<input class="myModal" type="text" name="name" placeholder="Name of recipe" ng-model="recipes.name" ng-minlength=3 ng maxlength=20 required/>
-			<br>
-			<label name="author">Author</label>
-			<br>
-			<input class="myModal" type= "text" name="author" ng-model="recipes.author" placeholder="Author" required="Author" />
-			<br>
-			<label>Tags</label>
-			<br>
-			<input class="myModal" type="text" name="tags" ng-model="recipes.tags" placeholder="tags" required="tags"/>
-			<br>
-			<label>Image</label>
-			<br>
-			<input class="myModal" type="file" onchange="previewFile(this)" name="user-photo" ng-model="recipes.image" required="image" style="color:white;"/>
+	<label>Recipe Name</label>
+			<input
+				class="myModal"
+				type="text"
+				name="recTitle"
+				placeholder="Name of recipe"
+				ng-model="recipe.recTitle"
+				ng-minlength=3
+				ng maxlength=20
+				required/>
 
-       <img id="blah" src="" alt="your image" />
+	<label name="author">Author</label>
+			<input
+				class="myModal"
+				type= "text"
+				name="recAuthor"
+				ng-model="recipe.recAuthor"
+				placeholder="Author"/>
 
-      		<label>Recipe Orgin:</label>
+	<label name="cookbook">Cookbook</label>
+			<input
+				class="myModal"
+				type= "text"
+				name="recCookbook"
+				value="My Cookbook"
+				ng-model="recipe.recCookbook"
+				placeholder="Cookbook"
+				required/>
 
+	<label>Tags</label>
+			<input
+				class="myModal"
+				type="text"
+				name="recTags"
+				ng-model="recipe.recTags"
+				placeholder="tags"/>
+
+	<label>Image</label>
+			<input
+				class="myModal"
+				type="file"
+				name="recImage"
+				onchange="previewFile(this)"
+				ng-model="recipe.recImage"/>
+
+  <img id="blah" src="" alt="your image" />
+	<br>
+
+  <label>Recipe Origin:</label>
+			<textarea
+				class="myModal"
+				rows="3"
+				cols="40"
+				name="recOriginStory"
+				ng-model="recipe.recOriginStory"
+				placeholder="What's the story of this recipe..."
+				id="history of recipe">
+			</textarea>
       		<br>
-      		<textarea class="myModal" rows="4" cols="40" id="history of recipe" palceholder="What's the story of this recipe..." ng-model="recipes.originStory"></textarea>
-      		<br>
 
 
-			<!-- INGREDIENT FORM -->
+	<!-- INGREDIENT FORM -->
+	<label>Ingredients</label>
+      	<input
+					class="myModal"
+					type="text"
+					ng-model="recipe.recIngredients"
+					name="recIngredients"
+					value=""
+					placeholder="add ingredient"/>
+        <button
+					class="myModal"
+					ng-click="addIngredient()"
+					name="button">
+					Add to List
+				</button>
 
-			<label>Ingredients</label>
-           	<input class="myModal" type="text" ng-model="ingredient" name="name" value="" placeholder="add ingredient" />
-        	<button class="myModal" ng-click="addIngredient()" name="button" style="color:white;">Add to List</button>
-
-        	<ul>
-            <li style="color:white;" ng-repeat="ingredient in recipes.ingredients| filter:filterList">{{ingredient | lowercase}}
-                <div>
-                    <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
-                    <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
-                    <a href="" class="delete" ng-click="removeIngredient($index)">delete</a>
-                    <input type="text" ng-model="ingredient" ng-show="showEditBar" class="myModal" />
-                </div>
+        	<ul id="new-recipe-ingredients">
+            <li ng-repeat="ingredient in recipes.ingredients| filter:filterList">{{ingredient | lowercase}}
+              <div>
+                <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+                <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+                <a href="" class="delete" ng-click="removeIngredient($index)">delete</a>
+                <input type="text" ng-model="ingredient" ng-show="showEditBar" class="myModal" />
+              </div>
             </li>
         	</ul>
-
         	<!-- END OF INGREDIENTS -->
 
+
         	<!-- START OF INSTRUCTIONS/STEPS -->
-			<label>Instructions in Steps</label>
-           	<input class="myModal" type="text" ng-model="instruction" name="name" value="" placeholder="add instruction" />
-        	<button class="myModal" ng-click="addInstruction()" name="button" style="color:white;">Add instructions</button>
+			<label>Instructions</label>
+          <input
+						class="myModal"
+						type="text"
+						ng-model="recipe.recInstructions"
+						name="recInstructions"
+						placeholder="add instruction"/>
+        	<button
+						class="myModal"
+						ng-click="addInstruction()"
+						name="button">
+						Add instructions
+					</button>
 
         	<ol>
-            <li style="color:white;" ng-repeat="instruction in recipes.instructions| filter:filterList">{{instruction | lowercase}}
-                <div>
-                    <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
-                    <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
-                    <a href="" class="delete" ng-click="removeInstruction($index)">delete</a>
-                    <input type="text" ng-model="intruction" ng-show="showEditBar" class="myModal" />
-                </div>
+            <li
+							ng-repeat="instruction in recipes.instructions| filter:filterList">{{instruction | lowercase}}
+              <div>
+                <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+                <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+                <a href="" class="delete" ng-click="removeInstruction($index)">delete</a>
+                <input
+									type="text"
+									ng-model="intruction"
+									ng-show="showEditBar"
+									class="myModal"/>
+              </div>
             </li>
         	</ol>
 
 
 
-
-			<br>
 			<!-- link ng-click to a submit function -->
-			<button class="btn btn-primary" type="button" ng-click="submitRecipe(recipes)">OK</button>
-           	<button class="btn btn-warning" type="button" ng-click="" ui-sref="userhome">Cancel</button>
+			<button class="btn btn-primary" type="button">Save Recipe</button>
+      <button class="btn btn-warning" type="button" ng-click="cancelRecipe()">Cancel</button>
 
 </form>
 
