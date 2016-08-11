@@ -37,7 +37,7 @@ app.controller("userhomeCtrl", ['$scope', '$http', function($scope, $http) {
     $http.get(searchUrl)
     .then(function(response){
       console.log("successful API request!", response);
-      $scope.thirdpartyrecipes = response.results; });
+      $scope.thirdpartyrecipes = response.data.results; });
 
     var searchFactory = {};
     searchFactory.getRecipe = function(){
