@@ -3,6 +3,7 @@ var app = angular.module("cookingConnect");
 app.controller("userhomeCtrl", ['$scope', '$http', function($scope, $http) {
   $scope.title = "My Kitchen";
 
+<<<<<<< HEAD
   // $scope.recipeForm = function() {
   //   alert("This should pop up the new reciple form");
   // }
@@ -53,3 +54,9 @@ app.controller("userhomeCtrl", ['$scope', '$http', function($scope, $http) {
   };
 
 }]);
+=======
+  $scope.submitRecipe = function() {
+    alert("This should POST the new recipe info to the database!");
+  };
+});
+>>>>>>> mongo-magic
