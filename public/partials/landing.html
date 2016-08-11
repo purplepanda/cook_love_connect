@@ -5,26 +5,40 @@
 
 <div>
 <p>CLC makes it easier for you to save your recipes in one place, but what you'll really love is being able to share your favorites, new and old, with your favorite people, no matter how far away they are. Bon appetit!</p>
-<<<<<<< HEAD
-  <button type="button" id="loginButton" ng-click="loginTemp()">Login</button>
-  <button type="button" id="signupButton" ng-click="regTemp()">Sign Up</button>
-=======
-  <a ui-sref="login"><button type="button">Log In</button></a>
-  <a ui-sref="register"><button type="button">Sign Up</button></a>
->>>>>>> mongo-magic
+  <button type="button" id="loginButton" ng-click="loginForm()">Login</button>
+  <button type="button" id="signupButton" ng-click="regForm()">Sign Up</button>
+
 </div>
 
+
+<!-- Log In Form -->
 <form id="login">
   <!-- note, I still need to set up ng-model -->
   <label for="email">Email</label>
-  <input type="email" name="email" placeholder="jane@gmail.com" required></input>
+  <input
+    type="email"
+    name="email"
+    placeholder="jane@gmail.com"
+    required>
+  </input>
+
   <label for="password">Password</label>
-  <input type="password" name="password" placeholder="Not12345" required></input>
-  <!-- note, I still need to add ng-click -->
-  <button type="button" name="button">Login</button>
+  <input
+    type="password"
+    name="password"
+    placeholder="Not12345"
+    required>
+  </input>
+
+  <button
+    type="button"
+    name="button"
+    ng-click="fakeLogin()"> <!-- fakeLogin() is a temporary fix to get us through MVP demo on Friday -->
+    login
+  </button>
 </form>
 
-
+<!-- Registration Form -->
 <form id="signup">
   <!-- note, I still need to set up ng-model -->
   <label for="firstName">First Name</label>

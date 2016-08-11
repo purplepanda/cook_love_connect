@@ -1,22 +1,14 @@
-<<<<<<< HEAD
-<div id="bgUserHome">
+<div>
 	<header ng-include="'partials/header_main.html'"></header>
-	<h3 style="color:white;">{{title}}</h3>
+	<h3>{{title}}</h3>
 
+
+<!-- User Home Kitchen -->
 	<div id="userhome">
 		<div class="tempDiv">
-			<a ui-sref="newForm"><h4>New Form Recipe</h4></a>
-		  <!-- <div ng-include="'partials/newRecipeForm.html'"></div> -->
+			<a ui-sref="newForm"><h4>New Recipe Form</h4></a>
+			<p>Add a new recipe here!</p>
 		</div>
-=======
-<header ng-include="'partials/header_main.html'"></header>
-<h3>{{title}}{{name}}</h3>
-
-<div id="userhome">
-<div class="tempDiv" ng-include="'partials/tempRecForm.html'">
-</div>
->>>>>>> mongo-magic
-
 
 		<div class="tempDiv">
 		  <a ui-sref="cookbook"><h4>Personal Cookbook</h4></a>
@@ -27,17 +19,19 @@
 		  <a ui-sref="cookbook"><h4>Shared Cookbooks</h4></a>
 		  <p>This div is a placeholder for the area where a user can access any of their shared cookbooks.</p>
 		</div>
-	</div>
 
+
+
+<!-- Recipe API Search Results -->
+	<div id="searchResults">
+	  <h1>Yummy Findings</h1>
+		<p ng-repeat="recipe in thirdpartyrecipes"><a ng-href="{{recipe.href}}">{{recipe.title}}</a></p>
+		</div>
+<!-- Recipe Search API -->
 <form id="recipeSearch">
   <label for="search">Recipe Search</label>
   <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna" ng-model="searchIt"></input>
   <button ng-click="submitSearch(searchIt)" >Search</button>
 </form>
-
-<div id="searchResults">
-  <h1>Yummy Findings</h1>
-  <p ng-repeat="recipe in thirdpartyrecipes"><a ng-href="{{recipe.href}}">{{recipe.title}}</a></p>
-</div>
-
+<!-- End Recipe Search API -->
 </div>

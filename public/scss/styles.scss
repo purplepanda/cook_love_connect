@@ -52,8 +52,16 @@ header {
   width: 100%;
   z-index: 999;
 }
+
+#tempRecFormBack{
+  background-color: $dark_azure;
+}
 #landing {
-  background-image: url(/images/asparagus.jpg);
+  background-image: url(/images/asparagus.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-size: 100%;
 }
 #welcome {
@@ -148,16 +156,6 @@ textarea {
   margin: 0 auto;
 }
 
-#bgUserHome {
-    background: url(http://trichilofoods.com/site/wp-content/uploads/2015/06/veggies.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 700px;
-
-}
-
 .footerMedia {
   width: 34px;
   height: 32px;
@@ -172,7 +170,7 @@ textarea {
 }
 
 label {
-  color:white;
+  color: $grey;
 }
 
 

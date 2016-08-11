@@ -1,32 +1,30 @@
-<div id="bgUserHome">
+<div id="tempRecFormBack">
 	<header ng-include="'partials/header_main.html'"></header>
 <h3 style="color:white;">{{title}}</h3>
 
-<form id="newForm"> 
-	<label> Recipe Name</label>
-			<br>
-			<input class="myModal" type="text" name="name" placeholder="Name of recipe" ng-model="recipe.name" ng-minlength=3 ng maxlength=20 required/> 
-			<br>
+<form id="newForm">
+	<label>Recipe Name</label>
+			<input class="myModal" type="text" name="name" placeholder="Name of recipe" ng-model="recipe.name" ng-minlength=3 ng maxlength=20 required/>
 			<label name="author">Author</label>
-			<br>
+
 			<input class="myModal" type= "text" name="author" ng-model="author" placeholder="Author" required="Author" />
-			<br>
-			<label>Tags</label>	
-			<br>
+
+			<label>Tags</label>
+
 			<input class="myModal" type="text" name="tags" ng-model="tags" placeholder="tags" required="tags"/>
-			<br>
+
 			<label>Image</label>
-			<br>
+
 			<input class="myModal" type="file" onchange="previewFile(this)" name="user-photo" ng-model="image" required="image" style="color:white;"/>
        <img id="blah" src="" alt="your image" />
-       		<br>
+
       		<label>Recipe Orgin:</label>
-      		<br>
+
       		<textarea class="myModal" rows="4" cols="40" id="history of recipe" palceholder="What's the story of this recipe..."></textarea>
-      		<br>
-      		
+
+
 			<!-- INGREDIENT FORM -->
-			
+
 			<label>Ingredients</label>
            	<input class="myModal" type="text" ng-model="ingredient" name="name" value="" placeholder="add ingredient" />
         	<button class="myModal" ng-click="addIngredient()" name="button" style="color:white;">Add to List</button>
@@ -39,7 +37,7 @@
                     <a href="" class="delete" ng-click="removeIngredient($index)">delete</a>
                     <input type="text" ng-model="ingredient" ng-show="showEditBar" class="myModal" />
                 </div>
-            </li>           	
+            </li>
         	</ul>
 
         	<!-- END OF INGREDIENTS -->
@@ -57,7 +55,7 @@
                     <a href="" class="delete" ng-click="removeInstruction($index)">delete</a>
                     <input type="text" ng-model="intruction" ng-show="showEditBar" class="myModal" />
                 </div>
-            </li>           	
+            </li>
         	</ol>
 
 
