@@ -15,19 +15,18 @@
 	      <p>{{recipe.tags}}</p>
 				<!-- maybe use css to display this recipeDetails div in a special way? -->
 						<div class="recipeDetails"  ng-show="showDetails">
-							<p>{{recipe.name}}</p>
+							<h1>{{recipe.name}}</h1>
 							<img ng-src="{{recipe.image}}" alt="" />
 							<p>{{recipe.tags}}</p>
 							<p>ORIGIN STORY: {{recipe.originStory}}</p>
 							<p>AUTHOR: {{recipe.author}}</p>
-							<div>INGREDIENTS
+							<p style="color: white">INGREDIENTS</p>
 							<ul>
-				        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+				        <li ng-repeat="ingredient in recipe.ingredients" style="color: white">{{ingredient}}</li>
 				      </ul>
-							</div>
-							<p>STEPS</p>
+							<p style="color: white">STEPS</p>
 				      <ol>
-				        <li ng-repeat="step in recipe.steps">{{step}}</li>
+				        <li ng-repeat="step in recipe.steps" style="color: white">{{step}}</li>
 				      </ol>
 						</div>
 	</div>

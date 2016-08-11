@@ -214,11 +214,11 @@ label {
   padding: 3em;
 }
 
-.recipeDetails,
-.recipeDetails > .ng-binding {
-  color: white;
+.recipeDetails img {
+  border: 4px solid white;
 }
 
-.ingModal {
+.recipeDetails,
+.recipeDetails > .ng-binding {
   color: white;
 }
