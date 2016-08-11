@@ -6,7 +6,7 @@ app.controller("userhomeCtrl", ['$scope', '$http', function($scope, $http) {
   // $scope.recipeForm = function() {
   //   alert("This should pop up the new reciple form");
   // }
-});
+
 
   // josh added this code block Aug 9 AM
   // $http({
