@@ -16,10 +16,10 @@ h3 {
     display: inline-block;
     text-decoration: none;
     padding: 15px;
-    color: white; }
+    color: #404040; }
     .nav-left ul li a {
       text-decoration: none;
-      color: white; }
+      color: #404040; }
 
 .nav-right {
   display: inline-block;
@@ -30,7 +30,7 @@ h3 {
     padding: 25px; }
     .nav-right ul li a {
       text-decoration: none;
-      color: white; }
+      color: #404040; }
       .nav-right ul li a:hover {
         color: #ED685E; }
 
