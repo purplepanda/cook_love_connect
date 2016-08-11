@@ -1,0 +1,57 @@
+{
+  "cookbooks": [{
+    "_id": 123456789,
+    "cookbookName": "Jane's Faves",
+    "email": "fakeemail@gmail.com",
+    "recipes": [
+      {
+        "name": "Vodka Tonic",
+        "_id": 123456789,
+        "tags": "alcohol",
+        "image": "http://www.placekitten.com/150/150",
+        "author": "Benson",
+        "originStory": "I started making these in college. Foolproof.",
+        "ingredients": ["8 fluid ounces of tonic water", "1 cup ice", "1 fluid ounce of vodka", "1 lemon wedge"],
+        "steps": ["get a glass", "pour ice into glass", "pour vodka into glass", "stir it up"]
+      },
+      {
+        "name": "Fruit Salad",
+        "_id": 987654321,
+        "tags": "side-dish",
+        "image": "http://www.placekitten.com/150/150",
+        "author": "Amanda",
+        "originStory": "This was one of the first recipes my grandmother taught me to make when I was a kid.",
+        "ingredients": ["1 whole apple", "1 sliced banana", "1 cup grapes", "1 cup blueberries"],
+        "steps": ["wash the fruit", "place the fruit into a bowl", "mix and chill", "serve and enjoy"]
+      }
+      ]
+    },
+    {
+      "_id": 987654321,
+      "cookbookName": "Carrie's Best Vegetarian Recipes",
+      "email": "yetanotherfakeemail@gmail.com",
+      "recipes": [
+        {
+          "name": "Vodka Tonic",
+          "_id": 123456789,
+          "tags": "alcohol",
+          "image": "http://www.placekitten.com/150/150",
+          "author": "Benson",
+          "originStory": "I started making these in college. Foolproof.",
+          "ingredients": ["8 fluid ounces of tonic water", "1 cup ice", "1 fluid ounce of vodka", "1 lemon wedge"],
+          "steps": ["get a glass", "pour ice into glass", "pour vodka into glass", "stir it up"]
+        },
+        {
+          "name": "Fruit Salad",
+          "_id": 987654321,
+          "tags": "side-dish",
+          "image": "http://www.placekitten.com/150/150",
+          "author": "Amanda",
+          "originStory": "This was one of the first recipes my grandmother taught me to make when I was a kid.",
+          "ingredients": ["1 whole apple", "1 sliced banana", "1 cup grapes", "1 cup blueberries"],
+          "steps": ["wash the fruit", "place the fruit into a bowl", "mix and chill", "serve and enjoy"]
+        }
+      ]
+    }
+  ]
+}

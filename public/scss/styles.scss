@@ -24,6 +24,11 @@ h3 {
     display: inline-block;
     text-decoration: none;
     padding: 15px;
+    color: white;
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 }
 .nav-right {
@@ -35,7 +40,7 @@ h3 {
     padding: 25px;
     a {
       text-decoration: none;
-      color: $grey;
+      color: white;
       &:hover {
         color: $pastel_red;
       }
@@ -59,6 +64,8 @@ header {
   margin-left: 5%;
   padding: 5%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto
 }
 button {
   &:hover {
@@ -104,4 +111,92 @@ recipe-card {
 input {
   display: block;
   width: 350px;
+}
+
+#signup,
+#login {
+  display: none;
+}
+
+#signup input,
+#signup textarea,
+#signup button,
+#login input,
+#login button {
+  margin: 1em auto;
+}
+
+textarea {
+    min-width: 350px;
+    height: auto;
+    margin-bottom: 2em;
+    display: block;
+}
+
+.btn-primary.raised {
+    box-shadow: 0 3px 0 0 #007299;
+}
+.btn-primary.raised:active, .btn-primary.raised.active {
+    background: #33a6cc;
+    box-shadow: none;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+.myModal {
+  display: block;
+  margin: 0 auto;
+}
+
+#bgUserHome {
+    background: url(http://trichilofoods.com/site/wp-content/uploads/2015/06/veggies.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 700px;
+
+}
+
+.footerMedia {
+  width: 34px;
+  height: 32px;
+  padding-left: 5px;
+}
+
+
+#newForm {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+label {
+  color:white;
+}
+
+
+.recipeCard {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 20%;
+  max-width: 250px;
+  height: 250px;
+  margin: 2%;
+  padding: 2%;
+  background-color: $pastel_red;
+  border: 2px solid $grey;
+}
+
+#recipeSearch {
+  text-align: center;
+  width: 50%;
+  margin: 1em auto;
+  padding: 1em;
+  border: 1px solid black;
+}
+
+#recipeSearchBox {
+  margin: 1em auto;
 }

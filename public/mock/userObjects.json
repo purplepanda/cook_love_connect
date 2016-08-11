@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "firstName": "Jane",
+      "lastName":  "Doe",
+      "dietPrefs": "vegan",
+      "allergies":  "shellfish",
+      "shortBio": "Although I'm a vegan, I'm pretty resourceful at dinner parties. Just let me know if there aren't any vegan entrees and I'll come prepared. Thanks!",
+      "email":  "fakeemail@gmail.com",
+      "groups": "",
+      "familyMembers": "",
+      "familyMembersNotes": ""
+    },
+    {
+      "firstName": "Bill",
+      "lastName":  "Withers",
+      "dietPrefs": "",
+      "allergies":  "",
+      "shortBio": "No dietary restrictions or allergies -- I'll eat just about anything.",
+      "email":  "anotherfakeemail@gmail.com",
+      "groups": "",
+      "familyMembers": "",
+      "familyMembersNotes": ""
+    },
+    {
+      "firstName": "Carrie",
+      "lastName":  "Brownstein",
+      "dietPrefs": "vegetarian",
+      "allergies":  "gluten",
+      "shortBio": "I am OK with dairy and not extremely sensitive to gluten, so don't worry about cross contamination. That said, I appreciate a heads up if you're cooking vegetable soup using chicken stock, etc.",
+      "email":  "yetanotherfakeemail@gmail.com",
+      "groups": "",
+      "familyMembers": "",
+      "familyMembersNotes": ""
+    }
+  ]
+}
