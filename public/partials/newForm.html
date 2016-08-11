@@ -32,7 +32,7 @@
         	<button class="myModal" ng-click="addIngredient()" name="button" style="color:white;">Add to List</button>
 
         	<ul>
-            <li style="color:white;" ng-repeat="ingredient in ingredients| filter:filterList">{{ingredient | lowercase}}
+            <li style="color:white;" ng-repeat="ingredient in recipes.ingredients| filter:filterList">{{ingredient | lowercase}}
                 <div>
                     <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
                     <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
@@ -50,7 +50,7 @@
         	<button class="myModal" ng-click="addInstruction()" name="button" style="color:white;">Add instructions</button>
 
         	<ol>
-            <li style="color:white;" ng-repeat="instruction in instructions| filter:filterList">{{instruction | lowercase}}
+            <li style="color:white;" ng-repeat="instruction in recipes.instructions| filter:filterList">{{instruction | lowercase}}
                 <div>
                     <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
                     <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
