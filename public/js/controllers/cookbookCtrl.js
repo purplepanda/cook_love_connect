@@ -37,9 +37,14 @@ app.controller("cookbookCtrl", function($scope, $http) {
   $(document).ready(function(){
     $(document).on('click', ".recipeCard", function(){
       // alert('clicked');
-      $('.recipeDetails').toggle();
+      event.preventDefault();
+      $(this).closest('.recipeDetails').toggle();
+      // $(this > 'div').toggle();
     });
+
+
   });
+
 
 
 });
