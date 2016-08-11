@@ -11,7 +11,7 @@ app.controller("newFormCtrl", function($scope) {
     // Methods for $scope.ingredients
     $scope.addIngredient = addIngredient;
     $scope.removeIngredient = removeIngredient;
-    
+
 
     // Adds to $scope.ingredients
     function addIngredient() {
@@ -30,22 +30,28 @@ app.controller("newFormCtrl", function($scope) {
         "Dummy Test for intructions",
     ];
 
-    // Methods for $scope.instructions 
+    // Methods for $scope.instructions
     $scope.addInstruction = addInstruction;
     $scope.removeInstruction = removeInstruction;
-    
 
-    // Adds to $scope.instructions 
+
+    // Adds to $scope.instructions
     function addInstruction() {
         $scope.instructions.push($scope.instruction);
         $scope.instruction = "";
     }
 
-    // Removes from $scope.instructions 
+    // Removes from $scope.instructions
     function removeInstruction(dummy) {
         $scope.instructions.splice(dummy, 1);
     }
 
+    // write function to get recipe object on ng-click in newForm.html
+
+    $scope.submitRecipe = function(recipes){
+      // console.log('submitRecipe logging');
+      console.log(recipes);
+    }
 
 
 
