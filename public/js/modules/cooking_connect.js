@@ -13,7 +13,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
     .state("register", {
       url: "/register",
       templateUrl: "partials/register.html",
-      controller: "registerCtrl"
+      controller: "postCtrl"
     })
     .state("login", {
       url: "/login",

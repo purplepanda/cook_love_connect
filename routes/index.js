@@ -29,14 +29,18 @@ router.post('/users', function(req, res, next) {
     email: req.body.email,
     password: req.body.password
   });
+  console.log(user);
 
   user.save(function(error) {
     if (error) {
+      console.log("Not saved");
+      console.log(error);
       res.json({
         success: false,
         error: error
       })
     } else {
+      console.log("Saved!");
       res.json({
         success: true,
         user: user
