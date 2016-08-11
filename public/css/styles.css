@@ -137,3 +137,11 @@ textarea {
   width: 34px;
   height: 32px;
   padding-left: 5px; }
+
+#newForm {
+  display: block;
+  text-align: center;
+  margin: 0 auto; }
+
+label {
+  color: white; }
