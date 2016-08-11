@@ -33,7 +33,20 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory) {
   // for cookbooks -- if we want to isolate one user's collection, I suppose
   $http.get('../mock/cookbookObjects.json').success(function(data) {
    $scope.cookbooks = data;
-   console.log(data);
+  //  console.log(data);
   });
+
+  $(document).ready(function(){
+    $(document).on('click', ".recipeCard", function(){
+      // alert('clicked');
+      event.preventDefault();
+      $(this).closest('.recipeDetails').toggle();
+      // $(this > 'div').toggle();
+    });
+
+
+  });
+
+
 
 });

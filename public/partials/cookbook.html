@@ -7,21 +7,27 @@
 
 	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
 	<!-- we will link the entire div to whisk us off to the recipe view -->
-	<div class="recipeCard" ng-repeat="recipe in recipes.recipes">
+
+	<div class="recipeCard" ng-repeat="recipe in recipes.recipes" ng-click="showDetails = ! showDetails">
 
 				<p>{{recipe.name}}</p>
 				<img ng-src="{{recipe.image}}" alt="" />
 	      <p>{{recipe.tags}}</p>
-
-				<!-- <p>ORIGIN STORY: {{recipe.originStory}}</p>
-				<p>AUTHOR: {{recipe.author}}</p>
-				<p>INGREDIENTS</p>
-				<ul>
-	        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
-	      </ul>
-				<p>STEPS</p>
-	      <ol>
-	        <li ng-repeat="step in recipe.steps">{{step}}</li>
-	      </ol> -->
+				<!-- maybe use css to display this recipeDetails div in a special way? -->
+						<div class="recipeDetails"  ng-show="showDetails">
+							<h1>{{recipe.name}}</h1>
+							<img ng-src="{{recipe.image}}" alt="" />
+							<p>{{recipe.tags}}</p>
+							<p>ORIGIN STORY: {{recipe.originStory}}</p>
+							<p>AUTHOR: {{recipe.author}}</p>
+							<p style="color: white">INGREDIENTS</p>
+							<ul>
+				        <li ng-repeat="ingredient in recipe.ingredients" style="color: white">{{ingredient}}</li>
+				      </ul>
+							<p style="color: white">STEPS</p>
+				      <ol>
+				        <li ng-repeat="step in recipe.steps" style="color: white">{{step}}</li>
+				      </ol>
+						</div>
 	</div>
 </div>
