@@ -24,6 +24,11 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       url: "/newForm",
       templateUrl: "partials/newForm.html",
       controller: "newFormCtrl"
+    })
+    .state("recipeInfo", {
+      url: "/recipeInfo",
+      templateUrl: "partials/recipeInfo.html",
+      controller: "recipeInfoCtrl"
     });
 }]);
 

@@ -37,7 +37,7 @@ app.controller("newFormCtrl", function($scope) {
 
     // Adds to $scope.instructions 
     function addInstruction() {
-        $scope.instructions.unshift($scope.instruction);
+        $scope.instructions.push($scope.instruction);
         $scope.instruction = "";
     }
 
