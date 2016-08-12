@@ -188,6 +188,11 @@ label {
   border: 2px solid $grey;
 }
 
+.recipeCard img {
+  width: 150px;
+  height: 150px;
+}
+
 #recipeSearch {
   text-align: center;
   width: 50%;
@@ -220,4 +225,15 @@ label {
 .recipeDetails,
 .recipeDetails > .ng-binding {
   color: white;
+}
+
+#newRecipe {
+  max-width: 50%;
+  margin: 1em auto;
+  border: 2px solid black;
+  padding: 1em 3em;
+}
+
+.prettyList {
+  list-style: none;
 }

@@ -3,7 +3,7 @@
 	<div class="cookbook">
 	<!-- eventually, swap this title directive with something personal to the user -->
 	<h3>{{title}}</h3>
-	<input type="text" ng-model="recipeSearch" placeholder="recipe search">
+	<!-- <input type="text" ng-model="recipeSearch" placeholder="recipe search"> -->
 
 	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
 	<!-- we will link the entire div to whisk us off to the recipe view -->
@@ -18,8 +18,9 @@
 							<h1>{{recipe.name}}</h1>
 							<img ng-src="{{recipe.image}}" alt="">
 							<p>{{recipe.tags}}</p>
-							<p>ORIGIN STORY: {{recipe.originStory}}</p>
-							<p>AUTHOR: {{recipe.author}}</p>
+							<p><strong>Origin Story</strong></p>
+							<p>{{recipe.originStory}}</p>
+							<p>Submitted by: {{recipe.author}}</p>
 							<p style="color: white">INGREDIENTS</p>
 							<ul>
 				        <li ng-repeat="ingredient in recipe.ingredients" style="color: white">{{ingredient}}</li>
@@ -31,14 +32,23 @@
 						</div>
 	</div>
 
-	<div>
-		<p>{{storeRecipeObject.name}}</p>
-		<p>{{storeRecipeObject.author}}</p>
-		<p>{{storeRecipeObject.tags}}</p>
-		<p><img ng-src="{{storeRecipeObject.image}}" height="300" width="300"></p>
-		<p>{{storeRecipeObject.originStory}}</p>
-		<p>{{storeRecipeObject.ingredients}}</p>
-		<p>{{storeRecipeObject.instructions}}</p>
+
+	<!-- eventually, would like to auto show/hide depending if user has added recipe -->
+	<div id="newRecipe">
+		<h2>{{storeRecipeObject.name}}</h2>
+		<p><img ng-src="{{storeRecipeObject.image}}"></p>
+		<p><strong>Submitted by</strong>: {{storeRecipeObject.author}}</p>
+		<p><strong>Tags</strong>: {{storeRecipeObject.tags}}</p>
+		<p><strong>Origin Story</strong>: {{storeRecipeObject.originStory}}</p>
+		<!-- <p>{{storeRecipeObject.ingredients}}</p> -->
+		<ul class="prettyList"><strong>Ingredients</strong>:
+			<li ng-repeat="ingredient in storeRecipeObject.ingredients">{{ingredient}}</li>
+		</ul>
+		<ol><strong>Directions</strong>:
+			<li ng-repeat="step in storeRecipeObject.instructions">{{step}}</li>
+		</ol>
+		<!-- <p>{{storeRecipeObject.instructions}}</p> -->
+
 
 	</div>
 
