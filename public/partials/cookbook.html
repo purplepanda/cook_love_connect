@@ -16,7 +16,7 @@
 				<!-- maybe use css to display this recipeDetails div in a special way? -->
 						<div class="recipeDetails"  ng-show="showDetails">
 							<h1>{{recipe.name}}</h1>
-							<img ng-src="{{recipe.image}}" alt="" />
+							<img ng-src="{{recipe.image}}" alt="">
 							<p>{{recipe.tags}}</p>
 							<p>ORIGIN STORY: {{recipe.originStory}}</p>
 							<p>AUTHOR: {{recipe.author}}</p>
@@ -35,7 +35,7 @@
 		<p>{{storeRecipeObject.name}}</p>
 		<p>{{storeRecipeObject.author}}</p>
 		<p>{{storeRecipeObject.tags}}</p>
-		<p><img ng-src="{{storeRecipeObject.image}}"></p>
+		<p><img ng-src="{{storeRecipeObject.image}}" height="300" width="300"></p>
 		<p>{{storeRecipeObject.originStory}}</p>
 		<p>{{storeRecipeObject.ingredients}}</p>
 		<p>{{storeRecipeObject.instructions}}</p>

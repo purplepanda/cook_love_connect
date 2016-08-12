@@ -19,6 +19,26 @@
       "originStory": "This was one of the first recipes my grandmother taught me to make when I was a kid.",
       "ingredients": ["1 whole apple", "1 sliced banana", "1 cup grapes", "1 cup blueberries"],
       "steps": ["wash the fruit", "place the fruit into a bowl", "mix and chill", "serve and enjoy"]
-    }
+     },
+   {
+       "name": "Simple Guacamole",
+       "_id": 465953021,
+       "tags": "appetizer",
+       "image": "http://www.placekitten.com/150/150",
+       "author": "Erika",
+       "originStory": "This was the 2nd dish I learned to make growing up. It has been a crowd pleaser ever since.",
+       "ingredients": ["3 ripe avocados", "1/2 lemon", "1 tsp hot sauce", "salt"],
+       "steps": ["halve the avocados", "remove pits and scoop out avocado", "squeeze lemon (lime if you prefer) in bowl.", "add hot sauce", "salt and peper to taste","smoosh with fork","great with veggies and tortillia chips"]
+     },
+     {
+       "name": "Grean Beans All for Me!",
+       "_id": 45424326,
+       "tags": "side-dish",
+       "image": "http://www.placekitten.com/150/150",
+       "author": "Josh",
+       "originStory": "I make this dish everynight after boot-camp to keep me lean and mean...boom",
+       "ingredients": ["1 lb green beans", "1/4 cup of slivered almonds", "2 tbls of butter", "1/2 lemon", "salt and peper to taste"],
+       "steps": ["boil water in saucepan", "poor green beans in water for 2 minutes", "blanch green beans", "in saucepan melt butter and toast almonds","once almonds are golden brown add green beans","toss and squeeze fresh lemon", "add salt and pepper to taste"]
+     }
   ]
 }
