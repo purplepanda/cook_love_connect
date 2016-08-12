@@ -1,7 +1,7 @@
 var app = angular.module("cookingConnect");
 
 app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory) {
-  $scope.title = "The ... Cookbook";
+  $scope.title = "The JABE Cookbook";
 
   $scope.storeRecipeObject = storeRecipeFactory.returnObject();
 
