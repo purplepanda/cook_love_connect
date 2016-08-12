@@ -2,9 +2,9 @@ var app = angular.module("cookingConnect");
 
 app.factory('storeRecipeFactory', function(){
 	
-	var storeRecipe = {};
+	var storeRecipe = [];
 	function saveObject(recipes) {
-		storeRecipe = recipes;
+		storeRecipe.push(recipes);
 		console.log("Store recipe", storeRecipe);
 	}
 
@@ -13,4 +13,6 @@ app.factory('storeRecipeFactory', function(){
 	};
 
 return {saveObject:saveObject, returnObject:returnObject}
-})
+
+
+});

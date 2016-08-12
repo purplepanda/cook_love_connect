@@ -34,23 +34,26 @@
 
 
 	<!-- eventually, would like to auto show/hide depending if user has added recipe -->
-	<div id="newRecipe">
-		<h2>{{storeRecipeObject.name}}</h2>
-		<p><img ng-src="{{storeRecipeObject.image}}"></p>
-		<p><strong>Submitted by</strong>: {{storeRecipeObject.author}}</p>
-		<p><strong>Tags</strong>: {{storeRecipeObject.tags}}</p>
-		<p><strong>Origin Story</strong>: {{storeRecipeObject.originStory}}</p>
-		<!-- <p>{{storeRecipeObject.ingredients}}</p> -->
+	<div id="newRecipe" ng-repeat="recipe in storedRecipes">
+		<h2>{{recipe.name}}</h2>
+		<p><img ng-src="{{recipe.image}}"></p>
+		<p><strong>Submitted by</strong>: {{recipe.author}}</p>
+		<p><strong>Tags</strong>: {{recipe.tags}}</p>
+		<p><strong>Origin Story</strong>: {{recipe.originStory}}</p>
+		<!-- <p>{{recipe.ingredients}}</p> -->
 		<ul class="prettyList"><strong>Ingredients</strong>:
-			<li ng-repeat="ingredient in storeRecipeObject.ingredients">{{ingredient}}</li>
+			<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
 		</ul>
 		<ol><strong>Directions</strong>:
-			<li ng-repeat="step in storeRecipeObject.instructions">{{step}}</li>
+			<li ng-repeat="step in recipe.instructions">{{step}}</li>
 		</ol>
-		<!-- <p>{{storeRecipeObject.instructions}}</p> -->
+		<!-- <p>{{recipe.instructions}}</p> -->
 
 
 	</div>
+
+	<!-- TESTING NG REPEAT FOR NEW FORM SUBMMISSION-->
+	<!-- <div ng-repeat="store in storeRecipeObjects track by $index"></div> -->
 
 
 

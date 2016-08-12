@@ -1,5 +1,6 @@
 var app = angular.module("cookingConnect");
 
+
 app.controller("userhomeCtrl", ['$scope', '$http', function($scope, $http) {
   $scope.title = "My Kitchen";
 
