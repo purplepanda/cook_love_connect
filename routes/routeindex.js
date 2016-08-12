@@ -7,14 +7,14 @@ var Recipe = require('../models/recipe_model');
 //////////  recipe POST  //////////
 
 router.post('/recipes', function(req, res, next) {
-  var recipe = new Recipe({
+  var user = new Recipe({
     recTitle: req.body.recTitle,
     recAuthor: req.body.recAuthor,
     recCookbook: req.body.recCookbook,
     recTags: req.body.recTags,
     recOriginStory: req.body.recOriginStory
   });
-  console.log(recipe);
+  console.log(user);
 
 
   user.save(function(error) {
@@ -29,7 +29,7 @@ router.post('/recipes', function(req, res, next) {
       console.log("Saved!");
       res.json({
         success: true,
-        recipe: recipe
+        user: user
       })
     }
   });
@@ -41,7 +41,7 @@ router.get('/recipes', function(req, res) {
   Recipe.find({}, function(req, res) {
     res.json({
       success: true,
-      recipe: recipe
+      user: user
     })
   });
 })
