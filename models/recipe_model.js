@@ -15,20 +15,21 @@ var RecipeSchema = new Schema({
   recTags: [{
     type: String
   }],
-  recImage: {
-    type: String
-  },
   recOriginStory: {
     type: String
-  },
-  recIngredients: [{
-    type: String
-  }],
-  recInstructions: [{
-    type: String
-  }]
+  }
 });
 
+
+// recImage: {
+//   type: String
+// },
+// recIngredients: [{
+//   type: String
+// }],
+// recInstructions: [{
+//   type: String
+// }]
 
 var Recipe = mongoose.model('Recipe', RecipeSchema);
 module.exports = Recipe;

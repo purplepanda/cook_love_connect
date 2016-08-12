@@ -10,11 +10,11 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       templateUrl: "partials/landing.html",
       controller: "landingCtrl"
     })
-    // .state("register", {
-    //   url: "/register",
-    //   templateUrl: "partials/register.html",
-    //   controller: "postCtrl"
-    // })
+    .state("postRecipeForm", {
+      url: "/postRecipeForm",
+      templateUrl: "partials/postRecipeForm.html",
+      controller: "newRecipeCtrl"
+    })
     .state("login", {
       url: "/login",
       templateUrl: "partials/login.html",
@@ -34,11 +34,6 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       url: "/cookbook",
       templateUrl: "partials/cookbook.html",
       controller: "cookbookCtrl"
-    })
-    .state("newForm", {
-      url: "/newForm",
-      templateUrl: "partials/newForm.html",
-      controller: "newFormCtrl"
     })
     .state("recipeInfo", {
       url: "/recipeInfo",

@@ -10,15 +10,14 @@ var mid = require('../middleware');
 ///// routing to add a new recipe /////
 router.post('/recipes', function(req, res, next) {
   var recipe = new Recipe({
-
-
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password
-
-
-
+    recTitle: req.body.recTitle,
+    recAuthor: req.body.recAuthor,
+    recCookbook: req.body.recCookbook,
+    recTags: req.body.recTags,
+    recImage: req.body.recImage,
+    recOriginStory: req.body.recOriginStory,
+    recIngredients: req.body.recIngredients,
+    recInstructions: req.body.recInstructions
   });
   console.log(recipe);
 
@@ -237,21 +236,6 @@ router.post('/register', function(req, res, next) {
         return res.redirect('/userhome');
       }
     });
-    // user.save(function(err) {
-    //   if (err) {
-    //     console.log(err);
-    //     res.json({
-    //       "status": "bad"
-    //     });
-    //     // res.send('Error!');
-    //   } else {
-    //     console.log('meow');
-    //     res.json({
-    //       "status": "yay"
-    //     });
-    //     // res.send('User Created!');
-    //   }
-    // });
 
   } else {
     var err = new Error('All fields required.');
@@ -259,9 +243,6 @@ router.post('/register', function(req, res, next) {
     return next(err);
   }
 })
-
-
-
 
 
 module.exports = router;

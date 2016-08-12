@@ -1,0 +1,37 @@
+<h1>{{title}}</h1>
+<!-- <form method="POST" action="/recipes"> -->
+
+<form name="form" ng-submit="redirectHome(recipe)">
+    <input
+      type="text"
+      required
+      name="recTitle"
+      ng-model="recipe.recTitle"
+      placeholder="Name of Recipe">
+    <input
+      type="text"
+      name="recAuthor"
+      ng-model="recipe.recAuthor"
+      placeholder="author or contributor">
+    <input
+      type="text"
+      required
+      name="recCookbook"
+      ng-model="recipe.recCookbook"
+      placeholder="Cookbook (default 'My Cookbook')">
+    <input
+      type="text"
+      name="recTags"
+      ng-model="recipe.recTags"
+      placeholder="Tags">
+    <input
+      type="text"
+      rows="3"
+      name="recOriginStory"
+      ng-model="recipe.recOriginStory"
+      placeholder="What is the story of this recipe?">
+    <button
+      type="submit">
+      Save Recipe
+    </button>
+</form>

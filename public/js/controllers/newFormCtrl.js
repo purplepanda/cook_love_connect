@@ -12,10 +12,9 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", function($scope
   $scope.removeIngredient = removeIngredient;
 
 
-
   // Adds to $scope.ingredients
   function addIngredient() {
-    $scope.recipe.recIngredients.unshift($scope.ingredient);
+    $scope.recipe.recIngredients.unshift($scope.recIngredients);
     $scope.recIngredients = "";
   }
 

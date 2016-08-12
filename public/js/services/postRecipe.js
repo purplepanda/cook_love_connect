@@ -14,3 +14,8 @@ var app = angular.module("cookingConnect")
     addNewRecipe: addNewRecipe
   };
 }]);
+
+
+// redirectHome = redirectHome
+// postService = postRecipe
+// registerUser = addNewRecipe

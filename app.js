@@ -38,10 +38,8 @@ app.use(function(req, res, next) {
 
 
 
-
 //where to find static html files
 app.use(express.static(__dirname + '/public')); //tells express to find static html files in the public folder
-
 
 
 
@@ -53,7 +51,6 @@ app.use(bodyParser.urlencoded({
 
 
 
-
 // view engine setup // for use with jade templates, not sure about 2nd line
 //how do you even use jade here? does is automatically convert html to templates? What am I doing?
 app.set('view engine', 'pug');
@@ -61,10 +58,8 @@ app.set('views', __dirname + '/views');
 
 
 
-
-var routes = require('./routes/index');
+var routes = require('./routes/routeindex');
 app.use('/', routes);
-
 
 
 
@@ -84,7 +79,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 
 
