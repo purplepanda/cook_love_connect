@@ -3,12 +3,12 @@
 	<div class="cookbook">
 	<!-- eventually, swap this title directive with something personal to the user -->
 	<h3>{{title}}</h3>
-	<!-- <input type="text" ng-model="recipeSearch" placeholder="recipe search"> -->
+	<input type="text" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
 
 	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
 	<!-- we will link the entire div to whisk us off to the recipe view -->
 
-	<div class="recipeCard" ng-repeat="recipe in recipes.recipes" ng-click="showDetails = ! showDetails">
+	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | filter : recipeSearch" ng-click="showDetails = ! showDetails">
 
 				<p>{{recipe.name}}</p>
 				<img ng-src="{{recipe.image}}" alt="" />
@@ -34,7 +34,7 @@
 
 
 	<!-- eventually, would like to auto show/hide depending if user has added recipe -->
-	<div id="newRecipe" ng-repeat="recipe in storedRecipes">
+	<div id="newRecipe" ng-repeat="recipe in storedRecipes | filter : recipeSearch">
 		<h2>{{recipe.name}}</h2>
 		<p><img ng-src="{{recipe.image}}"></p>
 		<p><strong>Submitted by</strong>: {{recipe.author}}</p>
