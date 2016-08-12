@@ -1,37 +1,119 @@
-<h1>{{title}}</h1>
-<!-- <form method="POST" action="/recipes"> -->
+<div id="new-recipe-form">
 
-<form name="form" ng-submit="redirectHome(user)">
+<h1>{{title}}</h1>
+<!-- <form method="POST" action="/users"> -->
+<!-- ng-submit="redirectHome(user)", attached to button as an ng-click attribute-->
+<form name="form" novalidate="" >
     <input
       type="text"
       required
-      name="recTitle"
-      ng-model="user.recTitle"
+      ng-model="user.recipeTitle"
       placeholder="Name of Recipe">
     <input
       type="text"
-      name="recAuthor"
-      ng-model="user.recAuthor"
+      required
+      ng-model="user.author"
       placeholder="author or contributor">
     <input
       type="text"
       required
-      name="recCookbook"
-      ng-model="user.recCookbook"
+      ng-model="user.cookbook"
       placeholder="Cookbook (default 'My Cookbook')">
-    <input
-      type="text"
-      name="recTags"
-      ng-model="user.recTags"
-      placeholder="Tags">
-    <input
+    <textarea
       type="text"
       rows="3"
-      name="recOriginStory"
-      ng-model="user.recOriginStory"
+      ng-model="user.originStory"
       placeholder="What is the story of this recipe?">
+    </textarea>
+
+
+<!-- ////////// INPUT FOR TAGS ////////// -->
+    <input
+      type="text"
+      ng-model="tag"
+      placeholder="Tags">
+
+<!-- ////////// BUTTON FOR TAGS ////////// -->
+
+      <button class="add-stuff"
+              ng-click="addTags()"
+              type=""
+              name="button">
+              Add
+      </button>
+
+<!-- ////////// UNORDERED LIST FOR TAGS ////////// -->
+        <ul class="list-items">
+          <li ng-repeat="tag in user.tag">{{tag | lowercase}}
+            <div>
+              <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+              <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+              <a href="" class="delete" ng-click="removeTags($index)">delete</a>
+              <input type="text" class="button-small" ng-show="showEditBar" ng-model="tag">
+            </div>
+          </li>
+        </ul>
+
+<!-- ////////// INPUT FOR INGREDIENTS ////////// -->
+        <input
+          type="text"
+          ng-model="ingredient"
+          placeholder="Ingredients">
+
+<!-- ////////// BUTTON FOR INGREDIENTS  ////////// -->
+
+          <button class="add-stuff"
+            ng-click="addIngredients()"
+            type=""
+            name="button">
+            Add
+          </button>
+
+<!-- ////////// UNORDERED LIST FOR INGREDIENTS  ////////// -->
+          <ul class="list-items">
+            <li ng-repeat="ingredient in user.ingredient">{{ingredient | lowercase}}
+              <div>
+                <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+                <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+                <a href="" class="delete" ng-click="removeIngredients($index)">delete</a>
+                <input type="text" class="button-small" ng-show="showEditBar" ng-model="tag">
+              </div>
+            </li>
+          </ul>
+
+<!-- ////////// INPUT FOR INSTRUCTIONS ////////// -->
+          <input
+            type="text"
+            ng-model="instruction"
+            placeholder="Instructions">
+
+<!-- ////////// BUTTON FOR INSTRUCTIONS  ////////// -->
+
+          <button class="add-stuff"
+            ng-click="addInstructions()"
+            type=""
+            name="button">
+            Add
+          </button>
+
+<!-- ////////// UNORDERED LIST FOR INSTRUCTIONS  ////////// -->
+          <ul class="list-items">
+            <li ng-repeat="instruction in user.instruction">{{instruction | lowercase}}
+              <div>
+                <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+                <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+                <a href="" class="delete" ng-click="removeInstructions($index)">delete</a>
+                <input type="text" class="button-small" ng-show="showEditBar" ng-model="tag">
+              </div>
+            </li>
+          </ul>
+
+<!--  redirectHome(user) saves recipe to databse and returns user to their homepage  -->
     <button
+      ng-click="redirectHome(user)"
       type="submit">
       Save Recipe
     </button>
 </form>
+
+</div>

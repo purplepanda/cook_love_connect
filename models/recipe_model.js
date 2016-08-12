@@ -1,35 +1,34 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var RecipeSchema = new Schema({
-  recTitle: {
+var UserSchema = new Schema({
+  recipeTitle: {
     type: String,
     required: true,
   },
-  recAuthor: {
+  author: {
     type: String,
   },
-  recCookbook: [{
+  cookbook: [{
     type: String,
     required: true
   }],
-  recTags: [{
+  originStory: {
+    type: String
+  },
+  tag: [{
     type: String
   }],
-  recOriginStory: {
+  recipeImage: {
     type: String
-  }
+  },
+  ingredient: [{
+    type: String
+  }],
+  instruction: [{
+    type: String
+  }]
 });
 
 
-// recImage: {
-//   type: String
-// },
-// recIngredients: [{
-//   type: String
-// }],
-// recInstructions: [{
-//   type: String
-// }]
-
-var Recipe = mongoose.model('Recipe', RecipeSchema);
-module.exports = Recipe;
+var User = mongoose.model('User', UserSchema);
+module.exports = User;

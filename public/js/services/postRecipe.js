@@ -4,7 +4,7 @@ var app = angular.module("cookingConnect")
 
   var addNewRecipe = function(user) {
     console.log("Working?");
-    return $http.post("/recipes", user)
+    return $http.post("/users", user)
       .then(function(data) {
         console.log(data);
         $state.go("userhome");

@@ -1,18 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var Recipe = require('../models/recipe_model');
+var User = require('../models/recipe_model');
 
 
 //////////  begin recipe routing  //////////
 //////////  recipe POST  //////////
 
-router.post('/recipes', function(req, res, next) {
-  var user = new Recipe({
-    recTitle: req.body.recTitle,
-    recAuthor: req.body.recAuthor,
-    recCookbook: req.body.recCookbook,
-    recTags: req.body.recTags,
-    recOriginStory: req.body.recOriginStory
+router.post('/users', function(req, res, next) {
+  var user = new User({
+    recipeTitle: req.body.recipeTitle,
+    author: req.body.author,
+    cookbook: req.body.cookbook,
+    tags: req.body.tag,
+    originStory: req.body.originStory
   });
   console.log(user);
 
@@ -36,9 +36,10 @@ router.post('/recipes', function(req, res, next) {
 })
 
 //////////  recipe GET  //////////
+//////////  this needs to be tested  //////////
 
-router.get('/recipes', function(req, res) {
-  Recipe.find({}, function(req, res) {
+router.get('/users', function(req, res) {
+  User.find({}, function(req, res) {
     res.json({
       success: true,
       user: user
@@ -50,8 +51,8 @@ router.get('/recipes', function(req, res) {
 //////////  recipe DELETE  //////////
 //////////  this needs to be tested  //////////
 
-router.delete('/recipes/:id', function(req, res) {
-  Recipe.findById(req.params.id, function(error, recipe) {
+router.delete('/users/:id', function(req, res) {
+  User.findById(req.params.id, function(error, recipe) {
     recipe.remove();
     res.json({
       success: true,
