@@ -21,13 +21,13 @@
 							<p><strong>Origin Story</strong></p>
 							<p>{{recipe.originStory}}</p>
 							<p>Submitted by: {{recipe.author}}</p>
-							<p style="color: white">INGREDIENTS</p>
+							<p>INGREDIENTS</p>
 							<ul>
-				        <li ng-repeat="ingredient in recipe.ingredients" style="color: white">{{ingredient}}</li>
+				        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
 				      </ul>
-							<p style="color: white">STEPS</p>
+							<p>STEPS</p>
 				      <ol>
-				        <li ng-repeat="step in recipe.steps" style="color: white">{{step}}</li>
+				        <li ng-repeat="step in recipe.steps">{{step}}</li>
 				      </ol>
 						</div>
 	</div>
