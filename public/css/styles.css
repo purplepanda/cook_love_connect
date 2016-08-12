@@ -157,6 +157,10 @@ label {
   background-color: #ED685E;
   border: 2px solid #404040; }
 
+.recipeCard img {
+  width: 150px;
+  height: 150px; }
+
 #recipeSearch {
   text-align: center;
   width: 50%;

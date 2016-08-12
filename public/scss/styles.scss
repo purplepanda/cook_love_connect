@@ -188,6 +188,11 @@ label {
   border: 2px solid $grey;
 }
 
+.recipeCard img {
+  width: 150px;
+  height: 150px;
+}
+
 #recipeSearch {
   text-align: center;
   width: 50%;

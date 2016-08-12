@@ -3,7 +3,7 @@
 	<div class="cookbook">
 	<!-- eventually, swap this title directive with something personal to the user -->
 	<h3>{{title}}</h3>
-	<input type="text" ng-model="recipeSearch" placeholder="recipe search">
+	<!-- <input type="text" ng-model="recipeSearch" placeholder="recipe search"> -->
 
 	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
 	<!-- we will link the entire div to whisk us off to the recipe view -->
@@ -18,8 +18,9 @@
 							<h1>{{recipe.name}}</h1>
 							<img ng-src="{{recipe.image}}" alt="" />
 							<p>{{recipe.tags}}</p>
-							<p>ORIGIN STORY: {{recipe.originStory}}</p>
-							<p>AUTHOR: {{recipe.author}}</p>
+							<p><strong style="color: white">Origin Story</strong></p>
+							<p>{{recipe.originStory}}</p>
+							<p>Submitted by: {{recipe.author}}</p>
 							<p style="color: white">INGREDIENTS</p>
 							<ul>
 				        <li ng-repeat="ingredient in recipe.ingredients" style="color: white">{{ingredient}}</li>
