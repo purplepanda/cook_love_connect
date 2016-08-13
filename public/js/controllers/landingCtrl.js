@@ -32,6 +32,7 @@ app.controller("landingCtrl", function($scope, $state) {
   const btnLogin = document.getElementById('btnLogin');
   const btnSignUp = document.getElementById('btnSignUp');
   const btnLogout = document.getElementById('btnLogout');
+  const btnPasswordChange = document.getElementById('btnPasswordChange');
 
   // Add login event
   btnLogin.addEventListener('click', e => {
@@ -74,6 +75,38 @@ app.controller("landingCtrl", function($scope, $state) {
 
   });
 
+  // send email verification
+  btnPasswordChange.addEventListener('click', e => {
+    console.log('benson rules');
+    function sendPasswordReset() {
+      var email = txtEmail.value;
+      // [START sendpasswordemail]
+      firebase.auth().sendPasswordResetEmail(email).then(function() {
+        // Password Reset Email Sent!
+        // [START_EXCLUDE]
+        alert('Password Reset Email Sent!');
+        // [END_EXCLUDE]
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/invalid-email') {
+          alert(errorMessage);
+        } else if (errorCode == 'auth/user-not-found') {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
+      // [END sendpasswordemail];
+    }
+    sendPasswordReset();
+  });
+
+
+
+  // log out when button is clicked
   btnLogout.addEventListener('click', e => {
     firebase.auth().signOut();
   });
