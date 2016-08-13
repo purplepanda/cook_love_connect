@@ -1,61 +1,67 @@
 <div id="bgUserHome">
 	<header ng-include="'partials/header_main.html'"></header>
 	<div class="cookbook">
-	<h3 style="color:white;">{{title}}</h3>
-	<input type="text" ng-model="recipeSearch" placeholder="recipe search">
+	<!-- eventually, swap this title directive with something personal to the user -->
+	<h3>{{title}}</h3>
+	<input type="text" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
 
-	<!-- benson trying stuff out -->
-	<div class="recipeCard" ng-repeat="recipe in recipes.recipes">
-	    <img ng-src="{{recipe.image}}" alt="" />
-	      <h3>NAME: {{recipe.name}}</h3>
-	      <p>TAGS: {{recipe.tags}}</p>
-				<p>ORIGIN STORY: {{recipe.originStory}}</p>
-				<p>AUTHOR: {{recipe.author}}</p>
-				<p>INGREDIENTS</p>
-				<ul>
-	        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
-	      </ul>
-				<p>STEPS</p>
-	      <ol>
-	        <li ng-repeat="step in recipe.steps">{{step}}</li>
-	      </ol>
+	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
+	<!-- we will link the entire div to whisk us off to the recipe view -->
+
+	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | filter : recipeSearch" ng-click="showDetails = ! showDetails">
+
+				<p>{{recipe.name}}</p>
+				<img ng-src="{{recipe.image}}" alt="" />
+	      <p>{{recipe.tags}}</p>
+				<!-- maybe use css to display this recipeDetails div in a special way? -->
+						<div class="recipeDetails"  ng-show="showDetails">
+							<h1>{{recipe.name}}</h1>
+							<img ng-src="{{recipe.image}}" alt="">
+							<p>{{recipe.tags}}</p>
+							<p><strong>Origin Story</strong></p>
+							<p>{{recipe.originStory}}</p>
+							<p>Submitted by: {{recipe.author}}</p>
+							<p>INGREDIENTS</p>
+							<ul>
+				        <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+				      </ul>
+							<p>STEPS</p>
+				      <ol>
+				        <li ng-repeat="step in recipe.steps">{{step}}</li>
+				      </ol>
+						</div>
 	</div>
-  <!-- not sure how to proceed at this point. need to restructure jSON obj or query? -->
-  <!-- <ul>Cookbook json object using ng-repeat:
-  <li ng-repeat="book in cookbooks">{{book.users[0].recipes}}</li>
-  </ul> -->
+
+
+	<!-- eventually, would like to auto show/hide depending if user has added recipe -->
+	<div id="newRecipe" ng-repeat="recipe in storedRecipes | filter : recipeSearch">
+		<h2>{{recipe.name}}</h2>
+		<p><img ng-src="{{recipe.image}}"></p>
+		<p><strong>Submitted by</strong>: {{recipe.author}}</p>
+		<p><strong>Tags</strong>: {{recipe.tags}}</p>
+		<p><strong>Origin Story</strong>: {{recipe.originStory}}</p>
+		<!-- <p>{{recipe.ingredients}}</p> -->
+		<ul class="prettyList"><strong>Ingredients</strong>:
+			<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+		</ul>
+		<ol><strong>Directions</strong>:
+			<li ng-repeat="step in recipe.instructions">{{step}}</li>
+		</ol>
+		<!-- <p>{{recipe.instructions}}</p> -->
+
+
+	</div>
+
+	<!-- TESTING NG REPEAT FOR NEW FORM SUBMMISSION-->
+	<!-- <div ng-repeat="store in storeRecipeObjects track by $index"></div> -->
+
+
+
+
+
+
+
+
+
+
 </div>
-
-<!-- HARD CODED, may delete -->
-<!-- <recipe-card>{{recipes[0].name}}<br><img ng-src="{{recipes[0].image}}"/><br>{{recipes[0].tags}}
- <div ng-include="'partials/modal.html'"></div>
-</recipe-card>
-
-<recipe-card>{{recipes[1].name}}<br><img ng-src="{{recipes[1].image}}"/><br>{{recipes[1].tags}}
-<div ng-include="'partials/modal.html'"></div>
-</recipe-card>
-
-<recipe-card>Some Recipe 3
-<div ng-include="'partials/modal.html'"></div>
-</recipe-card>
-
-<recipe-card>Some Recipe 4
-<div ng-include="'partials/modal.html'"></div>
-</recipe-card>
-
-<recipe-card>Some Recipe 5
-<div ng-include="'partials/modal.html'"></div>
-</recipe-card>
-
-<recipe-card>Some Recipe 6
-<div ng-include="'partials/modal.html'"></div>
-</recipe-card>
-<recipe-card>Some Recipe 7
-<div ng-include="'partials/modal.html'"></div>
-</recipe-card>
-
-<recipe-card>Some Recipe 8
-<div ng-include="'partials/modal.html'"></div>
-</recipe-card>
-
-</div> -->
