@@ -42,6 +42,7 @@ app.controller("landingCtrl", function($scope, $state) {
     // Sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
+    promise.catch(e => window.alert('Sorry, no user with that email address. Please sign up, dum-dum.'));
   });
 
   btnSignUp.addEventListener('click', e => {
@@ -52,8 +53,9 @@ app.controller("landingCtrl", function($scope, $state) {
     const auth = firebase.auth();
     // Sign in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise
-      .catch(e => console.log(e.message));
+    promise.catch(e => console.log(e.message));
+    promise.catch(e => window.alert('Sorry, this email address is already registered. Please click Log in, ya fool.'));
+
   });
 
   btnLogout.addEventListener('click', e => {
