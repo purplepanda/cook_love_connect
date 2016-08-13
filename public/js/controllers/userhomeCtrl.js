@@ -1,7 +1,7 @@
 var app = angular.module("cookingConnect");
 
 
-app.controller("userhomeCtrl", ['$scope', '$http', function($scope, $http) {
+app.controller("userhomeCtrl", ['$scope', '$http', '$state', function($scope, $http, $state) {
   $scope.title = "My Kitchen";
 
   // [benson] define function that is called on submit button ng-click event
@@ -37,6 +37,16 @@ app.controller("userhomeCtrl", ['$scope', '$http', function($scope, $http) {
   $scope.submitRecipe = function() {
     alert("This should POST the new recipe info to the database!");
   };
+
+  // function that logs user out in header
+  $scope.logOut = function(){
+        console.log('logOut function is firing on click');
+        firebase.auth().signOut();
+        $state.go('landing');
+  };
+
+
+
 }]);
 
 

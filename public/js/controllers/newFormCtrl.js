@@ -3,7 +3,7 @@ var app = angular.module("cookingConnect");
 app.controller("newFormCtrl", ["$scope", "$state", "postRecipe","storeRecipeFactory","$location", function($scope, $state, postRecipe, storeRecipeFactory, $location) {
   $scope.title = "Add A New Recipe";
   $scope.recipes = {};
-  
+
 
   // List of Ingredients
   $scope.recipes.ingredients = [];
@@ -61,5 +61,12 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe","storeRecipeFact
   $scope.redirectHome = postRecipe.registerUser;
 
   ///postRecipe = name of service
+
+  // function that logs user out in header
+  $scope.logOut = function(){
+        console.log('logOut function is firing on click');
+        firebase.auth().signOut();
+        $state.go('landing');
+  };
 
 }]);

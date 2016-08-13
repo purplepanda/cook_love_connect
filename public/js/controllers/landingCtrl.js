@@ -57,7 +57,15 @@ app.controller("landingCtrl", function($scope, $state) {
     // Get email and pass
     // TODO: check for real email address
     const email = txtEmail.value;
+    if (email.length < 4) {
+      alert('Please enter a valid email address.');
+      return;
+    }
     const pass = txtPassword.value;
+    if (pass.length < 7) {
+      alert('Please enter a password of at least 6 characters.');
+      return;
+    }
     const auth = firebase.auth();
     // Sign up and log in
     const promise = auth.createUserWithEmailAndPassword(email, pass);

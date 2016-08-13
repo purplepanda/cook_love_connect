@@ -1,6 +1,6 @@
 var app = angular.module("cookingConnect");
 
-app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory) {
+app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state) {
   $scope.title = "The JABE Cookbook";
 
   $scope.storedRecipes = storeRecipeFactory.returnObject();
@@ -54,10 +54,14 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory) {
       $(this).closest('.recipeDetails').toggle();
       // $(this > 'div').toggle();
     });
-
-
   });
 
+  // function that logs user out in header
+  $scope.logOut = function(){
+        console.log('logOut function is firing on click');
+        firebase.auth().signOut();
+        $state.go('landing');
+  };
 
 
 });
