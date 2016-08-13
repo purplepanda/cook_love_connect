@@ -37,12 +37,20 @@ app.controller("landingCtrl", function($scope, $state) {
   btnLogin.addEventListener('click', e => {
     // Get email and pass
     const email = txtEmail.value;
+    if (email.length < 4) {
+      alert('Please enter a valid email address.');
+      return;
+    }
     const pass = txtPassword.value;
+    if (pass.length < 7) {
+      alert('Please enter a password of at least 6 characters.');
+      return;
+    }
     const auth = firebase.auth();
     // Sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
-    promise.catch(e => window.alert('Sorry, no user with that email address. Please sign up, dum-dum.'));
+    promise.catch(e => window.alert('Wrong email address or password, dum-dum.'));
   });
 
   btnSignUp.addEventListener('click', e => {
@@ -51,10 +59,10 @@ app.controller("landingCtrl", function($scope, $state) {
     const email = txtEmail.value;
     const pass = txtPassword.value;
     const auth = firebase.auth();
-    // Sign in
+    // Sign up and log in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
-    promise.catch(e => window.alert('Sorry, this email address is already registered. Please click Log in, ya fool.'));
+    promise.catch(e => window.alert('Something is wrong, ya fool. Check the console', e.message));
 
   });
 
@@ -67,6 +75,7 @@ app.controller("landingCtrl", function($scope, $state) {
     if(firebaseUser){
       console.log(firebaseUser);
       btnLogout.classList.remove('hide');
+      $state.go("userhome");
     } else {
       console.log('not logged in');
       btnLogout.classList.add('hide');
