@@ -37,9 +37,25 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   // });
 
   $http.get('https://cook-love-connect.firebaseio.com/.json').success(function(data) {
+    //  var user = firebase.auth().currentUser;
+    //  $scope.recipes.uid = user.uid;
+
     $scope.recipes = data;
     console.log(data);
   });
+  // var refObject = firebase.database().ref('cook-love-connect/recipes');
+  // refObject.once('');
+
+  // var recipeCall = firebase.database().ref('recipes');
+  // recipeCall.orderByChild("uid")
+  //   .equalTo("isRMRx0ImBhWLMyC3qUusykQLe32")
+  //   .on("value", function(snapshot) {
+  //     console.log(snapshot.val()[0]);
+  //     $scope.recipes = snapshot.val();
+  //     console.log(JSON.stringify(snapshot.val()));
+  //   });
+  // $scope.recipes =
+
 
   // for cookbooks -- if we want to isolate one user's collection, I suppose
   $http.get('../mock/cookbookObjects.json').success(function(data) {

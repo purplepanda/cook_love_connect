@@ -3,7 +3,6 @@
 <h3 style="color:white;">{{title}}</h3>
 
 <form id="newForm">
-
 	<label> Recipe Name</label>
 			<br>
 			<input class="myModal" type="text" name="name" placeholder="Mom's lasagna" ng-model="recipes.name" required/>
@@ -12,6 +11,12 @@
 			<br>
 			<input class="myModal" type= "text" name="author" ng-model="recipes.author" placeholder="Josh Teo" required="Author" />
 			<br>
+			<input
+				class="myModal"
+				type="text"
+				required
+				ng-model="recipes.cookbook"
+				placeholder="Cookbook (default 'My Cookbook')">
 			<label>Tags</label>
 			<br>
 			<input class="myModal" type="text" name="Entree" ng-model="recipes.tags" placeholder="tags" required="tags"/>

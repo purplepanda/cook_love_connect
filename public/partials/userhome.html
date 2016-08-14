@@ -1,6 +1,9 @@
 <div>
 	<header ng-include="'partials/header.html'"></header>
 	<h3>{{title}}</h3>
+	<h2>What's cooking
+		<script>var user = firebase.auth().currentUser; if(user){console.log(user.email)}</script>
+	</h2>
 
 
 <!-- User Home Kitchen -->
