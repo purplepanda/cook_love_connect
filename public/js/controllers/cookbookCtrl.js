@@ -36,19 +36,19 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   //   console.log('something went wrong');
   // });
 
-  $http.get('../mock/recipeObjects.json').success(function(data) {
-   $scope.recipes = data;
-   console.log(data);
+  $http.get('https://cook-love-connect.firebaseio.com/.json').success(function(data) {
+    $scope.recipes = data;
+    console.log(data);
   });
 
   // for cookbooks -- if we want to isolate one user's collection, I suppose
   $http.get('../mock/cookbookObjects.json').success(function(data) {
-   $scope.cookbooks = data;
-  //  console.log(data);
+    $scope.cookbooks = data;
+    //  console.log(data);
   });
 
-  $(document).ready(function(){
-    $(document).on('click', ".recipeCard", function(){
+  $(document).ready(function() {
+    $(document).on('click', ".recipeCard", function() {
       // alert('clicked');
       event.preventDefault();
       $(this).closest('.recipeDetails').toggle();
@@ -57,10 +57,10 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   });
 
   // function that logs user out in header
-  $scope.logOut = function(){
-        console.log('logOut function is firing on click');
-        firebase.auth().signOut();
-        $state.go('landing');
+  $scope.logOut = function() {
+    console.log('logOut function is firing on click');
+    firebase.auth().signOut();
+    $state.go('landing');
   };
 
 
