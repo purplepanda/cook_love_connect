@@ -1,4 +1,5 @@
 <div id="tempRecFormBack">
+<<<<<<< HEAD
 	<header ng-include="'partials/header_main.html'"></header>
 <h3>{{title}}</h3>
 
@@ -85,6 +86,53 @@
                 <a href="" class="delete" ng-click="removeIngredient($index)">delete</a>
                 <input type="text" ng-model="recipe.recIngredients" ng-show="showEditBar" class="myModal" />
               </div>
+=======
+	<header ng-include="'partials/header.html'"></header>
+<h3 style="color:white;">{{title}}</h3>
+
+<form id="newForm">
+
+	<label> Recipe Name</label>
+			<br>
+			<input class="myModal" type="text" name="name" placeholder="Mom's lasagna" ng-model="recipes.name" required/>
+			<br>
+			<label name="author">Author</label>
+			<br>
+			<input class="myModal" type= "text" name="author" ng-model="recipes.author" placeholder="Josh Teo" required="Author" />
+			<br>
+			<label>Tags</label>
+			<br>
+			<input class="myModal" type="text" name="Entree" ng-model="recipes.tags" placeholder="tags" required="tags"/>
+			<br>
+			<label>Image</label>
+			<br>
+      <input class="myModal" type="text" name="image" ng-model="recipes.image" placeholder="http://www.flickr.com/myImage.jpg">
+			<!-- <input class="myModal" type="file" onchange="previewFile(this)" name="user-photo" ng-model="recipes.image" required="image" style="color:white;"/>
+
+       <img id="blah" src="" alt="your image" /> -->
+
+      		<label>Recipe Orgin:</label>
+
+      		<br>
+      		<textarea class="myModal" rows="4" cols="40" id="history of recipe" placeholder="What's the story of this recipe..." ng-model="recipes.originStory"></textarea>
+      		<br>
+
+
+			<!-- INGREDIENT FORM -->
+
+			<label>Ingredients</label>
+           	<input class="myModal" type="text" ng-model="ingredient" name="name" value="" placeholder="add ingredient" />
+        	<button class="myModal" ng-click="addIngredient()" name="button" style="color:white;">Add to List</button>
+
+        	<ul>
+            <li style="color:white;" ng-repeat="ingredient in recipes.ingredients| filter:filterList">{{ingredient | lowercase}}
+                <div>
+                    <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+                    <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+                    <a href="" class="delete" ng-click="removeIngredient($index)">delete</a>
+                    <input type="text" ng-model="ingredient" ng-show="showEditBar" class="myModal" />
+                </div>
+>>>>>>> 86f3bd776d9bd4ceb59a9d4a32d256144a31264c
             </li>
         	</ul> -->
         	<!-- END OF INGREDIENTS -->
@@ -106,6 +154,7 @@
 					</button>
 
         	<ol>
+<<<<<<< HEAD
             <li
 							ng-repeat="instruction in recipe.recInstructions| filter:filterList">{{instruction | lowercase}}
               <div>
@@ -118,6 +167,15 @@
 									ng-show="showEditBar"
 									class="myModal"/>
               </div>
+=======
+            <li style="color:white;" ng-repeat="instruction in recipes.instructions| filter:filterList">{{instruction | lowercase}}
+                <div>
+									<a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+									<a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+                    <a href="" class="delete" ng-click="removeInstruction($index)">delete</a>
+                    <input type="text" ng-model="instruction" ng-show="showEditBar" class="myModal" />
+                </div>
+>>>>>>> 86f3bd776d9bd4ceb59a9d4a32d256144a31264c
             </li>
         	</ol> -->
 
@@ -127,4 +185,8 @@
       <!-- <button class="btn btn-warning" type="button" ng-click="cancelRecipe()">Cancel</button> -->
 
 </form>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 86f3bd776d9bd4ceb59a9d4a32d256144a31264c
 </div>

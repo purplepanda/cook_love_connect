@@ -4,21 +4,42 @@
       "name": "Vodka Tonic",
       "_id": 123456789,
       "tags": "alcohol",
-      "image": "http://www.placekitten.com/150/150",
+      "image": "http://www.branca.it/dati/menu/cocktail_sernova_tonic_pag_foto.jpg",
       "author": "Benson",
       "originStory": "I started making these in college. Foolproof.",
-      "ingredients": ["8 fluid ounces of tonic water", "1 cup ice", "1 fluid ounce of vodka", "1 lemon wedge"],
+      "ingredients": ["8 fluid ounces of tonic water", "1 cup ice", "1 fluid ounce of vodka", "1 lemon or lime wedge"],
       "steps": ["get a glass", "pour ice into glass", "pour vodka into glass", "stir it up"]
     },
     {
       "name": "Fruit Salad",
       "_id": 987654321,
       "tags": "side-dish",
-      "image": "http://www.placekitten.com/150/150",
+      "image": "http://images.media-allrecipes.com/userphotos/250x250/2289556.jpg",
       "author": "Amanda",
       "originStory": "This was one of the first recipes my grandmother taught me to make when I was a kid.",
       "ingredients": ["1 whole apple", "1 sliced banana", "1 cup grapes", "1 cup blueberries"],
       "steps": ["wash the fruit", "place the fruit into a bowl", "mix and chill", "serve and enjoy"]
-    }
+     },
+   {
+       "name": "Simple Guacamole",
+       "_id": 465953021,
+       "tags": "appetizer",
+       "image": "http://www.10tv.com/sites/10tv.com/files/archive/2015/05/03/Guacamole.PNG",
+
+       "author": "Erika",
+       "originStory": "This was the 2nd dish I learned to make growing up. It has been a crowd pleaser ever since.",
+       "ingredients": ["3 ripe avocados", "1/2 lemon", "1 tsp hot sauce", "salt"],
+       "steps": ["halve the avocados", "remove pits and scoop out avocado", "squeeze lemon (lime if you prefer) in bowl.", "add hot sauce", "salt and peper to taste","smoosh with fork","great with veggies and tortillia chips"]
+     },
+     {
+       "name": "Grean Beans All for Me!",
+       "_id": 45424326,
+       "tags": "side-dish",
+       "image": "http://images.media-allrecipes.com/userphotos/720x405/2432913.jpg",
+       "author": "Josh",
+       "originStory": "I make this dish everynight after boot-camp to keep me lean and mean...boom",
+       "ingredients": ["1 lb green beans", "1/4 cup of slivered almonds", "2 tbls of butter", "1/2 lemon", "salt and peper to taste"],
+       "steps": ["boil water in saucepan", "poor green beans in water for 2 minutes", "blanch green beans", "in saucepan melt butter and toast almonds","once almonds are golden brown add green beans","toss and squeeze fresh lemon", "add salt and pepper to taste"]
+     }
   ]
 }

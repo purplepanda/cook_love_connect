@@ -10,6 +10,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       templateUrl: "partials/landing.html",
       controller: "landingCtrl"
     })
+<<<<<<< HEAD
     .state("postRecipeForm", {
       url: "/postRecipeForm",
       templateUrl: "partials/postRecipeForm.html",
@@ -25,6 +26,18 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       templateUrl: "partials/logout.html",
       controller: "logoutCtrl"
     })
+=======
+    // .state("login", {
+    //   url: "/login",
+    //   templateUrl: "partials/login.html",
+    //   controller: "loginCtrl"
+    // })
+    // .state("logout", {
+    //   url: "/logout",
+    //   templateUrl: "partials/logout.html",
+    //   controller: "logoutCtrl"
+    // })
+>>>>>>> 86f3bd776d9bd4ceb59a9d4a32d256144a31264c
     .state("userhome", {
       url: "/userhome",
       templateUrl: "partials/userhome.html",

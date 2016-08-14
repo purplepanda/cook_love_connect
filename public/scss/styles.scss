@@ -188,6 +188,11 @@ label {
   border: 2px solid $grey;
 }
 
+.recipeCard img {
+  width: 150px;
+  height: 150px;
+}
+
 #recipeSearch {
   text-align: center;
   width: 50%;
@@ -200,5 +205,44 @@ label {
   margin: 1em auto;
 }
 
+<<<<<<< HEAD
 
 ////// styling for new recipe form /////
+=======
+.recipeDetails {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+  padding: 3em;
+}
+
+.recipeDetails img {
+  border: 4px solid white;
+}
+
+.recipeDetails,
+.recipeDetails > .ng-binding {
+  color: white;
+}
+
+#newRecipe {
+  max-width: 50%;
+  margin: 1em auto;
+  border: 2px solid black;
+  padding: 1em 3em;
+  img {
+    height: 300px;
+    width: 400px;
+  }
+}
+
+.prettyList {
+  list-style: none;
+}
+>>>>>>> 86f3bd776d9bd4ceb59a9d4a32d256144a31264c
