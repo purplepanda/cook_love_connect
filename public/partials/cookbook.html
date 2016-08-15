@@ -5,18 +5,6 @@
 	<h3>{{title}}</h3>
 	<input type="text" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
 	<!-- next step, use $scope.data to ng-repeat -->
-	<script type="text/javascript">
-
-	firebase.database().ref('/recipes')				// pointing to a path in our firebaseDB
-	.orderByChild('uid')											// look for everything with a key of uid
-	.equalTo('isRMRx0ImBhWLMyC3qUusykQLe32')	// just get the recipes with this specified UID
-	.once('value', show);											// listen once & stop listening after response, then call the show function
-
-   function show(snap) {										// log the results of our above DB call to the console
-		 console.log('our data', snap.val());
-   }
-
-	</script>
 	<pre></pre>
 	<h1>{{data}}</h1>
 	<h3 ng-repeat="cookbook in data.cookbooks">{{cookbook.cookbookName}}</h3>

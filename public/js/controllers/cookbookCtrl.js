@@ -36,13 +36,29 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   //   console.log('something went wrong');
   // });
 
-  $http.get('https://cook-love-connect.firebaseio.com/.json').success(function(data) {
-    //  var user = firebase.auth().currentUser;
-    //  $scope.recipes.uid = user.uid;
 
-    $scope.recipes = data;
-    console.log(data);
-  });
+    var user = firebase.auth().currentUser; //note: var user identifies logged in user
+    console.log("user is, ", user);
+    var userID = user.uid;
+    console.log("userID is, ", userID);
+
+  firebase.database().ref('/recipes')				// pointing to a path in our firebaseDB
+  .orderByChild('uid')											// look for everything with a key of uid
+  .equalTo(userID)	// just get the recipes with this specified UID
+  .once('value', show);											// listen once & stop listening after response, then call the show function
+
+   function show(snap) {										// log the results of our above DB call to the console
+     console.log('our data', snap.val());
+   }
+
+  // JSON REST API fallback in case we can't get anything to work
+  // $http.get('https://cook-love-connect.firebaseio.com/.json').success(function(data) {
+  //   //  var user = firebase.auth().currentUser;
+  //   //  $scope.recipes.uid = user.uid;
+  //
+  //   $scope.recipes = data;
+  //   console.log(data);
+  // });
   // var refObject = firebase.database().ref('cook-love-connect/recipes');
   // refObject.once('');
 
