@@ -42,14 +42,25 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
     var userID = user.uid;
     console.log("userID is, ", userID);
 
-  firebase.database().ref('/recipes')				// pointing to a path in our firebaseDB
-  .orderByChild('uid')											// look for everything with a key of uid
-  .equalTo(userID)	// just get the recipes with this specified UID
-  .once('value', show);											// listen once & stop listening after response, then call the show function
+    firebase.database().ref('/recipes')				// pointing to a path in our firebaseDB
+    .orderByChild('uid')											// look for everything with a key of uid
+    .equalTo(userID)	// just get the recipes with this specified UID
+    .once('value', show);											// listen once & stop listening after response, then call the show function
 
-   function show(snap) {										// log the results of our above DB call to the console
-     console.log('our data', snap.val());
-   }
+    $scope.data;
+     function show(snap) {										// log the results of our above DB call to the console
+       console.log('our data', snap.val());
+       $scope.data = snap.val();
+       console.log('scope data garbageKey', $scope.data['-KP8uCo0TXh_f-1OQA4k'].name);
+
+      //  myData = snap.val()
+      //  $scope.data = $firebaseObject(myData);
+      //  console.log("myData is", myData);
+      //  return myData;
+     }
+
+
+    // $scope.data = $firebaseObject(snap);
 
   // JSON REST API fallback in case we can't get anything to work
   // $http.get('https://cook-love-connect.firebaseio.com/.json').success(function(data) {
