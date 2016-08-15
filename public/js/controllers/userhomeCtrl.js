@@ -4,6 +4,38 @@ var app = angular.module("cookingConnect");
 app.controller("userhomeCtrl", ['$scope', '$http', '$state', function($scope, $http, $state) {
   $scope.title = "My Kitchen";
 
+
+
+
+
+  // $http({
+  //   method: "GET",
+  //   url: "https://cook-love-connect.firebaseio.com/cookbooks/.json"
+  // }).success(function(data, status, headers) {
+  //   console.log(data);
+  // }).error(function(data, status, headers) {
+  //   console.log("error");
+  // });
+
+  // var user = firebase.auth().currentUser;
+  // var userID = user.uid;
+  //
+  // firebase.database().ref('/cookbooks')
+  //   .orderByChild('uid')
+  //   .equalTo(userID)
+  //   .once('value', show);
+  //
+  //
+  // function show(snap) {
+  //   console.log(snap.val());
+  // }
+
+
+
+
+
+
+
   // [benson] define function that is called on submit button ng-click event
   var tempSearch = "";
   $scope.submitSearch = function(searchIt) {
@@ -39,10 +71,10 @@ app.controller("userhomeCtrl", ['$scope', '$http', '$state', function($scope, $h
   };
 
   // function that logs user out in header
-  $scope.logOut = function(){
-        console.log('logOut function is firing on click');
-        firebase.auth().signOut();
-        $state.go('landing');
+  $scope.logOut = function() {
+    console.log('logOut function is firing on click');
+    firebase.auth().signOut();
+    $state.go('landing');
   };
 
 
