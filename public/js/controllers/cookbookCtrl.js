@@ -43,6 +43,7 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
     var user = firebase.auth().currentUser; //note: var user identifies logged in user
     console.log("user is, ", user);
     var userID = user.uid;
+    $scope.uid = user.uid;
     console.log("userID is, ", userID);
 
     // firebase.database().ref('/recipes')				// pointing to a path in our firebaseDB

@@ -3,13 +3,16 @@
 	<div class="cookbook">
 	<!-- eventually, swap this title directive with something personal to the user -->
 	<h3>{{title}}</h3>
+	<h1>{{uid}}</h1>
 	<input type="text" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
 	<!-- next step, use $scope.data to ng-repeat -->
 	<!-- <h3 ng-repeat="cookbook in data.cookbooks">{{cookbook.cookbookName}}</h3> -->
 	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
 	<!-- we will link the entire div to whisk us off to the recipe view -->
 
-	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | toArray | filter : recipeSearch" ng-click="showDetails = ! showDetails">
+
+
+	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | toArray | filter: uid | filter : recipeSearch" ng-click="showDetails = ! showDetails">
 		<!-- | filter : recipeSearch -->
 				<p>{{recipe.name}}</p>
 				<img ng-src="{{recipe.image}}" alt="" />
