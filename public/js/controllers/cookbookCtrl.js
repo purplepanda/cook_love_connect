@@ -1,9 +1,12 @@
 var app = angular.module("cookingConnect");
 
+
 app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state, $firebaseObject, getRecipeDataFactory) {
   $scope.title = "The JABE Cookbook";
 
   $scope.storedRecipes = storeRecipeFactory.returnObject();
+
+
 
   // $scope.storeRecipeObject = storeRecipeFactory.returnObject();
   // TESTING OUT CODE BLOCK FOR REPEATING FORM SUBMMISION
