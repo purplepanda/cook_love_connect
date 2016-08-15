@@ -4,7 +4,33 @@
 	<!-- eventually, swap this title directive with something personal to the user -->
 	<h3>{{title}}</h3>
 	<input type="text" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
-	<h3>{{data.cookbooks}}</h3>
+	<!-- next step, use $scope.data to ng-repeat -->
+	<script type="text/javascript">
+	// example query to grab ALL users
+
+	// .startAt('Amanda')
+	// .endAt('Amanda')
+	// new Firebase('https://cook-love-connect.firebaseio.com/users')
+	var benson = firebase.database().ref('/recipes')
+	benson.orderByChild('uid').equalTo('isRMRx0ImBhWLMyC3qUusykQLe32').once('value', show);
+	// .startAt('isRMRx0ImBhWLMyC3qUusykQLe32')
+	// .once('child_added', function(snap){
+	// 	console.log('hi, adam!!!', snap.val());
+	// });
+
+	// var ref = new Firebase("https://teststack.firebaseio.com/contacts");
+	//
+  //  ref.orderByChild('name').equalTo('Priya').once('value', show);
+
+
+   function show(snap) {
+		 console.log('our data', snap.val());
+   }
+
+	</script>
+	<pre></pre>
+	<h1>{{data}}</h1>
+	<h3 ng-repeat="cookbook in data.cookbooks">{{cookbook.cookbookName}}</h3>
 	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
 	<!-- we will link the entire div to whisk us off to the recipe view -->
 
