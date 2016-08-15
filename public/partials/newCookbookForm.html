@@ -1,0 +1,72 @@
+<div></div>
+<header ng-include="'partials/header.html'"></header>
+<h3>{{title}}</h3>
+
+<form id="newForm" name="form">
+  <label>New Cookbook Name</label>
+  <input
+    class="myModal"
+    type="text"
+    required
+    ng-model="cookbook.cookbookName"
+    placeholder="Family Favorites">
+
+
+  <label>Cookbook Description</label>
+  <input
+    class="myModal"
+    type="text"
+    ng-model="cookbook.description"
+    placeholder="Cookbook description">
+
+
+
+<!-- ////////// INPUT FOR MEMBERS TO SHARE COOKBOOK WITH ////////// -->
+  <label>Who do you want to share this cookbook with?</label>
+    <input
+      class="myModal"
+      type="text"
+      ng-model="members"
+      placeholder="Leslie">
+
+<!-- ////////// BUTTON FOR MEMBERS TO SHARE COOKBOOK WITH   ////////// -->
+    <button
+      class="myModal"
+      ng-click="addMembers()"
+      name="button">
+      Add
+    </button>
+
+<!-- ////////// UNORDERED LIST FOR MEMBERS TO SHARE COOKBOOK WITH   ////////// -->
+    <ul>
+      <li ng-repeat="members in cookbook.members">{{members | lowercase}}
+        <div>
+          <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+          <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+          <a href="" class="delete" ng-click="removeMembers($index)">delete</a>
+          <input type="text" class="myModal" ng-show="showEditBar" ng-model="members">
+        </div>
+      </li>
+    </ul>
+
+    <p>The share function does not currently work! FIX!</p>
+
+
+
+
+<!--  submitNewCookbook(cookbook) saves new cookbook to database and returns user to their homepage  -->
+      <button
+        ng-click="submitNewCookbook(cookbook)"
+        type="submit">
+        Save and Share New Cookbook
+      </button>
+      <button
+        ng-click=""
+        type="button"
+        ui-sref="userhome">
+        Cancel
+      </button>
+
+</form>
+
+</div>

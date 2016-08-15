@@ -39,6 +39,11 @@ header {
   width: 100%;
   z-index: 999; }
 
+.text-highlight {
+  color: white;
+  font-weight: 100;
+  padding-top: 1em; }
+
 #tempRecFormBack {
   background-color: #3D6366; }
 

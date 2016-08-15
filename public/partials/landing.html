@@ -6,8 +6,7 @@
 <div>
 <p>CLC makes it easier for you to save your recipes in one place, but what you'll really love is being able to share your favorites, new and old, with your favorite people, no matter how far away they are. Bon appetit!</p>
   <button type="button" id="loginButton" ng-click="loginForm()">Login</button>
-  <button type="button" id="signupButton" ng-click="regForm()">Sign Up</button>
-
+  <!-- <button type="button" id="signupButton" ng-click="regForm()">Sign Up</button> -->
 </div>
 
 
@@ -30,12 +29,10 @@
     placeholder="Not12345"
     required>
   </input>
-
   <button
     id="btnLogin"
     type="button"
-    name="button"
-    >
+    name="button">
     Log In
   </button>
   <button
@@ -49,22 +46,19 @@
     id="btnLogout"
     type="button"
     name="button"
-    class="hide"
-    > <!-- fakeLogin() is a temporary fix to get us through MVP demo on Friday -->
+    class="hide">
     Log Out
   </button>
   <button
     id="btnPasswordChange"
     type="button"
-    name="button"
-    > <!-- fakeLogin() is a temporary fix to get us through MVP demo on Friday -->
+    name="button">
     Reset Password via Email
   </button>
   <button
-
     type="button"
     name="button"
-    ng-click="fakeLogin()"> <!-- fakeLogin() is a temporary fix to get us through MVP demo on Friday -->
+    ng-click="fakeLogin()"> <!-- fakeLogin() is a temporary fix just in case we need to access app without logging in -->
     ADVANCE
   </button>
 </form>

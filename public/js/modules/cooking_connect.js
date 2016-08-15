@@ -35,6 +35,16 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       templateUrl: "partials/newForm.html",
       controller: "newFormCtrl"
     })
+    .state("newCookbookForm", {
+      url: "/newCookbookForm",
+      templateUrl: "partials/newCookbookForm.html",
+      controller: "newCookbookCtrl"
+    })
+    .state("newUserProfileForm", {
+      url: "/newUserProfileForm",
+      templateUrl: "partials/newUserProfileForm.html",
+      controller: "newUserProfileCtrl"
+    })
     .state("recipeInfo", {
       url: "/recipeInfo",
       templateUrl: "partials/recipeInfo.html",

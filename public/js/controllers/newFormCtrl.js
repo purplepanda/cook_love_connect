@@ -5,18 +5,43 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
   $scope.recipes = {};
 
 
-  // List of Ingredients
-  $scope.recipes.ingredients = [];
 
-  // Methods for $scope.ingredients
+
+  ////////// variables //////////
+  $scope.recipes = {};
+  $scope.recipes.tag = [];
+  $scope.recipes.ingredients = [];
+  $scope.recipes.instructions = [];
+
+
+
+
+  ////////// methods //////////
+  $scope.addTags = addTags;
+  $scope.removeTags = removeTags;
   $scope.addIngredient = addIngredient;
   $scope.removeIngredient = removeIngredient;
+  $scope.addInstruction = addInstruction;
+  $scope.removeInstruction = removeInstruction;
 
+
+
+
+  ////////// functions //////////
+  function addTags() {
+    $scope.recipes.tag.push($scope.tag);
+    $scope.tag = "";
+  }
+
+
+  function removeTags(item) {
+    $scope.recipes.tag.splice(item, 1);
+  }
 
 
   // Adds to $scope.ingredients
   function addIngredient() {
-    $scope.recipes.ingredients.unshift($scope.ingredient);
+    $scope.recipes.ingredients.push($scope.ingredient);
     $scope.ingredient = "";
   }
 
@@ -25,12 +50,6 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
     $scope.recipes.ingredients.splice(dummy, 1);
   }
 
-  // Instructions and steps in newForm recipe
-  $scope.recipes.instructions = [];
-
-  // Methods for $scope.instructions
-  $scope.addInstruction = addInstruction;
-  $scope.removeInstruction = removeInstruction;
 
 
   // Adds to $scope.instructions
@@ -58,7 +77,7 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
   }
 
 
-  /////////// service to send new recipe information to database ///////////
+  /////////// service to send new recipe information to database /////////// Aug 14 - for MongoDB, not necessary for firebase
   // $scope.redirectHome = postRecipe.registerUser;
 
   ///postRecipe = name of service
