@@ -1,6 +1,6 @@
 var app = angular.module("cookingConnect");
 
-app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state) {
+app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state, $firebaseObject) {
   $scope.title = "The JABE Cookbook";
 
   $scope.storedRecipes = storeRecipeFactory.returnObject();
@@ -78,6 +78,12 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
     firebase.auth().signOut();
     $state.go('landing');
   };
+
+  // from angularfire docs -- grab data and add to scope
+  var ref = firebase.database().ref();
+  // download the data into a local object
+  $scope.data = $firebaseObject(ref);
+  
 
 
 });
