@@ -50,8 +50,9 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
     $scope.data;
      function show(snap) {										// log the results of our above DB call to the console
        console.log('our data', snap.val());
-       $scope.data = snap.val();
-       console.log('scope data garbageKey', $scope.data['-KP8uCo0TXh_f-1OQA4k'].name);
+       var dbCall = firebase.database().ref('/recipes');
+       $scope.data = $firebaseObject(dbCall);
+       console.log('scope data ', $scope.data);
 
       //  myData = snap.val()
       //  $scope.data = $firebaseObject(myData);
