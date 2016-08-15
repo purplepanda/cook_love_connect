@@ -1,9 +1,11 @@
 var app = angular.module("cookingConnect");
 
-app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state) {
+app.controller("cookbookCtrl", function($scope, $http, $state, storeRecipeFactory) {
   $scope.title = "The JABE Cookbook";
 
   $scope.storedRecipes = storeRecipeFactory.returnObject();
+
+
 
   // $scope.storeRecipeObject = storeRecipeFactory.returnObject();
   // TESTING OUT CODE BLOCK FOR REPEATING FORM SUBMMISION
