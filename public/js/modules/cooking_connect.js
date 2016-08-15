@@ -1,4 +1,4 @@
-var app = angular.module("cookingConnect", ["ui.router", "firebase"]);
+var app = angular.module("cookingConnect", ["ui.router", "firebase", "angular-toArrayFilter"]);
 
 app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider

@@ -5,14 +5,12 @@
 	<h3>{{title}}</h3>
 	<input type="text" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
 	<!-- next step, use $scope.data to ng-repeat -->
-	<pre></pre>
-	<h1>{{data}}</h1>
-	<h3 ng-repeat="cookbook in data.cookbooks">{{cookbook.cookbookName}}</h3>
+	<!-- <h3 ng-repeat="cookbook in data.cookbooks">{{cookbook.cookbookName}}</h3> -->
 	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
 	<!-- we will link the entire div to whisk us off to the recipe view -->
 
-	<div class="recipeCard" ng-repeat="recipe in recipes.recipes" ng-click="showDetails = ! showDetails">
-<!-- | filter : recipeSearch -->
+	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | toArray | filter : recipeSearch" ng-click="showDetails = ! showDetails">
+		<!-- | filter : recipeSearch -->
 				<p>{{recipe.name}}</p>
 				<img ng-src="{{recipe.image}}" alt="" />
 	      <p>{{recipe.tags}}</p>
