@@ -1,7 +1,7 @@
 var app = angular.module("cookingConnect");
 
 
-app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state, $firebaseObject, getRecipeDataFactory) {
+app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state, $firebaseObject) {
   $scope.title = "The JABE Cookbook";
 
   // add storedRecipes to our scope via the storeRecipeFactory
