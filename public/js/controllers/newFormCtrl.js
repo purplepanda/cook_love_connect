@@ -1,3 +1,5 @@
+// Logic to add new recipes via input Form
+
 var app = angular.module("cookingConnect");
 
 app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFactory", "$location", "$firebaseObject", function($scope, $state, postRecipe, storeRecipeFactory, $location, $firebaseObject) {
@@ -69,18 +71,7 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
 
     storeRecipeFactory.saveObject(recipes);
     $location.path("cookbook");
-
-    // console.log('submitRecipe logging');
-    // var newRecipe = new Recipe($scope.recipes.name, $scope.recipes.author, $scope.recipes.tags, $scope.recipes.originStory, "images",$scope.recipes.ingredients, "steps" );
-    // console.log(newRecipes);
-    // console.log(recipes);
   }
-
-
-  /////////// service to send new recipe information to database /////////// Aug 14 - for MongoDB, not necessary for firebase
-  // $scope.redirectHome = postRecipe.registerUser;
-
-  ///postRecipe = name of service
 
   // function that logs user out in header
   $scope.logOut = function() {
@@ -89,10 +80,11 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
     $state.go('landing');
   };
 
-  // Picute uploading functionality
+  // Photo uploading functionality
   var uploader = document.getElementById('uploader');
   var fileButton = document.getElementById('fileButton');
   var downloadURL;
+
   // Listen for file selection
   fileButton.addEventListener('change', function(e){
     // Get file
@@ -101,12 +93,8 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
     // Create a storage ref
     var storageRef = firebase.storage().ref('images/' + file.name);
 
-    
-
     // Upload file
     var task = storageRef.put(file);
-
-
 
     // Update progress bar
     task.on('state_changed',
@@ -115,7 +103,6 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
         var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
           uploader.value = percentage;
           console.log(percentage);
-
       },
 
       function error(err){
@@ -129,10 +116,7 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
 
       }
 
-    );
-});
-
-
-
+      );
+  });
 
 }]);

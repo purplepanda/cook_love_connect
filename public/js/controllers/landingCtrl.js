@@ -3,27 +3,11 @@ var app = angular.module("cookingConnect");
 app.controller("landingCtrl", function($scope, $state) {
   $scope.title = "Welcome to Cook Love Connect!";
 
-
   $scope.loginForm = function() {
-    // alert('Temporary Function! Clicking this button should pop up a form to login');
     $('#login').show();
     $('#loginButton').hide();
     $('#signup').hide(); // fallback in case user has initiated signup process but decides to login instead
   };
-
-  $scope.regForm = function() {
-    // alert('Temporary Function! Clicking this button should pop up a form to register');
-    $('#signup').show();
-    $('#signupButton').hide();
-    $('#login').hide(); // fallback in case user toggles bw signup and login
-
-  };
-
-  $scope.fakeLogin = function() {
-    $state.go("userhome");
-  };
-
-  // firebase code aug 13 //
 
   // Get elements
 
@@ -56,7 +40,6 @@ app.controller("landingCtrl", function($scope, $state) {
 
   btnSignUp.addEventListener('click', e => {
     // Get email and pass
-    // TODO: check for real email address
     const email = txtEmail.value;
     if (email.length < 4) {
       alert('Please enter a valid email address.');
@@ -75,7 +58,7 @@ app.controller("landingCtrl", function($scope, $state) {
 
   });
 
-  // send email verification
+  // send password reset via email
   btnPasswordChange.addEventListener('click', e => {
     console.log('benson rules');
     function sendPasswordReset() {
@@ -114,7 +97,7 @@ app.controller("landingCtrl", function($scope, $state) {
   // Add a realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
-      console.log(firebaseUser);
+      // console.log(firebaseUser);
       btnLogout.classList.remove('hide');
       $state.go("userhome");
     } else {
