@@ -6,7 +6,7 @@
 <form id="newForm" name="form">
   <label>First Name</label>
   <input
-    class="myModal"
+    class="formStyle"
     type="text"
     required
     ng-model="users.firstName"
@@ -17,7 +17,7 @@
 
   <label>Last Name</label>
   <input
-    class="myModal"
+    class="formStyle"
     type="text"
     required
     ng-model="users.lastName"
@@ -28,7 +28,7 @@
 
   <label>Dietary Preferences</label>
   <input
-    class="myModal"
+    class="formStyle"
     type="text"
     required
     ng-model="users.diet"
@@ -40,14 +40,14 @@
 <!-- ////////// INPUT FOR ALLERGIES ////////// -->
   <label>Allergies</label>
   <input
-    class="myModal"
+    class="formStyle"
     type="text"
     ng-model="allergies"
     placeholder="gluten, shellfish">
 
 <!-- ////////// BUTTON FOR ALLERGIES  ////////// -->
   <button
-    class="myModal"
+    class="formStyle"
     ng-click="addAllergies()"
     name="button">
     Add
@@ -60,7 +60,7 @@
         <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
         <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
         <a href="" class="delete" ng-click="removeAllergies($index)">delete</a>
-        <input type="text" class="myModal" ng-show="showEditBar" ng-model="allergies">
+        <input type="text" class="formStyle" ng-show="showEditBar" ng-model="allergies">
       </div>
     </li>
   </ul>
@@ -71,14 +71,14 @@
 <!-- ////////// INPUT FOR FAMILY MEMBERS ////////// -->
   <label>Family Members</label>
   <input
-    class="myModal"
+    class="formStyle"
     type="text"
     ng-model="members"
     placeholder="Julie">
 
 <!-- ////////// BUTTON FOR FAMILY MEMBERS  ////////// -->
   <button
-    class="myModal"
+    class="formStyle"
     ng-click="addFamily()"
     name="button">
     Add
@@ -91,7 +91,7 @@
         <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
         <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
         <a href="" class="delete" ng-click="removeFamily($index)">delete</a>
-        <input type="text" class="myModal" ng-show="showEditBar" ng-model="members">
+        <input type="text" class="formStyle" ng-show="showEditBar" ng-model="members">
       </div>
     </li>
   </ul>
@@ -101,7 +101,7 @@
 
   <label>What else should dinner party hosts know about you?</label>
   <textarea
-    class="myModal"
+    class="formStyle"
     rows="4"
     cols="4"
     name="shortBio"

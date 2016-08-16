@@ -5,7 +5,7 @@ app.controller("userhomeCtrl", ['$scope', '$http', '$state', function($scope, $h
   $scope.title = "My Kitchen";
 
   // logic for 3rd party API search
-  var tempSearch = "";  // make tempSearch available outside function if we ever want to display elsewhere
+  var tempSearch = ""; // make tempSearch available outside function if we ever want to display elsewhere
   $scope.submitSearch = function(searchIt) {
     tempSearch = searchIt;
 
@@ -21,10 +21,10 @@ app.controller("userhomeCtrl", ['$scope', '$http', '$state', function($scope, $h
   };
 
   // function that logs user out in header
-  $scope.logOut = function(){
-        console.log('logOut function is firing on click');
-        firebase.auth().signOut();
-        $state.go('landing');
+  $scope.logOut = function() {
+    console.log('logOut function is firing on click');
+    firebase.auth().signOut();
+    $state.go('landing');
   };
 
 }]);
