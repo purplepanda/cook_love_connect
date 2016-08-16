@@ -1,7 +1,7 @@
 var app = angular.module("cookingConnect");
 
 
-app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state, $firebaseObject, getRecipeDataFactory) {
+app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state, $firebaseObject, recipesFactory) {
   $scope.title = "The JABE Cookbook";
 
   $scope.storedRecipes = storeRecipeFactory.returnObject();
@@ -40,16 +40,16 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   // });
 
 
-    var user = firebase.auth().currentUser; //note: var user identifies logged in user
-    console.log("user is, ", user);
-    var userID = user.uid;
-    $scope.uid = user.uid;
-    console.log("userID is, ", userID);
+  var user = firebase.auth().currentUser; //note: var user identifies logged in user
+  console.log("user is, ", user);
+  var userID = user.uid;
+  $scope.uid = user.uid;
+  console.log("userID is, ", userID);
 
-    // firebase.database().ref('/recipes')				// pointing to a path in our firebaseDB
-    // .orderByChild('uid')											// look for everything with a key of uid
-    // .equalTo(userID)	// just get the recipes with this specified UID
-    // .once('value', show);											// listen once & stop listening after response, then call the show function
+  // firebase.database().ref('/recipes')				// pointing to a path in our firebaseDB
+  // .orderByChild('uid')											// look for everything with a key of uid
+  // .equalTo(userID)	// just get the recipes with this specified UID
+  // .once('value', show);											// listen once & stop listening after response, then call the show function
 
   //   $scope.data;
   //    function show(snap) {										// log the results of our above DB call to the console
@@ -58,16 +58,17 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   //      $scope.data = $firebaseObject(dbCall);
   //      console.log('scope data ', $scope.data);
 
-      //  myData = snap.val()
-      //  $scope.data = $firebaseObject(myData);
-      //  console.log("myData is", myData);
-      //  return myData;
+  //  myData = snap.val()
+  //  $scope.data = $firebaseObject(myData);
+  //  console.log("myData is", myData);
+  //  return myData;
   //    }
 
 
-    // $scope.data = $firebaseObject(snap);
+  // $scope.data = $firebaseObject(snap);
 
   // JSON REST API fallback in case we can't get anything to work
+
   $http.get('https://cook-love-connect.firebaseio.com/.json').success(function(data) {
     //  var user = firebase.auth().currentUser;
     //  $scope.recipes.uid = user.uid;
@@ -75,6 +76,8 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
     $scope.recipes = data;
     console.log(data.recipes);
   });
+
+
   // var refObject = firebase.database().ref('cook-love-connect/recipes');
   // refObject.once('');
 
@@ -112,7 +115,7 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   };
 
   // from angularfire docs -- grab data and add to scope
-    // figure out a way to get logged in UID then append to the DB call in the next line
+  // figure out a way to get logged in UID then append to the DB call in the next line
 
 
   // var ref = firebase.database().ref().child('recipes');  // angularfire -- goes to grab our data
