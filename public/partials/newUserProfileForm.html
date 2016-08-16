@@ -1,0 +1,128 @@
+<div></div>
+<header ng-include="'partials/header.html'"></header>
+<h3>{{title}}</h3>
+
+
+<form id="newForm" name="form">
+  <label>First Name</label>
+  <input
+    class="myModal"
+    type="text"
+    required
+    ng-model="users.firstName"
+    placeholder="Jane">
+
+
+
+
+  <label>Last Name</label>
+  <input
+    class="myModal"
+    type="text"
+    required
+    ng-model="users.lastName"
+    placeholder="Doe">
+
+
+
+
+  <label>Dietary Preferences</label>
+  <input
+    class="myModal"
+    type="text"
+    required
+    ng-model="users.diet"
+    placeholder="Vegetarian">
+
+
+
+
+<!-- ////////// INPUT FOR ALLERGIES ////////// -->
+  <label>Allergies</label>
+  <input
+    class="myModal"
+    type="text"
+    ng-model="allergies"
+    placeholder="gluten, shellfish">
+
+<!-- ////////// BUTTON FOR ALLERGIES  ////////// -->
+  <button
+    class="myModal"
+    ng-click="addAllergies()"
+    name="button">
+    Add
+  </button>
+
+<!-- ////////// UNORDERED LIST FOR INGREDIENTS  ////////// -->
+  <ul>
+    <li ng-repeat="allergies in users.allergies">{{allergies | lowercase}}
+      <div>
+        <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+        <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+        <a href="" class="delete" ng-click="removeAllergies($index)">delete</a>
+        <input type="text" class="myModal" ng-show="showEditBar" ng-model="allergies">
+      </div>
+    </li>
+  </ul>
+
+
+
+
+<!-- ////////// INPUT FOR FAMILY MEMBERS ////////// -->
+  <label>Family Members</label>
+  <input
+    class="myModal"
+    type="text"
+    ng-model="members"
+    placeholder="Julie">
+
+<!-- ////////// BUTTON FOR FAMILY MEMBERS  ////////// -->
+  <button
+    class="myModal"
+    ng-click="addFamily()"
+    name="button">
+    Add
+  </button>
+
+<!-- ////////// UNORDERED LIST FOR FAMILY MEMBERS  ////////// -->
+  <ul>
+    <li ng-repeat="members in users.family">{{members | lowercase}}
+      <div>
+        <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
+        <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
+        <a href="" class="delete" ng-click="removeFamily($index)">delete</a>
+        <input type="text" class="myModal" ng-show="showEditBar" ng-model="members">
+      </div>
+    </li>
+  </ul>
+
+
+
+
+  <label>What else should dinner party hosts know about you?</label>
+  <textarea
+    class="myModal"
+    rows="4"
+    cols="4"
+    name="shortBio"
+    placeholder="I love trying new things, but I am VERY allergic to shellfish. If that's what you're serving, I'll join in next time :)">
+  </textarea>
+
+
+
+
+<!--  submitNewUser(users) saves new user to database and returns user to their homepage  -->
+    <button
+      ng-click="submitNewUser(users)"
+      type="submit">
+      Save User Profile
+    </button>
+    <button
+      ng-click=""
+      type="button"
+      ui-sref="userhome">
+      Cancel
+    </button>
+</form>
+
+</div>
