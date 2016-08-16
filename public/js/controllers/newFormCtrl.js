@@ -71,7 +71,7 @@ app.controller("newFormCtrl", ["$scope", "$state", "storeRecipeFactory", "$locat
 
     storeRecipeFactory.saveObject(recipes);
     $location.path("cookbook");
-  }
+  };
 
   // function that logs user out in header
   $scope.logOut = function() {
@@ -86,7 +86,7 @@ app.controller("newFormCtrl", ["$scope", "$state", "storeRecipeFactory", "$locat
   var downloadURL;
 
   // Listen for file selection
-  fileButton.addEventListener('change', function(e){
+  fileButton.addEventListener('change', function(e) {
     // Get file
     var file = e.target.files[0];
 
@@ -99,24 +99,24 @@ app.controller("newFormCtrl", ["$scope", "$state", "storeRecipeFactory", "$locat
     // Update progress bar
     task.on('state_changed',
 
-      function progress(snapshot){
-        var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
-          uploader.value = percentage;
-          console.log(percentage);
+      function progress(snapshot) {
+        var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        uploader.value = percentage;
+        console.log(percentage);
       },
 
-      function error(err){
+      function error(err) {
         console.log(err);
       },
 
-      function complete(){
+      function complete() {
         downloadURL = task.snapshot.downloadURL;
         storeRecipeFactory.saveDownloadUrl(downloadURL);
         console.log(downloadURL);
 
       }
 
-      );
+    );
   });
 
 }]);

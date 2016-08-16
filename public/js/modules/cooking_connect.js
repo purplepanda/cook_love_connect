@@ -35,5 +35,5 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       url: "/newUserProfileForm",
       templateUrl: "partials/newUserProfileForm.html",
       controller: "newUserProfileCtrl"
-    })
+    });
 }]);
