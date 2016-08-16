@@ -1,6 +1,6 @@
 var app = angular.module("cookingConnect");
 
-app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFactory", "$location", function($scope, $state, postRecipe, storeRecipeFactory, $location) {
+app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFactory", "$location", "$firebaseObject", function($scope, $state, postRecipe, storeRecipeFactory, $location, $firebaseObject) {
   $scope.title = "Add A New Recipe";
   $scope.recipes = {};
 
@@ -88,5 +88,51 @@ app.controller("newFormCtrl", ["$scope", "$state", "postRecipe", "storeRecipeFac
     firebase.auth().signOut();
     $state.go('landing');
   };
+
+  // Picute uploading functionality
+  var uploader = document.getElementById('uploader');
+  var fileButton = document.getElementById('fileButton');
+  var downloadURL;
+  // Listen for file selection
+  fileButton.addEventListener('change', function(e){
+    // Get file
+    var file = e.target.files[0];
+
+    // Create a storage ref
+    var storageRef = firebase.storage().ref('images/' + file.name);
+
+    
+
+    // Upload file
+    var task = storageRef.put(file);
+
+
+
+    // Update progress bar
+    task.on('state_changed',
+
+      function progress(snapshot){
+        var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+          uploader.value = percentage;
+          console.log(percentage);
+
+      },
+
+      function error(err){
+        console.log(err);
+      },
+
+      function complete(){
+        downloadURL = task.snapshot.downloadURL;
+        storeRecipeFactory.saveDownloadUrl(downloadURL);
+        console.log(downloadURL);
+
+      }
+
+    );
+});
+
+
+
 
 }]);

@@ -31,7 +31,10 @@
 	<!-- END OF TAGS -->
 
 	<label class="text-highlight">Image</label>
-  <input class="myModal" type="text" ng-model="recipes.image" placeholder="http://www.flickr.com/myImage.jpg">
+	<br>
+  <!-- <input class="myModal" type="text" ng-model="recipes.image" placeholder="http://www.flickr.com/myImage.jpg"> -->
+  <progress value="0" max="100" id="uploader">0%</progress>
+  <input type="file" value="upload" class="myModal" id="fileButton" ng-model="recipes.image"/>
 	<!-- <input class="myModal" type="file" onchange="previewFile(this)" name="user-photo" ng-model="recipes.image" required="image" style="color:white;"/>
 	<img id="blah" src="" alt="your image" /> -->
 
