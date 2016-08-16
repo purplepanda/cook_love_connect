@@ -77,8 +77,6 @@ header {
   margin-left: 5%;
   padding: 5%;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto
 }
 button {
   &:hover {
@@ -156,7 +154,7 @@ textarea {
     margin-top: 3px;
 }
 
-.myModal {
+.formStyle {
   display: block;
   margin: 0 auto;
 }

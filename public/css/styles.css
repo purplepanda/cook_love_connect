@@ -62,9 +62,7 @@ header {
   opacity: 0.65;
   margin-left: 5%;
   padding: 5%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto; }
+  text-align: center; }
 
 button:hover {
   color: #ED685E;
@@ -133,7 +131,7 @@ textarea {
   margin-bottom: -3px;
   margin-top: 3px; }
 
-.myModal {
+.formStyle {
   display: block;
   margin: 0 auto; }
 

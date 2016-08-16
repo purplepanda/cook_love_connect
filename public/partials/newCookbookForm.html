@@ -6,7 +6,7 @@
 <form id="newForm" name="form">
   <label>New Cookbook Name</label>
   <input
-    class="myModal"
+    class="formStyle"
     type="text"
     required
     ng-model="cookbook.cookbookName"
@@ -15,7 +15,7 @@
 
   <label>Cookbook Description</label>
   <input
-    class="myModal"
+    class="formStyle"
     type="text"
     ng-model="cookbook.description"
     placeholder="Cookbook description">
@@ -25,14 +25,14 @@
 <!-- ////////// INPUT FOR MEMBERS TO SHARE COOKBOOK WITH ////////// -->
   <label>Who do you want to share this cookbook with?</label>
     <input
-      class="myModal"
+      class="formStyle"
       type="text"
       ng-model="members"
       placeholder="Leslie">
 
 <!-- ////////// BUTTON FOR MEMBERS TO SHARE COOKBOOK WITH   ////////// -->
     <button
-      class="myModal"
+      class="formStyle"
       ng-click="addMembers()"
       name="button">
       Add
@@ -45,7 +45,7 @@
           <a href="" class="edit" ng-show="!showEditBar" ng-click="showEditBar = !showEditBar">edit</a>
           <a href="" class="save" ng-show="showEditBar" ng-click="showEditBar = !showEditBar">save</a>
           <a href="" class="delete" ng-click="removeMembers($index)">delete</a>
-          <input type="text" class="myModal" ng-show="showEditBar" ng-model="members">
+          <input type="text" class="formStyle" ng-show="showEditBar" ng-model="members">
         </div>
       </li>
     </ul>
