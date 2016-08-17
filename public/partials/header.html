@@ -1,14 +1,22 @@
-<nav class="nav-left">
-    <ul>
-      <li><h4><a ui-sref="userhome">Cook Love Connect<a></h4></li>
-    </ul>
-</nav>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center logo">Cook Love Connect</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a ui-sref="newForm" class="btn waves-effect waves-red">Add Another Recipe!</a></li>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a ui-sref="cookbook/searchResults" class="btn waves-effect waves-red">Try Something New!</a></li>
+        <li><a ng-click="logOut()" class="btn waves-effect waves-red">Log Out</a></li>
+      </ul>
+    </div>
 
-<nav class="nav-right">
+
+<!-- <nav class="nav-left">
     <ul>
-      <li><a ui-sref="userhome">My Kitchen</a></li>
+      <li><a ui-sref="newForm">Add a New Recipe!</a></li>
+      <li class="logo">Cook Love Connect</li>
       <li><a ui-sref="cookbook">My Cookbook</a></li>
       <li><a ui-sref="newUserProfileForm">Profile</a></li>
       <li><a ng-click="logOut()">Log Out</a></li>
     </ul>
-</nav>
+</nav> -->

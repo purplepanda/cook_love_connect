@@ -1,6 +1,6 @@
-<div id="tempRecFormBack">
-	<header ng-include="'partials/header.html'"></header>
-<h3>{{title}}</h3>
+<header ng-include="'partials/header.html'"></header>
+<div class="submitForm">
+<h1>{{title}}</h1>
 
 <form id="newForm">
 	<label class="text-highlight">Recipe Name</label>
@@ -17,7 +17,8 @@
 	<!-- TAGS FORM -->
 	<label class="text-highlight">Tags</label>
   <input class="formStyle" type="text" ng-model="tag" placeholder="Tags">
-	<button class="formStyle" name="button" ng-click="addTags()" class="text-highlight">Add</button>
+	<button class="formStyle btn waves-effect waves-teal list-edit"
+	name="button" ng-click="addTags()" class="text-highlight">Add</button>
 	  <ul>
 	    <li class="text-highlight" ng-repeat="tag in recipes.tag | filter:filterList">{{tag | lowercase}}
 	      <div>
@@ -44,7 +45,8 @@
 	<!-- INGREDIENT FORM -->
 	<label class="text-highlight">Ingredients</label>
   <input class="formStyle" type="text" ng-model="ingredient" placeholder="add ingredient"/>
-  <button class="formStyle" ng-click="addIngredient()" name="button" class="text-highlight">Add to List</button>
+  <button class="formStyle btn waves-effect waves-teal list-edit"
+					ng-click="addIngredient()" name="button" class="text-highlight">Add to List</button>
 		<ul>
       <li class="text-highlight" ng-repeat="ingredient in recipes.ingredients | filter:filterList">{{ingredient | lowercase}}
         <div>
@@ -60,7 +62,8 @@
   <!-- START OF INSTRUCTIONS/STEPS -->
 	<label class="text-highlight">Instructions in Steps</label>
   <input class="formStyle" type="text" ng-model="instruction" name="name" value="" placeholder="add instruction" />
-  <button class="formStyle" ng-click="addInstruction()" name="button" class="text-highlight">Add instructions</button>
+  <button class="formStyle btn waves-effect waves-teal list-edit"
+					ng-click="addInstruction()" name="button" class="text-highlight">Add instructions</button>
 		<ol>
       <li class="text-highlight" ng-repeat="instruction in recipes.instructions| filter:filterList">{{instruction | lowercase}}
         <div>
@@ -73,7 +76,7 @@
     </ol>
 
 		<!-- link ng-click to a submit function -->
-		<button class="btn btn-primary" type="button" ng-click="submitRecipe(recipes)">OK</button>
-    <button class="btn btn-warning" type="button" ng-click="" ui-sref="userhome">Cancel</button>
+		<button class="btn waves-effect waves-red" type="button" ng-click="submitRecipe(recipes)">OK</button>
+    <button class="btn waves-effect waves-red" type="button" ng-click="" ui-sref="cookbook">Cancel</button>
 </form>
 </div>

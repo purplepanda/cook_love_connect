@@ -61,6 +61,7 @@ app.controller("landingCtrl", function($scope, $state) {
   // send password reset via email
   btnPasswordChange.addEventListener('click', e => {
     console.log('benson rules');
+
     function sendPasswordReset() {
       var email = txtEmail.value;
       // [START sendpasswordemail]
@@ -96,10 +97,10 @@ app.controller("landingCtrl", function($scope, $state) {
 
   // Add a realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
-    if(firebaseUser){
+    if (firebaseUser) {
       // console.log(firebaseUser);
       btnLogout.classList.remove('hide');
-      $state.go("userhome");
+      $state.go("cookbook");
     } else {
       console.log('not logged in');
       btnLogout.classList.add('hide');

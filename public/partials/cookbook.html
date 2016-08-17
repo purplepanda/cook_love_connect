@@ -1,14 +1,25 @@
-<div id="bgUserHome">
-	<header ng-include="'partials/header.html'"></header>
-	<div class="cookbook">
+<header ng-include="'partials/header.html'"></header>
+
+
+<div class="cookbook">
+
+	<div class="search-wrapper">
+		<div class="search-padding">
+			<input type="text" class="searchBar" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
+		</div>
+	</div>
+
+
 	<!-- eventually, swap this title directive with something personal to the user -->
 	<h3>{{title}}</h3>  <!-- being injected via cookbookCtrl -->
-	<input type="text" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
+
+
 
 	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | toArray | filter: uid | filter : recipeSearch" ng-click="showDetails = ! showDetails">
 		<!-- | filter : recipeSearch -->
-				<p>{{recipe.name}}</p>
+
 				<img ng-src="{{recipe.image}}" alt="" />
+				<p>{{recipe.name}}</p>
 	      <p>{{recipe.tags}}</p>
 				<!-- maybe use css to display this recipeDetails div in a special way? -->
 						<div class="recipeDetails"  ng-show="showDetails">
@@ -28,4 +39,20 @@
 				      </ol>
 						</div>
 	</div>
+
+
+	<!-- Recipe API Search Results -->
+<div class="search-wrapper">
+		<div id="searchResults">
+		  <h1>Yummy Findings</h1>
+			<p ng-repeat="recipe in thirdpartyrecipes"><a class="results" ng-href="{{recipe.href}}" target="_blank">{{recipe.title}}</a></p>
+			</div>
+	<!-- Recipe Search API -->
+	<form id="recipeSearch" class="search-padding">
+	  <label for="search">Recipe Search</label>
+	  <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna" ng-model="searchIt"></input>
+	  <button ng-click="submitSearch(searchIt)" class="btn waves-effect waves-red">Search</button>
+	</form>
+	</div>
+	<!-- End Recipe Search API -->
 </div>

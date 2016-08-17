@@ -1,10 +1,10 @@
-<div></div>
 <header ng-include="'partials/header.html'"></header>
+<div class="submitForm">
 <h3>{{title}}</h3>
 
 
 <form id="newForm" name="form">
-  <label>First Name</label>
+  <label class="text-highlight">First Name</label>
   <input
     class="formStyle"
     type="text"
@@ -15,7 +15,7 @@
 
 
 
-  <label>Last Name</label>
+  <label class="text-highlight">Last Name</label>
   <input
     class="formStyle"
     type="text"
@@ -26,7 +26,7 @@
 
 
 
-  <label>Dietary Preferences</label>
+  <label class="text-highlight">Dietary Preferences</label>
   <input
     class="formStyle"
     type="text"
@@ -38,7 +38,7 @@
 
 
 <!-- ////////// INPUT FOR ALLERGIES ////////// -->
-  <label>Allergies</label>
+  <label class="text-highlight">Allergies</label>
   <input
     class="formStyle"
     type="text"
@@ -47,7 +47,7 @@
 
 <!-- ////////// BUTTON FOR ALLERGIES  ////////// -->
   <button
-    class="formStyle"
+    class="formStyle btn waves-effect waves-teal list-edit"
     ng-click="addAllergies()"
     name="button">
     Add
@@ -69,7 +69,7 @@
 
 
 <!-- ////////// INPUT FOR FAMILY MEMBERS ////////// -->
-  <label>Family Members</label>
+  <label class="text-highlight">Family Members</label>
   <input
     class="formStyle"
     type="text"
@@ -78,7 +78,7 @@
 
 <!-- ////////// BUTTON FOR FAMILY MEMBERS  ////////// -->
   <button
-    class="formStyle"
+    class="formStyle btn waves-effect waves-teal list-edit"
     ng-click="addFamily()"
     name="button">
     Add
@@ -99,7 +99,7 @@
 
 
 
-  <label>What else should dinner party hosts know about you?</label>
+  <label class="text-highlight">What else should dinner party hosts know about you?</label>
   <textarea
     class="formStyle"
     rows="4"
@@ -114,13 +114,15 @@
 <!--  submitNewUser(users) saves new user to database and returns user to their homepage  -->
     <button
       ng-click="submitNewUser(users)"
+      class="btn waves-effect waves-red"
       type="submit">
       Save User Profile
     </button>
     <button
       ng-click=""
+      class="btn waves-effect waves-red"
       type="button"
-      ui-sref="userhome">
+      ui-sref="cookbook">
       Cancel
     </button>
 </form>
