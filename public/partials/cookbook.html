@@ -20,12 +20,12 @@
 
 				<img ng-src="{{recipe.image}}" alt="" />
 				<p>{{recipe.name}}</p>
-	      <p>{{recipe.tags}}</p>
+	      <p>{{recipe.tag}}</p>
 				<!-- maybe use css to display this recipeDetails div in a special way? -->
 						<div class="recipeDetails"  ng-show="showDetails">
 							<h1>{{recipe.name}}</h1>
 							<img ng-src="{{recipe.image}}" alt="">
-							<p>{{recipe.tags}}</p>
+							<p>{{recipe.tag}}</p>
 							<p><strong>Origin Story</strong></p>
 							<p>{{recipe.originStory}}</p>
 							<p>Submitted by: {{recipe.author}}</p>
