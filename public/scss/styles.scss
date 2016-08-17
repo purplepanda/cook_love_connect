@@ -225,10 +225,9 @@ label {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  width: 425px;
-  height: 300px;
-  margin: 1.5%;
-  padding: 1%;
+  width: 325px;
+  height: 275px;
+  margin: 10px;
   background-color: $light_azure;
   box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
   -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
@@ -237,8 +236,8 @@ label {
 }
 
 .recipeCard img {
-  width: 80%;
-  max-height: 75%;
+  width: 300px;
+  height: 200px;
 }
 
 #recipeSearch {
