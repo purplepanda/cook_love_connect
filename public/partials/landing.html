@@ -1,3 +1,8 @@
+
+<!-- Hide footer on landing page -->
+<script>
+$('#landingFooter').hide()  
+</script>
 <!-- Background image slide show -->
 <ul class="cb-slideshow">
             <li><span>Image 01</span>
@@ -24,22 +29,27 @@
 
 <!-- Log In Form -->
 <form id="login">
-  <label for="email">Email</label>
-  <input
-    id="txtEmail"
-    type="email"
-    placeholder="jane@gmail.com"
-    required>
-  </input>
 
-  <label for="password">Password</label>
-  <input
-    id="txtPassword"
-    type="password"
-    name="password"
-    placeholder="Not12345"
-    required>
-  </input>
+  
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="txtEmail" type="email" class="validate">
+          <label for="email" data-error="wrong" data-success="right">Email</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+        <div class="input-field col s12">
+          <input id="txtPassword" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+  </div>
+  
   <button
     id="btnLogin"
     class="btn waves-effect waves-red"

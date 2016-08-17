@@ -13,7 +13,6 @@ h1 {
   font-size: 2.5em; }
 
 input {
-  display: block;
   width: 350px;
   text-align: center;
   font-size: 1.15em; }
@@ -227,3 +226,6 @@ label {
 .recipeDetails,
 .recipeDetails > .ng-binding {
   color: white; }
+
+#imageLabel {
+  width: 100%; }
