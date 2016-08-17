@@ -66,11 +66,10 @@ input {
 }
 
 .search-padding{
-  width: 90%;
+  width: 80%;
   margin: auto;
   padding: 10px;
   background-color: $cream;
-  // border-radius: 7px;
   box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
   -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
   -moz-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
@@ -227,6 +226,8 @@ label {
 }
 
 
+
+////////// styling for recipe card feed //////////
 .recipeCard {
   display: inline-block;
   text-align: center;
@@ -249,6 +250,7 @@ label {
   font-size: 1.5em;
   margin-top: 0;
 }
+
 .recipeCard h2 {
   text-align: left;
   padding-left: 10px;
@@ -257,6 +259,7 @@ label {
   padding-top: 0;
   margin-top: -10px;
 }
+
 .recipeCard h2 ul li {
   display: inline-block;
   color: $cocoa;
@@ -267,6 +270,140 @@ label {
   height: 225px;
 }
 
+
+
+////////// styling for recipe card pop-up //////////
+
+.recipeDetails {
+  position: fixed;
+  z-index: 1;
+  left: 10%;
+  top: 8%;
+  width: 80%;
+  height: 85%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.90);
+  margin: auto;
+  border: 5px solid $dark_cocoa;
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -moz-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+}
+
+
+.recipeDetails h1 {
+  text-align: left;
+  font-size: 3.5em;
+  font-weight: 300;
+  color: $dark_cocoa;
+}
+
+.recipeDetails h2 {
+  text-align: left;
+  font-size: 2.75em;
+  font-weight: 300;
+  padding: 25px 0 5px 20px;
+  color: $dark_cocoa;
+  border-bottom: 1px solid $pastel_red;
+}
+
+.recipeDetails h3 {
+  text-align: left;
+  font-size: 2em;
+  font-weight: 300;
+  padding-left: 20px;
+  color: $dark_cocoa;
+}
+
+.recipeDetails h4 {
+  text-align: left;
+  font-size: 1.25em;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-top: -25px;
+  color: $cocoa;
+}
+
+.recipeDetails p {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 700;
+  padding-left: 45px;
+  color: $cocoa;
+}
+
+.recipeDetails .recipe-right ul li {
+  text-align: left;
+  width: 80%;
+  font-size: 1em;
+  font-weight: 700;
+  padding-left: 45px;
+  line-height: 1.25em;
+  color: $cocoa;
+}
+
+.recipeDetails .recipe-bottom ol li {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 700;
+  padding-left: 45px;
+  line-height: 1.25em;
+  color: $cocoa;
+}
+
+.recipeDetails .recipe-bottom ul li {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 400;
+  padding-left: 45px;
+  line-height: 1.25em;
+  color: $cocoa;
+}
+
+.recipe-bottom {
+  width: 100%;
+  display: inline-block;
+}
+
+.recipe-left {
+  width: 55%;
+  display: inline-block;
+  float: left;
+  text-align: left;
+  padding: 10px;
+}
+
+.recipe-left img {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding: 10px;
+}
+
+.title-block {
+  display: inline-block;
+  float: left;
+}
+
+.recipe-right {
+  width: 45%;
+  display: inline-block;
+  float: right;
+}
+
+
+.recipeDetails,
+.recipeDetails > .ng-binding {
+  color: $white;
+}
+
+
+
+
+
+
+///////////  styling for 3rd party recipe search //////////
 #recipeSearch {
   text-align: center;
   background-color: $cream;
@@ -278,41 +415,3 @@ label {
 #recipeSearchBox {
   margin: 1em auto;
 }
-
-.recipeDetails {
-  position: fixed;
-  z-index: 1;
-  left: 10%;
-  top: 8%;
-  width: 80%;
-  height: 85%;
-  overflow: auto;
-  background-color: rgba(255, 255, 255, 0.90);
-  padding: 3em;
-  margin: auto;
-  border: 5px solid $dark_cocoa;
-  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
-  -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
-  -moz-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
-  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
-}
-
-.recipeDetails img {
-  border: 4px solid $white;
-}
-
-.recipeDetails,
-.recipeDetails > .ng-binding {
-  color: $white;
-}
-
-// #newRecipe {
-//   max-width: 50%;
-//   margin: 1em auto;
-//   border: 2px solid black;
-//   padding: 1em 3em;
-//   img {
-//     height: 300px;
-//     width: 400px;
-//   }
-// }

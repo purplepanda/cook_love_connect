@@ -25,46 +25,47 @@
 						<li ng-repeat="tag in recipe.tag">&nbsp;{{tag }}&nbsp;|&nbsp;</li>
 					</ul>
 				</h2>
-				<!-- maybe use css to display this recipeDetails div in a special way? -->
 
 
 
-
-						<div class="recipeDetails" ng-show="showDetails">
-
-						<div class="recipe-left">
-							<img ng-src="{{recipe.image}}" alt="">
+				<div class="recipeDetails" ng-show="showDetails">
+				<!--  start recipe pop up  -->
+					<div class="recipe-left">
+						<img ng-src="{{recipe.image}}" alt="">
+						<div class="title-block">
 							<h1>{{recipe.name}}</h1>
-							<p>Submitted by: {{recipe.author}}</p>
+							<h4>Submitted by: {{recipe.author}}</h4>
+							</div>
 						</div>
 
 
-						<div class="recipe-rigth">
-							<h4>INGREDIENTS</h4>
-								<ul>
-									<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
-								</ul>
+					<div class="recipe-right">
+						<h2>INGREDIENTS</h2>
+						<ul>
+							<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+						</ul>
+					</div>
 
+					<div class="recipe-bottom">
+						<h2>INSTRUCTIONS</h2>
+						<ol>
+							<li ng-repeat="instructions in recipe.instructions">{{instructions}}</li>
+						</ol>
 
-							<h4>STEPS</h4>
-								<ol>
-									<li ng-repeat="instructions in recipe.instructions">{{instructions}}</li>
-								</ol>
+						<h3>ORIGIN STORY</h3>
+						<p>{{recipe.originStory}}</p>
 
-							<h4>Origin Story</h4>
-							<p>{{recipe.originStory}}</p>
-							<ul>
-								<li ng-repeat="tag in recipe.tag">&nbsp;{{tag }}&nbsp;|&nbsp;</li>
-							</ul>
-						</div>
-
-						</div>
-
-
+						<h3>TAGS</h3>
+						<ul>
+							<li ng-repeat="tag in recipe.tag">{{tag}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 	</div>
 
 
-	<!-- Recipe API Search Results -->
+
 <div class="search-wrapper">
 		<div id="searchResults">
 		  <h1>Yummy Findings</h1>
