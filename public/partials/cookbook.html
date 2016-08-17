@@ -1,17 +1,25 @@
-<div id="bgUserHome">
-	<header ng-include="'partials/header_main.html'"></header>
-	<div class="cookbook">
+<header ng-include="'partials/header.html'"></header>
+
+
+<div class="cookbook">
+
+	<div class="search-wrapper">
+		<div class="search-padding">
+			<input type="text" class="searchBar" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
+		</div>
+	</div>
+
+
 	<!-- eventually, swap this title directive with something personal to the user -->
-	<h3>{{title}}</h3>
-	<input type="text" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
+	<h3>{{title}}</h3>  <!-- being injected via cookbookCtrl -->
 
-	<!-- SAVE THIS COMMENTED CODE! We will use it on the full recipe view -->
-	<!-- we will link the entire div to whisk us off to the recipe view -->
 
-	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | filter : recipeSearch" ng-click="showDetails = ! showDetails">
 
-				<p>{{recipe.name}}</p>
+	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | toArray | filter: uid | filter : recipeSearch" ng-click="showDetails = ! showDetails">
+		<!-- | filter : recipeSearch -->
+
 				<img ng-src="{{recipe.image}}" alt="" />
+				<p>{{recipe.name}}</p>
 	      <p>{{recipe.tags}}</p>
 				<!-- maybe use css to display this recipeDetails div in a special way? -->
 						<div class="recipeDetails"  ng-show="showDetails">
@@ -27,41 +35,24 @@
 				      </ul>
 							<p>STEPS</p>
 				      <ol>
-				        <li ng-repeat="step in recipe.steps">{{step}}</li>
+				        <li ng-repeat="instructions in recipe.instructions">{{instructions}}</li>
 				      </ol>
 						</div>
 	</div>
 
 
-	<!-- eventually, would like to auto show/hide depending if user has added recipe -->
-	<div id="newRecipe" ng-repeat="recipe in storedRecipes | filter : recipeSearch">
-		<h2>{{recipe.name}}</h2>
-		<p><img ng-src="{{recipe.image}}"></p>
-		<p><strong>Submitted by</strong>: {{recipe.author}}</p>
-		<p><strong>Tags</strong>: {{recipe.tags}}</p>
-		<p><strong>Origin Story</strong>: {{recipe.originStory}}</p>
-		<!-- <p>{{recipe.ingredients}}</p> -->
-		<ul class="prettyList"><strong>Ingredients</strong>:
-			<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
-		</ul>
-		<ol><strong>Directions</strong>:
-			<li ng-repeat="step in recipe.instructions">{{step}}</li>
-		</ol>
-		<!-- <p>{{recipe.instructions}}</p> -->
-
-
+	<!-- Recipe API Search Results -->
+<div class="search-wrapper">
+		<div id="searchResults">
+		  <h1>Yummy Findings</h1>
+			<p ng-repeat="recipe in thirdpartyrecipes"><a class="results" ng-href="{{recipe.href}}" target="_blank">{{recipe.title}}</a></p>
+			</div>
+	<!-- Recipe Search API -->
+	<form id="recipeSearch" class="search-padding">
+	  <label for="search">Recipe Search</label>
+	  <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna" ng-model="searchIt"></input>
+	  <button ng-click="submitSearch(searchIt)" class="btn waves-effect waves-red">Search</button>
+	</form>
 	</div>
-
-	<!-- TESTING NG REPEAT FOR NEW FORM SUBMMISSION-->
-	<!-- <div ng-repeat="store in storeRecipeObjects track by $index"></div> -->
-
-
-
-
-
-
-
-
-
-
+	<!-- End Recipe Search API -->
 </div>

@@ -1,6 +1,11 @@
 <div>
-	<header ng-include="'partials/header_main.html'"></header>
+	<header ng-include="'partials/header.html'"></header>
 	<h3>{{title}}</h3>
+
+	<!-- starter code for ng expression to replace title -->
+	<h2>What's cooking
+		<script>var user = firebase.auth().currentUser; if(user){console.log(user.email)}</script>
+	</h2>
 
 
 <!-- User Home Kitchen -->
@@ -15,10 +20,15 @@
 		  <p>This div is a placeholder for the user's complete personal cookbook.</p>
 		</div>
 
-		<div class="tempDiv">
+		<!-- <div class="tempDiv">
 		  <a ui-sref="cookbook"><h4>Shared Cookbooks</h4></a>
 		  <p>This div is a placeholder for the area where a user can access any of their shared cookbooks.</p>
 		</div>
+
+		<div class="tempDiv">
+			<a ui-sref="newCookbookForm"><h4>Create A New Cookbook</h4></a>
+			<p>Click here to create a new cookbook to share!</p>
+		</div> -->
 
 
 

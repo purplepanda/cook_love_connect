@@ -1,19 +1,15 @@
-<!-- <header ng-include="'partials/header_login.html'"></header> -->
 <div id="landing">
 <section id="welcome">
 <h3>{{title}}</h3>
 
 <div>
 <p>CLC makes it easier for you to save your recipes in one place, but what you'll really love is being able to share your favorites, new and old, with your favorite people, no matter how far away they are. Bon appetit!</p>
-  <button type="button" id="loginButton" ng-click="loginForm()">Login</button>
-  <button type="button" id="signupButton" ng-click="regForm()">Sign Up</button>
-
+  <button type="button" class="btn waves-effect waves-red" id="loginButton" ng-click="loginForm()">Login</button>
 </div>
 
 
 <!-- Log In Form -->
 <form id="login">
-  <!-- note, I still need to set up ng-model -->
   <label for="email">Email</label>
   <input
     id="txtEmail"
@@ -30,16 +26,16 @@
     placeholder="Not12345"
     required>
   </input>
-
   <button
     id="btnLogin"
+    class="btn waves-effect waves-red"
     type="button"
-    name="button"
-    >
+    name="button">
     Log In
   </button>
   <button
     id="btnSignUp"
+    class="btn waves-effect waves-red"
     type="button"
     name="button"
     >
@@ -47,42 +43,19 @@
   </button>
   <button
     id="btnLogout"
+    class="btn waves-effect waves-red"
     type="button"
     name="button"
-    class="hide"
-    > <!-- fakeLogin() is a temporary fix to get us through MVP demo on Friday -->
+    class="hide">
     Log Out
   </button>
   <button
-
+    id="btnPasswordChange"
+    class="btn waves-effect waves-red"
     type="button"
-    name="button"
-    ng-click="fakeLogin()"> <!-- fakeLogin() is a temporary fix to get us through MVP demo on Friday -->
-    ADVANCE
+    name="button">
+    Reset Password via Email
   </button>
 </form>
-
-<!-- Registration Form  // Aug 13 // old form pre-firebase -->
-<!-- <form id="signup"> -->
-  <!-- note, I still need to set up ng-model -->
-  <!-- <label for="firstName">First Name</label>
-  <input type="text" name="firstName" placeholder="Jane" required></input>
-  <label for="lastName">Last Name</label>
-  <input type="text" name="lastName" placeholder="Doe" required></input>
-  <label for="email">Email</label>
-  <input type="email" name="email" placeholder="jane@gmail.com" required></input>
-  <label for="password">Password</label>
-  <input type="password" name="password" placeholder="Not12345" required></input>
-  <label for="confirm">Confirm Password</label>
-  <input type="password" name="confirmPassword" placeholder="Not12345" required></input>
-  <label for="dietPrefs">Dietary Preferences</label>
-  <input type="text" name="dietPrefs" placeholder="vegetarian"></input>
-  <label for="allergies">Allergies</label>
-  <input type="text" name="allergies" placeholder="gluten, shellfish"></input>
-  <label for="shortBio">What else should dinner party hosts know about you?</label>
-  <textarea rows="4" cols="4" name="shortBio" placeholder="I love trying new things, but I am VERY allergic to shellfish. If that's what you're serving, I'll join in next time :)"></textarea> -->
-  <!-- note, I still need to set up ng-click -->
-  <!-- <button type="button" name="button">Submit</button> -->
-<!-- </form> -->
 </section>
 </div>

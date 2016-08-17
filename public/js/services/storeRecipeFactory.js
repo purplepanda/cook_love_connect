@@ -1,18 +1,34 @@
 var app = angular.module("cookingConnect");
 
-app.factory('storeRecipeFactory', function(){
-	
-	var storeRecipe = [];
-	function saveObject(recipes) {
-		storeRecipe.push(recipes);
-		console.log("Store recipe", storeRecipe);
-	}
+app.factory('storeRecipeFactory', function() {
 
-	function returnObject () {
-		return storeRecipe;
-	};
+  // var storeRecipe = [];
+  var recipeTable = firebase.database().ref('recipes');
+  var imageUrl = "";
 
-return {saveObject:saveObject, returnObject:returnObject}
+  function saveDownloadUrl(downloadURL) {
+    imageUrl = downloadURL;
+    console.log(downloadURL);
+    console.log(imageUrl);
+  }
 
+  function saveObject(recipes) {
+    var user = firebase.auth().currentUser;
+    recipes.uid = user.uid;
+    recipes.image = imageUrl;
+    recipeTable.push(recipes);
+    // storeRecipe.push(recipes);
+    console.log("Store recipe", recipeTable);
+  }
+
+  function returnObject() {
+    return recipeTable;
+  }
+
+  return {
+    saveObject: saveObject,
+    returnObject: returnObject,
+    saveDownloadUrl: saveDownloadUrl
+  };
 
 });

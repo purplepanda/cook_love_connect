@@ -1,10 +1,14 @@
 $white: #FFFFFF;
 $grey: #404040;
+$light_orange: #ffcc80;
+$light_red: #ED7A66;
 $pastel_red: #ED685E;
 $bright_red: #E94F37;
 $ice_blue: #E8FFF5;
 $light_azure: #DAF4F0;
 $dark_azure: #3D6366;
+$white: white;
+
 
 * {
     box-sizing: border-box;
@@ -13,50 +17,101 @@ $dark_azure: #3D6366;
     font-size: 16px;
     color: $grey;
 }
-h3 {
+
+h1, h3 {
   text-align: center;
   clear: both;
 }
-.nav-left {
-  display: inline-block;
-  float: left;
-  ul li {
-    display: inline-block;
-    text-decoration: none;
-    padding: 15px;
-    color: $grey;
-    a {
-      text-decoration: none;
-      color: $grey;
-    }
-  }
-}
-.nav-right {
-  display: inline-block;
-  float: right;
-  ul li {
-    display: inline-block;
-    text-decoration: none;
-    padding: 25px;
-    a {
-      text-decoration: none;
-      color: $grey;
-      &:hover {
-        color: $pastel_red;
-      }
-    }
-  }
-}
-header {
-  background-color: rbga(255, 255, 255, 0.5);
-  width: 100%;
-  z-index: 999;
+
+h1 {
+  font-size: 2.5em;
 }
 
-#tempRecFormBack{
+input {
+  display: block;
+  width: 350px;
+  text-align: center;
+  font-size: 1.15em;
+}
+
+
+//////////  begin styling for header and main buttons //////////
+.nav-wrapper {
+  background-color: $pastel_red;
+}
+.btn {
+  background-color: $pastel_red;
+  // border-radius: 7px;
+  &:hover {
+    background-color: $light_red;
+    color: $white;
+  }
+}
+.logo {
+  font-weight: 300;
+  font-size: 1em;
+}
+//////////  end styling for header and main buttons //////////
+
+
+
+//////////  begin styling for search bar //////////
+.search-wrapper {
+  background-color: $pastel_red;
+  padding: 25px;
+}
+
+.search-padding{
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  background-color: $ice_blue;
+  // border-radius: 7px;
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -moz-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+}
+.searchBar{
+  width: 75%;
+  margin: auto;
+}
+
+.results {
+  text-decoration: none;
+  color: $white;
+  &:hover: $ice_blue;
+}
+//////////  end styling for search bar //////////
+
+
+
+
+//////////  begin styling for recipe form + new user form //////////
+.text-highlight {
+  color: $pastel_red;
+  font-weight: 300;
+  padding-top: 0.75em;
+  font-size: 1.15em;
+}
+.submitForm {
+  background-color: $ice_blue;
+  padding: 5%;
+}
+
+.list-edit {
   background-color: $dark_azure;
+  &:hover {
+    background-color: $light_azure;
+    color: $dark_azure;
+  }
 }
 
+//////////  end of styling for recipe form //////////
+
+
+
+//////////  begin styling for landing page //////////
 #landing {
   background-image: url(/images/asparagus.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -73,9 +128,15 @@ header {
   margin-left: 5%;
   padding: 5%;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto
 }
+//////////  end of styling for landing page //////////
+
+
+
+
+
+
+
 button {
   &:hover {
     color: $pastel_red;
@@ -104,22 +165,7 @@ button {
 }
 .cookbook {
   text-align: center;
-}
-recipe-card {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 20%;
-  max-width: 250px;
-  height: 250px;
-  margin: 2%;
-  padding: 2%;
-  background-color: $pastel_red;
-  border: 2px solid $grey;
-}
-input {
-  display: block;
-  width: 350px;
+  background-color: $ice_blue;
 }
 
 #signup,
@@ -152,7 +198,7 @@ textarea {
     margin-top: 3px;
 }
 
-.myModal {
+.formStyle {
   display: block;
   margin: 0 auto;
 }
@@ -179,26 +225,27 @@ label {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  width: 20%;
-  max-width: 250px;
-  height: 250px;
-  margin: 2%;
-  padding: 2%;
-  background-color: $pastel_red;
-  border: 2px solid $grey;
+  width: 325px;
+  height: 275px;
+  margin: 10px;
+  background-color: $light_azure;
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -moz-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
 }
 
 .recipeCard img {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 200px;
 }
 
 #recipeSearch {
   text-align: center;
+  background-color: $ice_blue;
   width: 50%;
   margin: 1em auto;
   padding: 1em;
-  border: 1px solid black;
 }
 
 #recipeSearchBox {
@@ -219,12 +266,12 @@ label {
 }
 
 .recipeDetails img {
-  border: 4px solid white;
+  border: 4px solid $white;
 }
 
 .recipeDetails,
 .recipeDetails > .ng-binding {
-  color: white;
+  color: $white;
 }
 
 #newRecipe {
