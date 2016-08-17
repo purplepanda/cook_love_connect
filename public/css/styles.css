@@ -52,6 +52,8 @@ input {
 .results {
   text-decoration: none;
   color: white; }
+  .results:hover {
+    color: #E8FFF5; }
 
 .text-highlight {
   color: #ED685E;
@@ -80,7 +82,7 @@ input {
 #welcome {
   width: 50%;
   min-height: 800px;
-  background-color: #FFFFFF;
+  background-color: white;
   opacity: 0.65;
   margin-left: 5%;
   padding: 5%;
@@ -110,7 +112,7 @@ button:hover {
 
 .cookbook {
   text-align: center;
-  background-color: #E8FFF5; }
+  background-color: #f6f4f1; }
 
 #signup,
 #login {
@@ -159,19 +161,28 @@ label {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  width: 425px;
-  height: 300px;
-  margin: 1.5%;
-  padding: 1%;
+  width: 325px;
+  height: 275px;
+  margin: 10px;
   background-color: #DAF4F0;
   box-shadow: 2px 2px 2px 1px rgba(122, 122, 122, 0.5);
   -webkit-box-shadow: 2px 2px 2px 1px rgba(122, 122, 122, 0.5);
   -moz-box-shadow: 2px 2px 2px 1px rgba(122, 122, 122, 0.5);
   box-shadow: 2px 2px 2px 1px rgba(122, 122, 122, 0.5); }
 
+.recipeCard h1 {
+  text-align: left;
+  font-weight: 300;
+  font-size: 0.5em; }
+
+.recipeCard h2 {
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.25em; }
+
 .recipeCard img {
-  width: 80%;
-  max-height: 75%; }
+  width: 300px;
+  height: 200px; }
 
 #recipeSearch {
   text-align: center;
@@ -188,11 +199,10 @@ label {
   z-index: 1;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   overflow: auto;
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.75);
   padding: 3em; }
 
 .recipeDetails img {
@@ -201,15 +211,3 @@ label {
 .recipeDetails,
 .recipeDetails > .ng-binding {
   color: white; }
-
-#newRecipe {
-  max-width: 50%;
-  margin: 1em auto;
-  border: 2px solid black;
-  padding: 1em 3em; }
-  #newRecipe img {
-    height: 300px;
-    width: 400px; }
-
-.prettyList {
-  list-style: none; }

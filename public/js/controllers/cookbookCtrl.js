@@ -48,9 +48,14 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   });
 
 
+  // function that take user to 3rd party API search
+  $scope.searchParty = function() {
+    $(document).scrollTop("#recipeSearch");
+  };
+
+
   // function that logs user out in header
   $scope.logOut = function() {
-    console.log('logOut function is firing on click');
     firebase.auth().signOut();
     $state.go('landing');
   };
