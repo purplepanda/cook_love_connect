@@ -13,6 +13,7 @@ $cocoa: #7F796C;
 $dark_cocoa: #5B5751;
 
 
+
 // $cream: #f6f4f1; // our first cream color, not dark enough for large screens
 
 * {
@@ -21,6 +22,10 @@ $dark_cocoa: #5B5751;
     font-weight: 400;
     font-size: 16px;
     color: $grey;
+}
+
+.special1 {
+  font-family: 'BlackJack', 'Lato', sans-serif;
 }
 
 h1, h3 {
