@@ -39,7 +39,7 @@ input {
   width: 80%;
   margin: auto;
   padding: 10px;
-  background-color: #f6f4f1;
+  background-color: #F9EAD4;
   box-shadow: 2px 2px 2px 1px rgba(122, 122, 122, 0.5);
   -webkit-box-shadow: 2px 2px 2px 1px rgba(122, 122, 122, 0.5);
   -moz-box-shadow: 2px 2px 2px 1px rgba(122, 122, 122, 0.5);
@@ -62,7 +62,7 @@ input {
   font-size: 1.15em; }
 
 .submitForm {
-  background-color: #f6f4f1;
+  background-color: #F9EAD4;
   padding: 5%; }
 
 .list-edit {
@@ -105,7 +105,7 @@ button:hover {
 
 .cookbook {
   text-align: center;
-  background-color: #f6f4f1; }
+  background-color: #F9EAD4; }
 
 #signup,
 #login {
@@ -299,7 +299,7 @@ label {
 
 #recipeSearch {
   text-align: center;
-  background-color: #f6f4f1;
+  background-color: #F9EAD4;
   width: 50%;
   margin: 1em auto;
   padding: 1em; }
