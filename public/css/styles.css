@@ -309,3 +309,17 @@ label {
 
 .heightForm {
   height: 5rem; }
+
+@media (max-width: 1025px) {
+  .recipe-bottom {
+    width: 100%; }
+  .recipe-left {
+    width: 100%; }
+  .recipe-right {
+    width: 100%; } }
+
+@media (max-width: 500px) {
+  body {
+    min-width: 480px; }
+    body .recipeDetails {
+      min-width: 400px; } }
