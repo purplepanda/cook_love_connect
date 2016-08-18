@@ -8,10 +8,12 @@ $ice_blue: #E8FFF5;
 $light_azure: #DAF4F0;
 $dark_azure: #3D6366;
 $white: white;
-$cream: #f6f4f1;
+$cream: #F9EAD4;
 $cocoa: #7F796C;
 $dark_cocoa: #5B5751;
 
+
+// $cream: #f6f4f1; // our first cream color, not dark enough for large screens
 
 * {
     box-sizing: border-box;
@@ -402,17 +404,6 @@ label {
   color: $white;
 }
 
-// #newRecipe {
-//   max-width: 50%;
-//   margin: 1em auto;
-//   border: 2px solid black;
-//   padding: 1em 3em;
-//   img {
-//     height: 300px;
-//     width: 400px;
-//   }
-// }
-
 #imageLabel {
   width:100%;
 }
@@ -437,4 +428,28 @@ label {
 
 .heightForm {
   height: 5rem;
+}
+
+
+////////// styling for responsiveness //////////
+@media (max-width: 1025px){
+  .recipe-bottom {
+    width: 100%;
+  }
+  .recipe-left {
+    width: 100%;
+  }
+  .recipe-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px){
+  body {
+    min-width: 480px;
+
+    .recipeDetails {
+      min-width: 400px;
+    }
+  }
 }
