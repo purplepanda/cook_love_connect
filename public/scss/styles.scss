@@ -117,21 +117,23 @@ input {
 
 
 //////////  begin styling for landing page //////////
-#landing {
-  background-image: url(/images/asparagus.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-size: 100%;
-}
+// #landing {
+//   max-height:100%;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   background-size: 100%;
+// }
+
 #welcome {
-  width: 50%;
-  min-height: 800px;
+  width: 40%;
+  max-height: 100%;
+  height: 1000px;
   background-color: $white;
-  opacity: 0.65;
+  opacity: 0.8;
   margin-left: 5%;
-  padding: 5%;
+  padding: 7%;
   text-align: center;
 }
 //////////  end of styling for landing page //////////
@@ -398,7 +400,6 @@ label {
   color: $white;
 }
 
-<<<<<<< HEAD
 // #newRecipe {
 //   max-width: 50%;
 //   margin: 1em auto;
@@ -412,7 +413,7 @@ label {
 
 #imageLabel {
   width:100%;
-
+}
 
 
 
@@ -430,4 +431,8 @@ label {
 #recipeSearchBox {
   margin: 1em auto;
 
+}
+
+.heightForm {
+  height: 5rem;
 }

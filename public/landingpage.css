@@ -49,7 +49,8 @@
     font-size: 240px;
     padding: 0;
     line-height: 200px;
-	color: rgba(169,3,41, 0.8);
+	color: white;
+	opacity: 0.8;
 }
 .cb-slideshow li:nth-child(1) span { background-image: url(images/bastaPasta.jpg) }
 .cb-slideshow li:nth-child(2) span {
@@ -129,7 +130,7 @@
 }
 
 /* Animation for the slideshow images */
-@-webkit-keyframes imageAnimation { 
+@-webkit-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-animation-timing-function: ease-in;
@@ -149,7 +150,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-moz-keyframes imageAnimation { 
+@-moz-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -moz-animation-timing-function: ease-in;
@@ -169,7 +170,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-o-keyframes imageAnimation { 
+@-o-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -o-animation-timing-function: ease-in;
@@ -189,7 +190,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-ms-keyframes imageAnimation { 
+@-ms-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -ms-animation-timing-function: ease-in;
@@ -209,7 +210,7 @@
 	}
 	100% { opacity: 0 }
 }
-@keyframes imageAnimation { 
+@keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    animation-timing-function: ease-in;
@@ -230,7 +231,7 @@
 	100% { opacity: 0 }
 }
 /* Animation for the title */
-@-webkit-keyframes titleAnimation { 
+@-webkit-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-transform: translateY(200px);
@@ -250,7 +251,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-moz-keyframes titleAnimation { 
+@-moz-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -moz-transform: translateY(200px);
@@ -270,7 +271,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-o-keyframes titleAnimation { 
+@-o-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -o-transform: translateY(200px);
@@ -290,7 +291,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-ms-keyframes titleAnimation { 
+@-ms-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -ms-transform: translateY(200px);
@@ -310,14 +311,19 @@
 	}
 	100% { opacity: 0 }
 }
-@keyframes titleAnimation { 
+@keyframes titleAnimation {
 	0% {
 	    opacity: 0;
-	    transform: translateY(200px);
+	    /*transform: translateY(200px);*/
+	    transform: translateX(200px);
+	    /*right:0px;*/
+	    top:0px;
+
 	}
 	8% {
 	    opacity: 1;
-	    transform: translateY(0px);
+	    transform: translateX(0px);
+	     top:0px;
 	}
 	17% {
 	    opacity: 1;
@@ -334,9 +340,19 @@
 .no-cssanimations .cb-slideshow li span{
 	opacity: 1;
 }
-@media screen and (max-width: 1140px) { 
+@media screen and (max-width: 1140px) {
 	.cb-slideshow li div h3 { font-size: 100px }
 }
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 1010px) {
 	.cb-slideshow li div h3 { font-size: 50px }
+	#welcome {width: 550px;
+		padding-top: 150px;
+
+	}
+
+}
+/*@media screen and (max-width: 400px) {
+	#welcome {
+		width: 375px;
+	}*/
 }

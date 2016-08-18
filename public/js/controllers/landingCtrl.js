@@ -1,7 +1,7 @@
 var app = angular.module("cookingConnect");
 
 app.controller("landingCtrl", function($scope, $state) {
-  $scope.title = "Welcome to Cook Love Connect!";
+  $scope.title = "Cook · Love · Connect";
 
   $scope.loginForm = function() {
     $('#login').show();
