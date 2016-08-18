@@ -8,13 +8,10 @@ $ice_blue: #E8FFF5;
 $light_azure: #DAF4F0;
 $dark_azure: #3D6366;
 $white: white;
-$cream: #F9EAD4;
+$cream: #f6f4f1;
 $cocoa: #7F796C;
 $dark_cocoa: #5B5751;
 
-
-
-// $cream: #f6f4f1; // our first cream color, not dark enough for large screens
 
 * {
     box-sizing: border-box;
@@ -25,17 +22,17 @@ $dark_cocoa: #5B5751;
 }
 
 .special1 {
-  font-family: 'BlackJack', 'Lato', sans-serif;
+  font-family: 'Courgette', cursive;
 }
 
 .special2 {
-  font-family: 'BlackJack', 'Lato', sans-serif;
+  font-family: 'Courgette', cursive;
   font-size: 1.25em;
   color: $white;
 }
 .special3 {
-  font-family: 'BlackJack', 'Lato', sans-serif;
-  font-size: 1.5em;
+  font-family: 'Courgette', cursive;
+  font-size: 1.75em;
   color: $white
 }
 
