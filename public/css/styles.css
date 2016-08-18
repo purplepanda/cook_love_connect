@@ -101,6 +101,16 @@ input {
   padding: 7%;
   text-align: center; }
 
+footer {
+  background-color: #7F796C; }
+
+footer a {
+  color: #ED7A66; }
+
+footer p {
+  padding-top: 2em;
+  color: white; }
+
 button:hover {
   color: #ED685E;
   background-color: #404040; }

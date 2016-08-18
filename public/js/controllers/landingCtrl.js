@@ -3,6 +3,10 @@ var app = angular.module("cookingConnect");
 app.controller("landingCtrl", function($scope, $state) {
   $scope.title = "Cook · Love · Connect";
 
+  // hide footer on landing page
+  $('footer').hide();
+
+
   $scope.loginForm = function() {
     $('#login').show();
     $('#loginButton').hide();

@@ -164,11 +164,18 @@ input {
 }
 //////////  end of styling for landing page //////////
 
+footer {
+  background-color: $cocoa;
+}
 
+footer a {
+  color: #ED7A66;
+}
 
-
-
-
+footer p {
+  padding-top: 2em;
+  color: $white;
+}
 
 button {
   &:hover {
