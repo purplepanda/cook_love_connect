@@ -7,7 +7,7 @@ app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $stat
   $scope.storedRecipes = storeRecipeFactory.returnObject();
 
   var user = firebase.auth().currentUser; // var user identifies logged in user
-  var userID = user.uid;
+  // var userID = user.uid;
   $scope.uid = user.uid;
   // console.log("user is, ", user);
   // console.log("userID is, ", userID);
