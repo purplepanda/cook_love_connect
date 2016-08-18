@@ -18,6 +18,9 @@
   font-size: 1.5em;
   color: white; }
 
+.input-field {
+  margin-top: -10px; }
+
 h1, h3 {
   text-align: center;
   clear: both;
@@ -89,7 +92,7 @@ input {
     color: #3D6366; }
 
 #welcome {
-  width: 40%;
+  width: 45%;
   max-height: 100%;
   height: 1000px;
   background-color: white;
@@ -327,6 +330,40 @@ label {
 .heightForm {
   height: 5rem; }
 
+@media (max-width: 1275px) {
+  #welcome {
+    width: 46%; } }
+
+@media (max-width: 1225px) {
+  #welcome {
+    width: 48%; } }
+
+@media (max-width: 1175px) {
+  #welcome {
+    width: 50%; } }
+
+@media (max-width: 1125px) {
+  #welcome {
+    width: 52%; } }
+
+@media (max-width: 1075px) {
+  #welcome {
+    width: 54%; } }
+
+@media (max-width: 1025px) {
+  #welcome {
+    width: 56%; } }
+
+@media (max-width: 1175px) {
+  #welcome {
+    width: 58%; } }
+
+@media (max-width: 850px) {
+  #welcome {
+    width: 70%;
+    min-width: 400px;
+    margin: auto; } }
+
 @media (max-width: 1025px) {
   .recipe-bottom {
     width: 100%; }
@@ -339,4 +376,8 @@ label {
   body {
     min-width: 480px; }
     body .recipeDetails {
-      min-width: 400px; } }
+      min-width: 400px; }
+  #welcome {
+    width: 100%;
+    margin: auto;
+    text-align: center; } }
