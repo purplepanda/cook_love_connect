@@ -1,14 +1,83 @@
-<header ng-include="'partials/header_main.html'"></header>
+<header ng-include="'partials/header.html'"></header>
+
+
 <div class="cookbook">
-<h3>{{title}}</h3>
-<input type="text" ng-model="recipeSearch" placeholder="recipe search">
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-<recipe-card>Some Recipe</recipe-card>
-</div>
+
+	<div class="search-wrapper">
+		<div class="search-padding">
+			<input type="text" class="searchBar" ng-model="recipeSearch" ng-change="" placeholder="recipe search">
+		</div>
+	</div>
+
+
+	<!-- eventually, swap this title directive with something personal to the user -->
+	<h1 class="special1">My Cookbook</h1>
+
+
+
+	<div class="recipeCard" ng-repeat="recipe in recipes.recipes | toArray | filter: uid | filter : recipeSearch" ng-click="showDetails = ! showDetails">
+		<!-- | filter : recipeSearch -->
+
+				<img ng-src="{{recipe.image}}" alt="" />
+				<h1>{{recipe.name}}</h1>
+	      <h2>
+					<ul>
+						<li ng-repeat="tag in recipe.tag">&nbsp;{{tag }}&nbsp;|&nbsp;</li>
+					</ul>
+				</h2>
+
+
+
+				<div class="recipeDetails" ng-show="showDetails">
+				<!--  start recipe pop up  -->
+					<div class="recipe-left">
+						<img ng-src="{{recipe.image}}" alt="">
+						<div class="title-block">
+							<h1>{{recipe.name}}</h1>
+							<h4>Submitted by: {{recipe.author}}</h4>
+							</div>
+						</div>
+
+
+					<div class="recipe-right">
+						<h2>INGREDIENTS</h2>
+						<ul>
+							<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+						</ul>
+					</div>
+
+					<div class="recipe-bottom">
+						<h2>INSTRUCTIONS</h2>
+						<ol>
+							<li ng-repeat="instructions in recipe.instructions">{{instructions}}</li>
+						</ol>
+
+						<h3>ORIGIN STORY</h3>
+						<p>{{recipe.originStory}}</p>
+
+						<h3>TAGS</h3>
+						<ul>
+							<li ng-repeat="tag in recipe.tag">{{tag}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	</div>
+
+
+
+<!-- 3rd party recipe search API - currently disabled due to https / http security issues  -->
+			<!-- <div class="search-wrapper">
+					<div id="searchResults">
+					  <h1>Yummy Findings</h1>
+						<p ng-repeat="recipe in thirdpartyrecipes"><a class="results" ng-href="{{recipe.href}}" target="_blank">{{recipe.title}}</a></p>
+						</div> -->
+				<!-- Recipe Search API -->
+				<!-- <form id="recipeSearch" class="search-padding">
+				  <label for="search">Recipe Search</label>
+				  <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna" ng-model="searchIt"></input>
+				  <button ng-click="submitSearch(searchIt)" class="btn waves-effect waves-red">Search</button>
+				</form>
+				</div> -->
+				<!-- End Recipe Search API -->
+<!-- </div> -->

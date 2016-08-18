@@ -31,13 +31,13 @@ gulp.task('sass', function() {
 });
 
 // JS concat, strip debugging and minify
-gulp.task('scripts', function() {
-  gulp.src(['./public/js/app.js', './public/js/**/*.js'])
-    .pipe(concat('script.js'))
-    .pipe(stripDebug())
-    .pipe(uglify())
-    .pipe(gulp.dest('./public/build/scripts/'));
-});
+// gulp.task('scripts', function() {
+//   gulp.src(['./public/js/app.js', './public/js/**/*.js'])
+//     .pipe(concat('script.js'))
+//     .pipe(stripDebug())
+//     .pipe(uglify())
+//     .pipe(gulp.dest('./public/build/scripts/'));
+// });
 
 // JSHint checks code for errors
 gulp.task('lint', function() {
@@ -63,10 +63,12 @@ gulp.task('test', function(done) {
   }, done).start();
 });
 
-gulp.task('default', ['serve', 'lint', 'sass', 'scripts', 'styles'], function() {
+// 'scripts', was removed aug 13
+gulp.task('default', ['serve', 'lint', 'sass', 'styles'], function() {
 
 });
 gulp.watch('./public/css/**/*.css', ['styles']);
 gulp.watch('./public/scss/**/*.scss', ['sass']);
 
-gulp.watch('./public/js/**/*.js', ['lint', 'scripts']);
+// , 'scripts' removed aug 13
+gulp.watch('./public/js/**/*.js', ['lint']);

@@ -1,19 +1,47 @@
-<header ng-include="'partials/header_main.html'"></header>
-<h3>{{title}}</h3>
+<div>
+	<header ng-include="'partials/header.html'"></header>
+	<h3>{{title}}</h3>
 
-<div id="userhome">
-<div class="tempDiv" ng-click="recipeForm()">
-  <h4>New Recipe Form</h4>
-  <p>This div is a placeholder for the "new recipe" form we are creating.</p>
-</div>
+	<!-- starter code for ng expression to replace title -->
+	<h2>What's cooking
+		<script>var user = firebase.auth().currentUser; if(user){console.log(user.email)}</script>
+	</h2>
 
-<div class="tempDiv">
-  <a ui-sref="cookbook"><h4>Personal Cookbook</h4></a>
-  <p>This div is a placeholder for the user's complete personal cookbook.</p>
-</div>
 
-<div class="tempDiv">
-  <a ui-sref="cookbook"><h4>Shared Cookbooks</h4></a>
-  <p>This div is a placeholder for the area where a user can access any of their shared cookbooks.</p>
-</div>
+<!-- User Home Kitchen -->
+	<div id="userhome">
+		<div class="tempDiv">
+			<a ui-sref="newForm"><h4>New Recipe Form</h4></a>
+			<p>Add a new recipe here!</p>
+		</div>
+
+		<div class="tempDiv">
+		  <a ui-sref="cookbook"><h4>Personal Cookbook</h4></a>
+		  <p>This div is a placeholder for the user's complete personal cookbook.</p>
+		</div>
+
+		<!-- <div class="tempDiv">
+		  <a ui-sref="cookbook"><h4>Shared Cookbooks</h4></a>
+		  <p>This div is a placeholder for the area where a user can access any of their shared cookbooks.</p>
+		</div>
+
+		<div class="tempDiv">
+			<a ui-sref="newCookbookForm"><h4>Create A New Cookbook</h4></a>
+			<p>Click here to create a new cookbook to share!</p>
+		</div> -->
+
+
+
+<!-- Recipe API Search Results -->
+	<div id="searchResults">
+	  <h1>Yummy Findings</h1>
+		<p ng-repeat="recipe in thirdpartyrecipes"><a ng-href="{{recipe.href}}">{{recipe.title}}</a></p>
+		</div>
+<!-- Recipe Search API -->
+<form id="recipeSearch">
+  <label for="search">Recipe Search</label>
+  <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna" ng-model="searchIt"></input>
+  <button ng-click="submitSearch(searchIt)" >Search</button>
+</form>
+<!-- End Recipe Search API -->
 </div>

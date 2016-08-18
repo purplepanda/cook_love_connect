@@ -1,4 +1,4 @@
-var app = angular.module("cookingConnect", ["ui.router"]);
+var app = angular.module("cookingConnect", ["ui.router", "firebase", "angular-toArrayFilter"]);
 
 app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider
@@ -19,5 +19,21 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
       url: "/cookbook",
       templateUrl: "partials/cookbook.html",
       controller: "cookbookCtrl"
+    })
+    .state("newForm", {
+      url: "/newForm",
+      templateUrl: "partials/newForm.html",
+      controller: "newFormCtrl"
+    })
+    // CLC 2.0
+    // .state("newCookbookForm", {
+    //   url: "/newCookbookForm",
+    //   templateUrl: "partials/newCookbookForm.html",
+    //   controller: "newCookbookCtrl"
+    // })
+    .state("newUserProfileForm", {
+      url: "/newUserProfileForm",
+      templateUrl: "partials/newUserProfileForm.html",
+      controller: "newUserProfileCtrl"
     });
 }]);

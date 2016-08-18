@@ -1,27 +1,64 @@
 var app = angular.module("cookingConnect");
 
-app.controller("cookbookCtrl", function($scope, $http) {
-  $scope.title = "The ... Cookbook";
 
-  // $.ajax({
-  //   url: 'http://food2fork.com/api/search?key=fc28481c5019cd053fe8ad5794e34d40&q=shredded%20chicken',
-  //   dataType: 'jsonp',
-  //   crossDomain: true
-  // }).done(function(response) {
-  //   console.log(response);
-  // }.bind(this));
+app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state, $firebaseObject) {
 
-  $http({
-    method: "GET",
-    dataType: 'jsonp',
-    crossDomain: true,
-    url: 'http://food2fork.com/api/search?key=fc28481c5019cd053fe8ad5794e34d40&q=shredded%20chicken'
-  }).then(function successCallback(response) {
-    // $scope.badges = response.data.badges
-    console.log(response);
-  }, function errorCallback(response) {
-    console.log('something went wrong');
+  // show footer
+  $('footer').show();
 
+  // add storedRecipes to our scope via the storeRecipeFactory
+  $scope.storedRecipes = storeRecipeFactory.returnObject();
+
+  var user = firebase.auth().currentUser; // var user identifies logged in user
+  // var userID = user.uid;
+  $scope.uid = user.uid;
+  // console.log("user is, ", user);
+  // console.log("userID is, ", userID);
+
+
+  // Call to our FirebaseDB to grab recipes
+  $http.get('https://cook-love-connect.firebaseio.com/.json').success(function(data) {
+    $scope.recipes = data;
+    // console.log(data.recipes);
   });
+
+
+  // logic for 3rd party API search
+  var tempSearch = ""; // make tempSearch available outside function if we ever want to display elsewhere
+  $scope.submitSearch = function(searchIt) {
+    tempSearch = searchIt;
+
+    // make API call by concat urlbase w/ user-supplied search query
+    var urlBase = 'http://recipepuppy.com/api/?q=';
+    var searchUrl = urlBase + tempSearch;
+
+    $http.get(searchUrl)
+      .then(function(response) {
+        console.log("successful API request!", response);
+        $scope.thirdpartyrecipes = response.data.results;
+      });
+  };
+
+
+  // enables CSS modal for individual recipes
+  $(document).ready(function() {
+    $(document).on('click', ".recipeCard", function() {
+      event.preventDefault();
+      $(this).closest('.recipeDetails').toggle();
+    });
+  });
+
+
+  // function that take user to 3rd party API search
+  $scope.searchParty = function() {
+    $(document).scrollTop("#recipeSearch");
+  };
+
+
+  // function that logs user out in header
+  $scope.logOut = function() {
+    firebase.auth().signOut();
+    $state.go('landing');
+  };
 
 });

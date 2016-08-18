@@ -1,65 +1,182 @@
 $white: #FFFFFF;
 $grey: #404040;
+$light_orange: #ffcc80;
+$light_red: #ED7A66;
 $pastel_red: #ED685E;
 $bright_red: #E94F37;
 $ice_blue: #E8FFF5;
 $light_azure: #DAF4F0;
 $dark_azure: #3D6366;
+$white: white;
+$cream: #f6f4f1;
+$cocoa: #7F796C;
+$dark_cocoa: #5B5751;
+
 
 * {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: $grey;
+    color: $cocoa;
 }
-h3 {
+
+.special1 {
+  font-family: 'Courgette', cursive;
+}
+
+.special2 {
+  font-family: 'Courgette', cursive;
+  font-size: 1.25em;
+  color: $white;
+}
+.special3 {
+  font-family: 'Courgette', cursive;
+  font-size: 1.75em;
+  color: $white
+}
+
+.input-field {
+  margin-top: -10px;
+}
+
+h1, h3 {
   text-align: center;
   clear: both;
+  color: $dark_cocoa;
 }
-.nav-left {
-  display: inline-block;
-  float: left;
-  ul li {
-    display: inline-block;
-    text-decoration: none;
-    padding: 15px;
+
+h1 {
+  font-size: 2.5em;
+}
+
+h5 {
+  font-size: 1.25em;
+  padding-bottom: 10px;
+}
+
+input {
+  // display: block;
+  width: 350px;
+  text-align: center;
+  font-size: 1.15em;
+}
+
+
+
+//////////  begin styling for header and main buttons //////////
+.nav-wrapper {
+  background-color: $cocoa;
+}
+
+.btn {
+  background-color: $cocoa;
+  // border-radius: 7px;
+  &:hover {
+    background-color: $light_red;
+    color: $white;
   }
 }
-.nav-right {
-  display: inline-block;
-  float: right;
-  ul li {
-    display: inline-block;
-    text-decoration: none;
-    padding: 25px;
-    a {
-      text-decoration: none;
-      color: $grey;
-      &:hover {
-        color: $pastel_red;
-      }
-    }
+.logo {
+  font-weight: 300;
+  font-size: 1em;
+}
+//////////  end styling for header and main buttons //////////
+
+
+
+//////////  begin styling for search bar //////////
+.search-wrapper {
+  background-color: $cocoa;
+  padding: 25px;
+}
+
+.search-padding{
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  background-color: $cream;
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -moz-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+}
+.searchBar{
+  width: 75%;
+  margin: auto;
+}
+
+.results {
+  text-decoration: none;
+  color: $white;
+  &:hover{
+    color: $ice_blue;
   }
 }
-header {
-  background-color: rbga(255, 255, 255, 0.5);
-  width: 100%;
-  z-index: 999;
+//////////  end styling for search bar //////////
+
+
+
+
+//////////  begin styling for recipe form + new user form //////////
+.text-highlight {
+  color: $pastel_red;
+  font-weight: 300;
+  padding-top: 0.75em;
+  font-size: 1.15em;
 }
-#landing {
-  background-image: url(/images/asparagus.jpg);
-  background-size: 100%;
-}
-#welcome {
-  width: 50%;
-  min-height: 800px;
-  background-color: $white;
-  opacity: 0.65;
-  margin-left: 5%;
+.submitForm {
+  background-color: $cream;
   padding: 5%;
+}
+
+.list-edit {
+  background-color: $dark_azure;
+  &:hover {
+    background-color: $light_azure;
+    color: $dark_azure;
+  }
+}
+
+//////////  end of styling for recipe form //////////
+
+
+
+//////////  begin styling for landing page //////////
+// #landing {
+//   max-height:100%;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   background-size: 100%;
+// }
+
+#welcome {
+  width: 45%;
+  max-height: 100%;
+  height: 1000px;
+  background-color: $white;
+  opacity: 0.8;
+  margin-left: 5%;
+  padding: 7%;
   text-align: center;
 }
+//////////  end of styling for landing page //////////
+
+footer {
+  background-color: $cocoa;
+}
+
+footer a {
+  color: #ED7A66;
+}
+
+footer p {
+  padding-top: 2em;
+  color: $white;
+}
+
 button {
   &:hover {
     color: $pastel_red;
@@ -75,7 +192,7 @@ button {
   width: 25%;
   max-width: 350px;
   height: 350px;
-  margin: 1%;
+  margin: 2%;
   padding: 1%;
   background-color: $ice_blue;
   border: 2px solid $grey;
@@ -88,20 +205,332 @@ button {
 }
 .cookbook {
   text-align: center;
+  background-color: $cream;
 }
-recipe-card {
+
+#signup,
+#login {
+  display: none;
+}
+
+#signup input,
+#signup textarea,
+#signup button,
+#login input,
+#login button {
+  margin: 1em auto;
+}
+
+textarea {
+    min-width: 350px;
+    height: auto;
+    margin-bottom: 2em;
+    display: block;
+}
+
+.btn-primary.raised {
+    box-shadow: 0 3px 0 0 #007299;
+}
+.btn-primary.raised:active, .btn-primary.raised.active {
+    background: #33a6cc;
+    box-shadow: none;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+.formStyle {
+  display: block;
+  margin: 0 auto;
+}
+
+.footerMedia {
+  width: 34px;
+  height: 32px;
+  padding-left: 5px;
+}
+
+
+#newForm {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+label {
+  color: $grey;
+}
+
+
+
+////////// styling for recipe card feed //////////
+.recipeCard {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  width: 20%;
-  max-width: 250px;
-  height: 250px;
-  margin: 2%;
-  padding: 2%;
-  background-color: $pastel_red;
-  border: 2px solid $grey;
+  width: 325px;
+  height: 325px;
+  margin: 10px;
+  background-color: $white;
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -moz-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
 }
-input {
-  display: block;
-  width: 350px;
+
+.recipeCard h1 {
+  text-align: left;
+  color: $cocoa;
+  padding-left: 10px;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+.recipeCard h2 {
+  text-align: left;
+  padding-left: 10px;
+  font-weight: 700;
+  font-size: 0.75em;
+  padding-top: 0;
+  margin-top: -10px;
+}
+
+.recipeCard h2 ul li {
+  display: inline-block;
+  color: $cocoa;
+}
+
+.recipeCard img {
+  width: 325px;
+  height: 225px;
+}
+
+
+
+////////// styling for recipe card pop-up //////////
+
+.recipeDetails {
+  position: fixed;
+  z-index: 1;
+  left: 10%;
+  top: 8%;
+  width: 80%;
+  height: 85%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.90);
+  margin: auto;
+  border: 5px solid $dark_cocoa;
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  -moz-box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+  box-shadow: 2px 2px 2px 1px rgba(122,122,122,0.5);
+}
+
+
+.recipeDetails h1 {
+  text-align: left;
+  font-size: 3.5em;
+  font-weight: 300;
+  color: $dark_cocoa;
+}
+
+.recipeDetails h2 {
+  text-align: left;
+  font-size: 2.75em;
+  font-weight: 300;
+  padding: 25px 0 5px 20px;
+  color: $dark_cocoa;
+  border-bottom: 1px solid $pastel_red;
+}
+
+.recipeDetails h3 {
+  text-align: left;
+  font-size: 2em;
+  font-weight: 300;
+  padding-left: 20px;
+  color: $dark_cocoa;
+}
+
+.recipeDetails h4 {
+  text-align: left;
+  font-size: 1.25em;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-top: -25px;
+  color: $cocoa;
+}
+
+.recipeDetails p {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 700;
+  padding-left: 45px;
+  color: $cocoa;
+}
+
+.recipeDetails .recipe-right ul li {
+  text-align: left;
+  width: 80%;
+  font-size: 1em;
+  font-weight: 700;
+  padding-left: 45px;
+  line-height: 1.25em;
+  color: $cocoa;
+}
+
+.recipeDetails .recipe-bottom ol li {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 700;
+  padding-left: 45px;
+  line-height: 1.25em;
+  color: $cocoa;
+}
+
+.recipeDetails .recipe-bottom ul li {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 400;
+  padding-left: 45px;
+  line-height: 1.25em;
+  color: $cocoa;
+}
+
+.recipe-bottom {
+  width: 100%;
+  display: inline-block;
+}
+
+.recipe-left {
+  width: 55%;
+  display: inline-block;
+  float: left;
+  text-align: left;
+  padding: 10px;
+}
+
+.recipe-left img {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding: 10px;
+}
+
+.title-block {
+  display: inline-block;
+  float: left;
+}
+
+.recipe-right {
+  width: 45%;
+  display: inline-block;
+  float: right;
+}
+
+
+.recipeDetails,
+.recipeDetails > .ng-binding {
+  color: $white;
+}
+
+#imageLabel {
+  width:100%;
+}
+
+
+
+
+
+///////////  styling for 3rd party recipe search //////////
+#recipeSearch {
+  text-align: center;
+  background-color: $cream;
+  width: 50%;
+  margin: 1em auto;
+  padding: 1em;
+}
+
+#recipeSearchBox {
+  margin: 1em auto;
+
+}
+
+.heightForm {
+  height: 5rem;
+}
+
+
+////////// styling for responsiveness //////////
+@media (max-width: 1275px){
+  #welcome {
+    width: 46%;
+  }
+}
+@media (max-width: 1225px){
+  #welcome {
+    width: 48%;
+  }
+}
+@media (max-width: 1175px){
+  #welcome {
+    width: 50%;
+  }
+}
+@media (max-width: 1125px){
+  #welcome {
+    width: 52%;
+  }
+}
+@media (max-width: 1075px){
+  #welcome {
+    width: 54%;
+  }
+}
+@media (max-width: 1025px){
+  #welcome {
+    width: 56%;
+  }
+}
+
+@media (max-width: 1175px){
+  #welcome {
+    width: 58%;
+  }
+}
+@media (max-width: 850px){
+  #welcome {
+    width: 70%;
+    min-width: 400px;
+    margin: auto;
+  }
+}
+
+
+
+
+@media (max-width: 1025px){
+  .recipe-bottom {
+    width: 100%;
+  }
+  .recipe-left {
+    width: 100%;
+  }
+  .recipe-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px){
+  body {
+    min-width: 480px;
+
+    .recipeDetails {
+      min-width: 400px;
+    }
+  }
+  #welcome {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
 }

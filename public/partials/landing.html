@@ -1,12 +1,90 @@
-<header ng-include="'partials/header_login.html'"></header>
-<div id="landing">
-<section id="welcome">
-<h3>{{title}}</h3>
+
+<!-- Hide footer on landing page -->
+<script>
+$('#landingFooter').hide()
+</script>
+<!-- Background image slide show -->
+<ul class="cb-slideshow">
+            <li><span>Image 01</span>
+              <!-- <div><h3>COOK</h3></div></li> -->
+            <li><span>Image 02</span>
+              <!-- <div><h3>LOVE</h3></div></li> -->
+            <li><span>Image 03</span>
+              <!-- <div><h3>CONNECT</h3></div></li> -->
+            <li><span>Image 04</span>
+              <!-- <div><h3>COOK</h3></div></li> -->
+            <li><span>Image 05</span>
+              <!-- <div><h3>LOVE</h3></div></li> -->
+            <li><span>Image 06</span>
+              <!-- <div><h3>CONNECT</h3></div></li> -->
+</ul>
+
+
+
+
+
+
+<div id="welcome">
+<h1 class="special4">Cook Love Connect</h1>
 
 <div>
-<p>CLC makes it easier for you to save your recipes in one place, but what you'll really love is being able to share your favorites, new and old, with your favorite people, no matter how far away they are. Bon appetit!</p>
-  <button type="button" ng-click="loginTemp()">Login</button>
-  <button type="button" ng-click="regTemp()">Sign Up</button>
+<h5>Welcome to <span class="special5">Cook Love Connect</span>, an app for users to store and enjoy recipes their favorite recipes. Bon appetit!</h5>
+  <button type="button" class="btn waves-effect waves-red" id="loginButton" ng-click="loginForm()">Enter</button>
 </div>
-</section>
+
+
+<!-- Log In Form -->
+<form id="login">
+
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="txtEmail" type="email" class="validate">
+          <label for="email" data-error="wrong" data-success="right">Email</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+        <div class="input-field col s12">
+          <input id="txtPassword" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+  </div>
+
+  <button
+    id="btnLogin"
+    class="btn waves-effect waves-red"
+    type="button"
+    name="button">
+    Log In
+  </button>
+  <button
+    id="btnSignUp"
+    class="btn waves-effect waves-red"
+    type="button"
+    name="button"
+    >
+    Sign Up
+  </button>
+  <button
+    id="btnLogout"
+    class="btn waves-effect waves-red"
+    type="button"
+    name="button"
+    class="hide">
+    Log Out
+  </button>
+  <button
+    id="btnPasswordChange"
+    class="btn waves-effect waves-red"
+    type="button"
+    name="button">
+    Reset Password via Email
+  </button>
+</form>
 </div>
