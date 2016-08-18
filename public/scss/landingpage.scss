@@ -1,3 +1,19 @@
+$dark_cocoa: #5B5751;
+
+
+
+.special4 {
+  font-family: 'BlackJack', 'Lato', sans-serif;
+  font-size: 3em;
+  color: $dark_cocoa;
+}
+.special5 {
+  font-family: 'BlackJack', 'Lato', sans-serif;
+  font-size: 1.25em;
+  color: $dark_cocoa;
+}
+
+
 .cb-slideshow,
 .cb-slideshow:after {
     position: fixed;
@@ -128,7 +144,7 @@
 //     animation-delay: 30s;
 // }
 /* Animation for the slideshow images */
-@-webkit-keyframes imageAnimation { 
+@-webkit-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-animation-timing-function: ease-in;
@@ -148,7 +164,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-moz-keyframes imageAnimation { 
+@-moz-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -moz-animation-timing-function: ease-in;
@@ -168,7 +184,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-o-keyframes imageAnimation { 
+@-o-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -o-animation-timing-function: ease-in;
@@ -188,7 +204,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-ms-keyframes imageAnimation { 
+@-ms-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -ms-animation-timing-function: ease-in;
@@ -208,7 +224,7 @@
 	}
 	100% { opacity: 0 }
 }
-@keyframes imageAnimation { 
+@keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    animation-timing-function: ease-in;
@@ -229,7 +245,7 @@
 	100% { opacity: 0 }
 }
 /* Animation for the title */
-@-webkit-keyframes titleAnimation { 
+@-webkit-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-transform: translateY(200px);
@@ -249,7 +265,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-moz-keyframes titleAnimation { 
+@-moz-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -moz-transform: translateY(200px);
@@ -269,7 +285,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-o-keyframes titleAnimation { 
+@-o-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -o-transform: translateY(200px);
@@ -289,7 +305,7 @@
 	}
 	100% { opacity: 0 }
 }
-@-ms-keyframes titleAnimation { 
+@-ms-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -ms-transform: translateY(200px);
@@ -309,7 +325,7 @@
 	}
 	100% { opacity: 0 }
 }
-@keyframes titleAnimation { 
+@keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    transform: translateY(200px);
@@ -333,9 +349,9 @@
 .no-cssanimations .cb-slideshow li span{
 	opacity: 1;
 }
-@media screen and (max-width: 1140px) { 
+@media screen and (max-width: 1140px) {
 	.cb-slideshow li div h3 { font-size: 100px }
 }
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 600px) {
 	.cb-slideshow li div h3 { font-size: 50px }
 }

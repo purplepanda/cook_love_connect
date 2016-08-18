@@ -3,7 +3,6 @@
 var app = angular.module("cookingConnect");
 
 app.controller("newFormCtrl", ["$scope", "$state", "storeRecipeFactory", "$location", "$firebaseObject", function($scope, $state, storeRecipeFactory, $location, $firebaseObject) {
-  $scope.title = "Add A New Recipe";
   $scope.recipes = {};
 
 
