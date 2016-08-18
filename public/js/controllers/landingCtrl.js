@@ -19,7 +19,7 @@ app.controller("landingCtrl", function($scope, $state) {
   const btnPasswordChange = document.getElementById('btnPasswordChange');
 
   // Add login event
-  btnLogin.addEventListener('click', e => {
+  btnLogin.addEventListener('click', function(e) {
     // Get email and pass
     const email = txtEmail.value;
     if (email.length < 4) {
@@ -34,11 +34,11 @@ app.controller("landingCtrl", function($scope, $state) {
     const auth = firebase.auth();
     // Sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
-    promise.catch(e => window.alert('Wrong email address or password, dum-dum.'));
+    // promise.catch(e => console.log(e.message));
+    promise.catch(function(e){ window.alert('Wrong email address or password, dum-dum.')});
   });
 
-  btnSignUp.addEventListener('click', e => {
+  btnSignUp.addEventListener('click', function(e) {
     // Get email and pass
     const email = txtEmail.value;
     if (email.length < 4) {
@@ -53,13 +53,13 @@ app.controller("landingCtrl", function($scope, $state) {
     const auth = firebase.auth();
     // Sign up and log in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
-    promise.catch(e => window.alert('Something is wrong, ya fool. Check the console', e.message));
+    // promise.catch(e => console.log(e.message));
+    promise.catch(function(e){ window.alert('Something is wrong, ya fool. Check the console', e.message)});
 
   });
 
   // send password reset via email
-  btnPasswordChange.addEventListener('click', e => {
+  btnPasswordChange.addEventListener('click', function(e) {
     console.log('benson rules');
 
     function sendPasswordReset() {
@@ -91,12 +91,12 @@ app.controller("landingCtrl", function($scope, $state) {
 
 
   // log out when button is clicked
-  btnLogout.addEventListener('click', e => {
+  btnLogout.addEventListener('click', function(e) {
     firebase.auth().signOut();
   });
 
   // Add a realtime listener
-  firebase.auth().onAuthStateChanged(firebaseUser => {
+  firebase.auth().onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
       // console.log(firebaseUser);
       btnLogout.classList.remove('hide');
