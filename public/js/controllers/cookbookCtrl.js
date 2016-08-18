@@ -3,6 +3,9 @@ var app = angular.module("cookingConnect");
 
 app.controller("cookbookCtrl", function($scope, $http, storeRecipeFactory, $state, $firebaseObject) {
 
+  // show footer
+  $('footer').show();
+
   // add storedRecipes to our scope via the storeRecipeFactory
   $scope.storedRecipes = storeRecipeFactory.returnObject();
 
