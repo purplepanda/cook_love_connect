@@ -349,6 +349,10 @@
 	100% { opacity: 0 }
 }
 
+nav .button-collapse i {
+	color:white;
+}
+
 
 /* Show at least something when animations not supported */
 .no-cssanimations .cb-slideshow li span{
@@ -365,8 +369,36 @@
 	}
 
 }
-/*@media screen and (max-width: 400px) {
+@media screen and (max-width: 405px) {
 	#welcome {
-		width: 375px;
-	}*/
+		width: 0px;
+		margin-left: 0px;
+		padding-top: 80px;
+	}
+	.search-padding {
+		margin:0px;
+		width:85%;
+	}
+	.special1 {
+		text-align: left;
+		padding-left: 76px;
+	}
+	.recipeCard {
+		margin-left: -74px;
+	}
+	.search-wrapper {
+		padding-left: 9px;
+	}
+	nav .brand-logo {
+		left:41%;
+}
+
+	nav .button-collapse i{
+		padding:0px;
+	}
+	
+	#special1{
+	font-family: Courgette,cursive;
+	padding-left: 0px;
+    margin-left: -89px;
 }
