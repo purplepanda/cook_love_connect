@@ -24,6 +24,7 @@ $dark_cocoa: #5B5751;
 h1, h3 {
   text-align: center;
   clear: both;
+  color: $dark_cocoa;
 }
 
 h1 {
@@ -36,6 +37,7 @@ input {
   text-align: center;
   font-size: 1.15em;
 }
+
 
 
 //////////  begin styling for header and main buttons //////////
@@ -100,7 +102,7 @@ input {
   font-size: 1.15em;
 }
 .submitForm {
-  background-color: $ice_blue;
+  background-color: $cream;
   padding: 5%;
 }
 

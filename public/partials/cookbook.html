@@ -66,17 +66,18 @@
 
 
 
-<div class="search-wrapper">
-		<div id="searchResults">
-		  <h1>Yummy Findings</h1>
-			<p ng-repeat="recipe in thirdpartyrecipes"><a class="results" ng-href="{{recipe.href}}" target="_blank">{{recipe.title}}</a></p>
-			</div>
-	<!-- Recipe Search API -->
-	<form id="recipeSearch" class="search-padding">
-	  <label for="search">Recipe Search</label>
-	  <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna" ng-model="searchIt"></input>
-	  <button ng-click="submitSearch(searchIt)" class="btn waves-effect waves-red">Search</button>
-	</form>
-	</div>
-	<!-- End Recipe Search API -->
-</div>
+<!-- 3rd party recipe search API - currently disabled due to https / http security issues  -->
+			<!-- <div class="search-wrapper">
+					<div id="searchResults">
+					  <h1>Yummy Findings</h1>
+						<p ng-repeat="recipe in thirdpartyrecipes"><a class="results" ng-href="{{recipe.href}}" target="_blank">{{recipe.title}}</a></p>
+						</div> -->
+				<!-- Recipe Search API -->
+				<!-- <form id="recipeSearch" class="search-padding">
+				  <label for="search">Recipe Search</label>
+				  <input type="text" name="search" id="recipeSearchBox" placeholder="Lasagna" ng-model="searchIt"></input>
+				  <button ng-click="submitSearch(searchIt)" class="btn waves-effect waves-red">Search</button>
+				</form>
+				</div> -->
+				<!-- End Recipe Search API -->
+<!-- </div> -->
